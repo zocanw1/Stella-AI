@@ -1,0 +1,131 @@
+{
+  "level": 8,
+  "xp": 1251,
+  "xp_to_next_level": 1702,
+  "total_interactions": 229,
+  "total_tasks_completed": 65,
+  "total_positive_feedback": 48,
+  "total_negative_feedback": 15,
+  "personality": {
+    "friendliness": 1,
+    "curiosity": 0.5700000000000001,
+    "helpfulness": 1,
+    "humor": 0.4,
+    "proactivity": 0.3,
+    "patience": 0.7400000000000001
+  },
+  "skill_tree": {
+    "conversation": {
+      "level": 6,
+      "xp": 226
+    },
+    "coding_help": {
+      "level": 1,
+      "xp": 12
+    },
+    "system_admin": {
+      "level": 3,
+      "xp": 50
+    },
+    "web_search": {
+      "level": 3,
+      "xp": 40
+    },
+    "file_management": {
+      "level": 3,
+      "xp": 35
+    },
+    "emotional_support": {
+      "level": 1,
+      "xp": 40
+    },
+    "creative_writing": {
+      "level": 2,
+      "xp": 56
+    },
+    "scheduling": {
+      "level": 1,
+      "xp": 4
+    }
+  },
+  "milestones": [
+    {
+      "description": "Level Up ke Level 2!",
+      "achieved_at": "2026-05-04T01:37:10.102Z"
+    },
+    {
+      "description": "Skill \"conversation\" naik ke Level 2!",
+      "achieved_at": "2026-05-04T06:27:40.129Z"
+    },
+    {
+      "description": "Level Up ke Level 3!",
+      "achieved_at": "2026-05-04T06:28:59.254Z"
+    },
+    {
+      "description": "Level Up ke Level 4!",
+      "achieved_at": "2026-05-04T06:53:12.681Z"
+    },
+    {
+      "description": "Skill \"file_management\" naik ke Level 2!",
+      "achieved_at": "2026-05-04T07:03:11.090Z"
+    },
+    {
+      "description": "Level Up ke Level 5!",
+      "achieved_at": "2026-05-04T07:10:46.182Z"
+    },
+    {
+      "description": "Skill \"system_admin\" naik ke Level 2!",
+      "achieved_at": "2026-05-04T07:19:35.076Z"
+    },
+    {
+      "description": "Skill \"web_search\" naik ke Level 2!",
+      "achieved_at": "2026-05-04T07:39:35.674Z"
+    },
+    {
+      "description": "Level Up ke Level 6!",
+      "achieved_at": "2026-05-04T07:43:57.713Z"
+    },
+    {
+      "description": "Skill \"conversation\" naik ke Level 3!",
+      "achieved_at": "2026-05-04T07:48:00.247Z"
+    },
+    {
+      "description": "Skill \"file_management\" naik ke Level 3!",
+      "achieved_at": "2026-05-04T07:49:10.176Z"
+    },
+    {
+      "description": "Level Up ke Level 7!",
+      "achieved_at": "2026-05-04T08:14:46.676Z"
+    },
+    {
+      "description": "Skill \"conversation\" naik ke Level 4!",
+      "achieved_at": "2026-05-04T09:50:55.514Z"
+    },
+    {
+      "description": "Skill \"system_admin\" naik ke Level 3!",
+      "achieved_at": "2026-05-04T10:38:08.219Z"
+    },
+    {
+      "description": "Level Up ke Level 8!",
+      "achieved_at": "2026-05-04T11:30:55.676Z"
+    },
+    {
+      "description": "Skill \"creative_writing\" naik ke Level 2!",
+      "achieved_at": "2026-05-04T11:31:41.241Z"
+    },
+    {
+      "description": "Skill \"conversation\" naik ke Level 5!",
+      "achieved_at": "2026-05-04T12:59:49.831Z"
+    },
+    {
+      "description": "Skill \"web_search\" naik ke Level 3!",
+      "achieved_at": "2026-05-04T13:27:40.843Z"
+    },
+    {
+      "description": "Skill \"conversation\" naik ke Level 6!",
+      "achieved_at": "2026-06-23T13:47:42.069Z"
+    }
+  ],
+  "created_at": "2026-05-04T01:04:29.537Z",
+  "last_evolution": "2026-06-23T13:47:42.069Z"
+}

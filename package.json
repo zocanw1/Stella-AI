@@ -1,0 +1,30 @@
+{
+  "name": "asistent-ai-telegram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "stella": "./cli.js"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node --check index.js && node --check core/stella_tree.js && node --check core/deepseek_provider.js && node --check core/self_modifier.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^1.51.0",
+    "@google/generative-ai": "^0.24.1",
+    "@tensorflow/tfjs": "^4.22.0",
+    "axios": "^1.16.0",
+    "cheerio": "^1.2.0",
+    "chokidar": "^4.0.3",
+    "cli-table3": "^0.6.5",
+    "commander": "^12.1.0",
+    "date-fns": "^4.1.0",
+    "groq-sdk": "^1.1.2",
+    "gtts": "^0.2.1",
+    "node-telegram-bot-api": "^0.67.0"
+  }
+}

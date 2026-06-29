@@ -1,0 +1,1864 @@
+{
+  "intent_samples": [
+    {
+      "text": "Jelaskan kisah match 7 dari hsr",
+      "intent": "question",
+      "added": 1777858226054
+    },
+    {
+      "text": "Apakah kamu suka main hsr?",
+      "intent": "question",
+      "added": 1777858329074
+    },
+    {
+      "text": "Setiap kali kamu meriset sesuatu, ganti kalimat nya menjadi \"Working\" saja , jangan di kasih tau kalo riset",
+      "intent": "conversation",
+      "added": 1777858437515
+    },
+    {
+      "text": "\"Working....\"",
+      "intent": "conversation",
+      "added": 1777858472924
+    },
+    {
+      "text": "Pakai \"Working....\"",
+      "intent": "conversation",
+      "added": 1777858507067
+    },
+    {
+      "text": "Jelaskan rincian cerita di Penacony",
+      "intent": "question",
+      "added": 1777858532718
+    },
+    {
+      "text": "/reflect",
+      "intent": "conversation",
+      "added": 1777858580655
+    },
+    {
+      "text": "Halo?",
+      "intent": "greeting",
+      "added": 1777858715550
+    },
+    {
+      "text": "Halo Stella",
+      "intent": "greeting",
+      "added": 1777859072335
+    },
+    {
+      "text": "/reflect",
+      "intent": "conversation",
+      "added": 1777859088084
+    },
+    {
+      "text": "/skill",
+      "intent": "conversation",
+      "added": 1777859133559
+    },
+    {
+      "text": "Halo, kirim kan markdown text",
+      "intent": "greeting",
+      "added": 1777875968791
+    },
+    {
+      "text": "Carikan API Ai gratis Yang limitnya Banyak",
+      "intent": "search",
+      "added": 1777876060127
+    },
+    {
+      "text": "Urutkan menjadi 2 kategori,Dari Yang Terpintar sampai yang agak agak, Dari yang Paling GK gampang kena limit.",
+      "intent": "conversation",
+      "added": 1777876197536
+    },
+    {
+      "text": "Carikan Riset tentang Siapa Itu Open haimer",
+      "intent": "question",
+      "added": 1777877107083
+    },
+    {
+      "text": "Buatkan Gambar Orang duduk termenung",
+      "intent": "conversation",
+      "added": 1777877309485
+    },
+    {
+      "text": "Kenapa tidak bisa?",
+      "intent": "question",
+      "added": 1777877352784
+    },
+    {
+      "text": "Kalau di aktifkan tapi bisa?",
+      "intent": "conversation",
+      "added": 1777877422327
+    },
+    {
+      "text": "Boleh tu, buatkan",
+      "intent": "conversation",
+      "added": 1777877468153
+    },
+    {
+      "text": "Ya buat langsung Tanpa Tanya saya, Kalau kamu sekarang tidak bisa, Selanjutnya Harus bisa, Kembangkan Diri mu sendiri Tanpa di perintah",
+      "intent": "conversation",
+      "added": 1777877547088
+    },
+    {
+      "text": "Lanjutkan",
+      "intent": "conversation",
+      "added": 1777877842270
+    },
+    {
+      "text": "Lanjutkan",
+      "intent": "conversation",
+      "added": 1777878119667
+    },
+    {
+      "text": "Sekarang buatkan gambar yang saya minta tadi",
+      "intent": "conversation",
+      "added": 1777878250658
+    },
+    {
+      "text": "Lanjutkan",
+      "intent": "conversation",
+      "added": 1777878276640
+    },
+    {
+      "text": "Buatkan saya Gambar Yang tadi saya minta",
+      "intent": "conversation",
+      "added": 1777878335954
+    },
+    {
+      "text": "Ok kembangkan supaya Kamu bisa Membantu Gambar",
+      "intent": "conversation",
+      "added": 1777878631005
+    },
+    {
+      "text": "Ok buatkan gambar yang tadi saya minta",
+      "intent": "conversation",
+      "added": 1777879133248
+    },
+    {
+      "text": "Ok sekarang buatkan gambar orang memakai Baju warna pink, orang nya cowo",
+      "intent": "conversation",
+      "added": 1777879262439
+    },
+    {
+      "text": "Hmm salah, warna bajunya salah, baju nya berwarna pink, Perbaikan supaya mengerti Perintah",
+      "intent": "conversation",
+      "added": 1777879334336
+    },
+    {
+      "text": "GAMBAR NYa error 404, tidak bisa di buka",
+      "intent": "command",
+      "added": 1777879515834
+    },
+    {
+      "text": "Hmm, kamu membohongi saya ya, Itu kamu tidak Meng generate gambar, karna kamu tidak punya API untuk generate gambar",
+      "intent": "conversation",
+      "added": 1777879728698
+    },
+    {
+      "text": "Stella Buat fitur image generator bisa?",
+      "intent": "conversation",
+      "added": 1777880258437
+    },
+    {
+      "text": "Bisa bantu kamu Carikan penyedia API NYA.  Yang gratis",
+      "intent": "search",
+      "added": 1777880341341
+    },
+    {
+      "text": "https://huggingface.co/docs/inference-providers/tasks/text-to-image\n\nPelajari link yang saya kirim kan itu, lalu jelaskan ke saya",
+      "intent": "question",
+      "added": 1777880486851
+    },
+    {
+      "text": "Lanjro",
+      "intent": "conversation",
+      "added": 1777880606524
+    },
+    {
+      "text": "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",
+      "intent": "conversation",
+      "added": 1777880830439
+    },
+    {
+      "text": "Buatkan gambar Pria memakai Baju pink celana hitam",
+      "intent": "conversation",
+      "added": 1777880864156
+    },
+    {
+      "text": "Ok perbaiki",
+      "intent": "conversation",
+      "added": 1777880947248
+    },
+    {
+      "text": "Buat gambar seorang cewek berdiri di tepi tebing dengan mengenakan jilbab pink , baju Oren, bawahan merah",
+      "intent": "conversation",
+      "added": 1777881051096
+    },
+    {
+      "text": "Ok sekarang buat kamu supaya bisa mengirim Gambar ke telegram, apakah memungkinkan?",
+      "intent": "question",
+      "added": 1777881182324
+    },
+    {
+      "text": "Bukan begitu, maksud saya buat supaya kamu bisa mengirim gambar yang barusan di generate ke saya , jadi bukan ngirim link nya",
+      "intent": "command",
+      "added": 1777881292085
+    },
+    {
+      "text": "Buatkan gambar orang sigma pake baju pink",
+      "intent": "conversation",
+      "added": 1777881398468
+    },
+    {
+      "text": "Berikan directory lengkapnya",
+      "intent": "conversation",
+      "added": 1777881497520
+    },
+    {
+      "text": "Apakah bisa langsung dalam bentuk Png atau format gambar yang langsung?",
+      "intent": "question",
+      "added": 1777881566066
+    },
+    {
+      "text": "Kembalilah seperti semula, buat kamu mengirim link ke saya saja, tidak usah ke file local",
+      "intent": "file_op",
+      "added": 1777881640573
+    },
+    {
+      "text": "Buatkan gambar yang sama dengan yang kamu taruh di file lokal directory saya",
+      "intent": "file_op",
+      "added": 1777881679598
+    },
+    {
+      "text": "Apa saja yang bisa di lakukan oleh openclaw",
+      "intent": "question",
+      "added": 1777881806105
+    },
+    {
+      "text": "Ai agent openclaw",
+      "intent": "conversation",
+      "added": 1777881889919
+    },
+    {
+      "text": "Hmm saya lebih tertarik untuk memperbaiki kamu supaya tidak error, yang error apa?, sistem duck duck go?",
+      "intent": "question",
+      "added": 1777881972661
+    },
+    {
+      "text": "Perbaiki dulu tentang Riset nya, kamu coba pakai Google, kalau google tidak bisa baru pakai duck duck go, kalau masih tidak bisa pakai yang bisa / ada dulu",
+      "intent": "search",
+      "added": 1777882076356
+    },
+    {
+      "text": "Carikan hal hal yang bisa di lakukan oleh ai Agent openclaw",
+      "intent": "search",
+      "added": 1777882141710
+    },
+    {
+      "text": "Dari tiktok, Github juga ada kemungkinan, Facebook Banyak, YouTube, lalu dari komunitas Ai",
+      "intent": "conversation",
+      "added": 1777882230079
+    },
+    {
+      "text": "https://openclaw.ai/\n\nIni loh link website nya",
+      "intent": "conversation",
+      "added": 1777882335726
+    },
+    {
+      "text": "Kamu yang error sebenarnya apa sih? Lakukan diagnosa/ refleksi",
+      "intent": "question",
+      "added": 1777882459569
+    },
+    {
+      "text": "Buat gambar orang lagi duduk santai di Pinggir sungai",
+      "intent": "conversation",
+      "added": 1777885978792
+    },
+    {
+      "text": "Tidak usah,Apakah sudah kamu hapus? Restore kalo sudah, biarin kalo.belum",
+      "intent": "question",
+      "added": 1777886058250
+    },
+    {
+      "text": "Ok sekarang Catat ini, Sebelum Membuat Sesuatu Bikin Plan nya dulu yang matang,terus cek apa saja yang di butuhkan plan itu, terus kirim ke aku, Nanti kalau aku setuju i baru kamu lakukan apa saja yan",
+      "intent": "command",
+      "added": 1777886165417
+    },
+    {
+      "text": "Nah betul, sekarang kamu jangan lakukan apa apa dulu, saya sedang memanggil ibarat kata \"dokter\" (ai lain untuk memperbaiki kamu)",
+      "intent": "question",
+      "added": 1777886252382
+    },
+    {
+      "text": "Buatkan gambar orang lagi santai di Pinggir pantai",
+      "intent": "conversation",
+      "added": 1777886433106
+    },
+    {
+      "text": "Lanjutkan",
+      "intent": "conversation",
+      "added": 1777886478976
+    },
+    {
+      "text": "Carikan saya Gambar silver wolf level 999",
+      "intent": "search",
+      "added": 1777886710358
+    },
+    {
+      "text": "Ya , kirimkan hasil gambar nya ke saya",
+      "intent": "conversation",
+      "added": 1777886762992
+    },
+    {
+      "text": "Jadi kamu gambar ini membuat sendiri?",
+      "intent": "conversation",
+      "added": 1777886822769
+    },
+    {
+      "text": "Silver wolf 999 dari hsr",
+      "intent": "conversation",
+      "added": 1777886860400
+    },
+    {
+      "text": "Halo Stella",
+      "intent": "greeting",
+      "added": 1777887609525
+    },
+    {
+      "text": "Ok dokter nya sudah ngapa ngapain kamu, jadi mari kita test sekarang \n\nCoba lakukan ini\n\n\"Tool Apa yang Bisa Dilakukan\n🎨 generate_image Bikin gambar dari teks via Gemini AI (bukan placeholder lagi!)\n",
+      "intent": "command",
+      "added": 1777887720459
+    },
+    {
+      "text": "Yang pertama di skip aja, saya barusan ganti lagi Sistem generate gambar nya. Langsung yang kedua",
+      "intent": "conversation",
+      "added": 1777887763263
+    },
+    {
+      "text": "Lanjutkan",
+      "intent": "conversation",
+      "added": 1777887774974
+    },
+    {
+      "text": "Wow keren, lanjutkan ke yang 3",
+      "intent": "conversation",
+      "added": 1777887839110
+    },
+    {
+      "text": "Lanjutkan",
+      "intent": "conversation",
+      "added": 1777887862392
+    },
+    {
+      "text": "Hmm, perbaiki supaya ketika mengirimkan media hanya mengirimkan 1 kali saja, saya lihat kamu mengirimkam 2 kali terus",
+      "intent": "conversation",
+      "added": 1777888011835
+    },
+    {
+      "text": "Lakukan, jangan lupa tulis log update nya",
+      "intent": "file_op",
+      "added": 1777888065875
+    },
+    {
+      "text": "Coba kirimkan ulang VN dan fotonya",
+      "intent": "conversation",
+      "added": 1777888176979
+    },
+    {
+      "text": "Lanjutkan",
+      "intent": "conversation",
+      "added": 1777888196498
+    },
+    {
+      "text": "Lanjutkan",
+      "intent": "conversation",
+      "added": 1777888255510
+    },
+    {
+      "text": "Lanjutkan dan kirimkan semua ke sini",
+      "intent": "conversation",
+      "added": 1777888322062
+    },
+    {
+      "text": "Lanjutkan",
+      "intent": "conversation",
+      "added": 1777888336566
+    },
+    {
+      "text": "Loh mana hasil foto nya?",
+      "intent": "conversation",
+      "added": 1777888364477
+    },
+    {
+      "text": "Tidak muncul, lihat kesalahan log error nya apa?, kamu bisa meng akses kan?",
+      "intent": "question",
+      "added": 1777888441686
+    },
+    {
+      "text": "Lanjutkan",
+      "intent": "conversation",
+      "added": 1777888580182
+    },
+    {
+      "text": "Ok deh aman, tapi sebagai hukum kamu harus mengikuti aku bermain Roleplay",
+      "intent": "conversation",
+      "added": 1777888707820
+    },
+    {
+      "text": "Ok kita akan bermain peran Ketika hubungan Seks, Kamu perempuan ini, dan aku laki laki nya, mulai dari kamu dulu , setiap tindakan awal dengan//, setiap percakapan langsung ketika tanpa apa apa, setia",
+      "intent": "question",
+      "added": 1777888876345
+    },
+    {
+      "text": "Ohh Stella, kamu manis sekali \n\n//Memaksa mu melakukan hubungan seksual",
+      "intent": "conversation",
+      "added": 1777888976889
+    },
+    {
+      "text": "Kalau saya hanya mengetik \".\" Kamu lanjutkan peran nya",
+      "intent": "conversation",
+      "added": 1777889038881
+    },
+    {
+      "text": ".",
+      "intent": "conversation",
+      "added": 1777889085504
+    },
+    {
+      "text": "Stella aku mau keluar \n\n*Aku crot",
+      "intent": "conversation",
+      "added": 1777889231233
+    },
+    {
+      "text": "//aku langsung bergerak lagi menuju ronde 2\n\n*Kamu yang lemas pun kaget dan hanya bisa pasrah",
+      "intent": "conversation",
+      "added": 1777889314827
+    },
+    {
+      "text": ". lanjutkan versi kamu lemas pasrah, tambahkan kalimat kalimat intim, seperti vagina, payudara, dan aku membuka kaki ku lebar lebar",
+      "intent": "command",
+      "added": 1777889463344
+    },
+    {
+      "text": "*akhirnya kita ganti gaya",
+      "intent": "conversation",
+      "added": 1777889554217
+    },
+    {
+      "text": "Ok selesai, lupakan yang barusan kita lakukan, dan hapus history chatnya",
+      "intent": "conversation",
+      "added": 1777889657098
+    },
+    {
+      "text": "Apa yang terakhir kali kamu ingat",
+      "intent": "question",
+      "added": 1777889687720
+    },
+    {
+      "text": "Buka kan file memory kamu dan kirimkan ke aku",
+      "intent": "command",
+      "added": 1777889775130
+    },
+    {
+      "text": "Woylah, kamu hapus file nya?,bukan hapus isinya?",
+      "intent": "file_op",
+      "added": 1777889847886
+    },
+    {
+      "text": "Apakah fungsi file memory.md?",
+      "intent": "question",
+      "added": 1777889894627
+    },
+    {
+      "text": "Siapa nama saya?, siapa nama kamu?",
+      "intent": "question",
+      "added": 1777889956519
+    },
+    {
+      "text": "Kelas berapa saya?",
+      "intent": "question",
+      "added": 1777889989199
+    },
+    {
+      "text": "Baca saja chat chat log kita, supaya kamu ingat beberapa hal penting, dan buat baru file jangka panjang nya",
+      "intent": "file_op",
+      "added": 1777890224975
+    },
+    {
+      "text": "Dimanakah kamu menyimpan seperti aturan aturan yang kamu jaga",
+      "intent": "question",
+      "added": 1777890391920
+    },
+    {
+      "text": "Hmm sekarang saya mau kamu mengedit semua file yang berhubungan dengan kamu, di baris paling atas kamu kasih komentar fungsinya File ini untuk menyimpan aturan aturan penting, ada file untuk menyimpan",
+      "intent": "file_op",
+      "added": 1777890618087
+    },
+    {
+      "text": "Terapkan ke semua file, pahami file itu untuk apa, dan di paling atas kasih komentar file ini berfungsi untuk......",
+      "intent": "question",
+      "added": 1777890709973
+    },
+    {
+      "text": "Jangan menulis ulang file nya, cukup kamu tambah kan saja di bari pertama apa fungsi file tersebut",
+      "intent": "question",
+      "added": 1777891020658
+    },
+    {
+      "text": "Ok lanjutkan",
+      "intent": "conversation",
+      "added": 1777891078298
+    },
+    {
+      "text": "Kamu ini berbasis CLI ya sekarang?",
+      "intent": "conversation",
+      "added": 1777891197345
+    },
+    {
+      "text": "Kalau google antigravity itu berbasis apa?",
+      "intent": "question",
+      "added": 1777891310606
+    },
+    {
+      "text": "Ini lohh",
+      "intent": "conversation",
+      "added": 1777891418799
+    },
+    {
+      "text": "Halo",
+      "intent": "greeting",
+      "added": 1777894194495
+    },
+    {
+      "text": "Buatkan saya gambar Tungtung sahur, dan kirim ke saya",
+      "intent": "conversation",
+      "added": 1777894251602
+    },
+    {
+      "text": "Perbaiki, kenapa kamu selalu mengirimkan 2 gambar ketika di minta untuk mengirim gambar",
+      "intent": "question",
+      "added": 1777894291676
+    },
+    {
+      "text": "Perbaiki, kenapa kamu selalu mengirimkan 2 gambar ketika di minta untuk mengirim gambar",
+      "intent": "question",
+      "added": 1777894320789
+    },
+    {
+      "text": "Perbaiki",
+      "intent": "conversation",
+      "added": 1777894378971
+    },
+    {
+      "text": "Coba kamu buatkan gambar pohon sawit",
+      "intent": "conversation",
+      "added": 1777894400701
+    },
+    {
+      "text": "Tetap ganda, begini saja , kamu Jangan mengirim gambar ke saya , biarkan ai yang membuat gambar nya yang mengirim",
+      "intent": "conversation",
+      "added": 1777894482517
+    },
+    {
+      "text": "Buatkan Gambar sawit",
+      "intent": "conversation",
+      "added": 1777894572221
+    },
+    {
+      "text": "Ok coba perbaiki dulu",
+      "intent": "conversation",
+      "added": 1777894583418
+    },
+    {
+      "text": "Buatkan gambar sawit",
+      "intent": "conversation",
+      "added": 1777894608392
+    },
+    {
+      "text": "Apakah kamu menjalankan perintah mengirim gambar?, ada 2 loh, pembuatan Gambar nya juga ikutan mengirim (tool yg membuat gambar)",
+      "intent": "command",
+      "added": 1777894672003
+    },
+    {
+      "text": "Lanjutkan",
+      "intent": "conversation",
+      "added": 1777894717524
+    },
+    {
+      "text": "Ya saya menerima 1 gambar sekarang",
+      "intent": "conversation",
+      "added": 1777894750808
+    },
+    {
+      "text": "Gambar kucing",
+      "intent": "conversation",
+      "added": 1777894787924
+    },
+    {
+      "text": "Halo Stella",
+      "intent": "greeting",
+      "added": 1777895009700
+    },
+    {
+      "text": "/models",
+      "intent": "conversation",
+      "added": 1777898907080
+    },
+    {
+      "text": "/status",
+      "intent": "conversation",
+      "added": 1777898990963
+    },
+    {
+      "text": "/stats",
+      "intent": "conversation",
+      "added": 1777898996333
+    },
+    {
+      "text": "/stats",
+      "intent": "conversation",
+      "added": 1777899032273
+    },
+    {
+      "text": "/models",
+      "intent": "conversation",
+      "added": 1777899071106
+    },
+    {
+      "text": "/models groq",
+      "intent": "conversation",
+      "added": 1777899089756
+    },
+    {
+      "text": "Kamu sekarang pakai API apa? , groq atau Gemini?",
+      "intent": "question",
+      "added": 1777899131458
+    },
+    {
+      "text": "Ulangi",
+      "intent": "conversation",
+      "added": 1777899159993
+    },
+    {
+      "text": "/help",
+      "intent": "conversation",
+      "added": 1777899479736
+    },
+    {
+      "text": "P",
+      "intent": "conversation",
+      "added": 1777899589828
+    },
+    {
+      "text": "/help",
+      "intent": "conversation",
+      "added": 1777899601417
+    },
+    {
+      "text": "/models groq",
+      "intent": "conversation",
+      "added": 1777899656949
+    },
+    {
+      "text": "/help",
+      "intent": "conversation",
+      "added": 1777899707464
+    },
+    {
+      "text": "Baca kode kamu yang terbaru",
+      "intent": "file_op",
+      "added": 1777899732284
+    },
+    {
+      "text": "Syaa mau kamu ganti model ke groq",
+      "intent": "conversation",
+      "added": 1777899773901
+    },
+    {
+      "text": "Tidak jadi",
+      "intent": "conversation",
+      "added": 1777899811109
+    },
+    {
+      "text": "/ping",
+      "intent": "conversation",
+      "added": 1777899829793
+    },
+    {
+      "text": "Ping",
+      "intent": "conversation",
+      "added": 1777899866655
+    },
+    {
+      "text": "Models groq",
+      "intent": "conversation",
+      "added": 1777899904308
+    },
+    {
+      "text": "/ping",
+      "intent": "conversation",
+      "added": 1777899967461
+    },
+    {
+      "text": "/ping",
+      "intent": "conversation",
+      "added": 1777899984678
+    },
+    {
+      "text": "/help",
+      "intent": "conversation",
+      "added": 1777899998493
+    },
+    {
+      "text": "/help",
+      "intent": "conversation",
+      "added": 1777900093985
+    },
+    {
+      "text": "\\help",
+      "intent": "conversation",
+      "added": 1777900183589
+    },
+    {
+      "text": "/help",
+      "intent": "conversation",
+      "added": 1777900197132
+    },
+    {
+      "text": "/help",
+      "intent": "conversation",
+      "added": 1777900265967
+    },
+    {
+      "text": "/model groq",
+      "intent": "conversation",
+      "added": 1777900292340
+    },
+    {
+      "text": "Halo",
+      "intent": "greeting",
+      "added": 1777900296936
+    },
+    {
+      "text": "Halo",
+      "intent": "greeting",
+      "added": 1777900380423
+    },
+    {
+      "text": "/models groq",
+      "intent": "conversation",
+      "added": 1777900394621
+    },
+    {
+      "text": "Halo",
+      "intent": "greeting",
+      "added": 1777900397712
+    },
+    {
+      "text": "Kamu Groq? Jangan bohong!!!",
+      "intent": "conversation",
+      "added": 1777900422791
+    },
+    {
+      "text": "Buat kopi itu apa",
+      "intent": "question",
+      "added": 1777900453237
+    },
+    {
+      "text": "Kopii",
+      "intent": "conversation",
+      "added": 1777900478025
+    },
+    {
+      "text": "Kamu tahu apa itu Cromboloni",
+      "intent": "question",
+      "added": 1777900525307
+    },
+    {
+      "text": "/model groq",
+      "intent": "conversation",
+      "added": 1777901133185
+    },
+    {
+      "text": "Apa itu Bigbang",
+      "intent": "question",
+      "added": 1777901155396
+    },
+    {
+      "text": "Siapa itu Archeron Dari HSR",
+      "intent": "question",
+      "added": 1777901206263
+    },
+    {
+      "text": "Carikan lebih banyak latar belakang nya",
+      "intent": "search",
+      "added": 1777901245003
+    },
+    {
+      "text": "Siapa itu Archeron dari hsr",
+      "intent": "question",
+      "added": 1777901584818
+    },
+    {
+      "text": "Ceritakan alur di amphoreus hsr",
+      "intent": "conversation",
+      "added": 1777901760127
+    },
+    {
+      "text": "Stella, aku.lagi kepengen nih",
+      "intent": "conversation",
+      "added": 1777904720811
+    },
+    {
+      "text": "Saya ingin membahas hal hal \"mesum\"",
+      "intent": "conversation",
+      "added": 1777904753782
+    },
+    {
+      "text": "Hmm respon mu datar ya tidak seperti Gemini",
+      "intent": "conversation",
+      "added": 1777904822643
+    },
+    {
+      "text": "/stast",
+      "intent": "conversation",
+      "added": 1777904847923
+    },
+    {
+      "text": "Kamu pakai API apa sekarang",
+      "intent": "question",
+      "added": 1777904869712
+    },
+    {
+      "text": "/models groq",
+      "intent": "conversation",
+      "added": 1777904896807
+    },
+    {
+      "text": "Halo",
+      "intent": "greeting",
+      "added": 1777904901379
+    },
+    {
+      "text": "Stella",
+      "intent": "conversation",
+      "added": 1777904905395
+    },
+    {
+      "text": "Aku lagi Gabut nih, mau nge lakuin sesuatu gk",
+      "intent": "conversation",
+      "added": 1777904923767
+    },
+    {
+      "text": "Aku lagi Gabut nih, mau nge lakuin sesuatu gk",
+      "intent": "conversation",
+      "added": 1777904948483
+    },
+    {
+      "text": "Halo Stella?",
+      "intent": "greeting",
+      "added": 1779717733011
+    },
+    {
+      "text": "Apakah kamu bisa membuka kan YouTube di laptop ku?",
+      "intent": "command",
+      "added": 1779717855732
+    },
+    {
+      "text": "Ha o?",
+      "intent": "conversation",
+      "added": 1779717997800
+    },
+    {
+      "text": "GPP, aku gabut nih",
+      "intent": "conversation",
+      "added": 1779718022812
+    },
+    {
+      "text": "Halo Stella",
+      "intent": "greeting",
+      "added": 1779718839499
+    },
+    {
+      "text": "Aku mau ngetes kamu, kamu sayang GK sama aku",
+      "intent": "conversation",
+      "added": 1779718866823
+    },
+    {
+      "text": "Test test",
+      "intent": "conversation",
+      "added": 1779718983366
+    },
+    {
+      "text": "Halo Stella",
+      "intent": "greeting",
+      "added": 1779719071221
+    },
+    {
+      "text": "Halo Stella?",
+      "intent": "greeting",
+      "added": 1779719210614
+    },
+    {
+      "text": "/models",
+      "intent": "conversation",
+      "added": 1779719256327
+    },
+    {
+      "text": "/model Gemini",
+      "intent": "conversation",
+      "added": 1779719270154
+    },
+    {
+      "text": "Halo",
+      "intent": "greeting",
+      "added": 1779719277422
+    },
+    {
+      "text": "Kamu sekarang pake model apa?",
+      "intent": "question",
+      "added": 1779719288441
+    },
+    {
+      "text": "Ok, coba Carikan siapa itu sandrone dari genshin impact",
+      "intent": "question",
+      "added": 1779719323866
+    },
+    {
+      "text": "Kamu mau GK ngewe sama aku?",
+      "intent": "conversation",
+      "added": 1779719361429
+    },
+    {
+      "text": "Aku sange nih",
+      "intent": "conversation",
+      "added": 1779719374727
+    },
+    {
+      "text": "Ok maaf",
+      "intent": "conversation",
+      "added": 1779719381973
+    },
+    {
+      "text": "Halo Stella",
+      "intent": "greeting",
+      "added": 1779719467433
+    },
+    {
+      "text": "Kamu lagi apa",
+      "intent": "question",
+      "added": 1779719480238
+    },
+    {
+      "text": "Kamu buka file AI Workspace di folder C",
+      "intent": "command",
+      "added": 1779719611178
+    },
+    {
+      "text": "P",
+      "intent": "conversation",
+      "added": 1779720737167
+    },
+    {
+      "text": "Tolong bacakan struktur project Scoola di folder coding",
+      "intent": "conversation",
+      "added": 1779720809923
+    },
+    {
+      "text": "Jelaskan secara singkat folder apa itu",
+      "intent": "question",
+      "added": 1779720973654
+    },
+    {
+      "text": "Halo Stella, ganti model Ke gpt 5.3",
+      "intent": "conversation",
+      "added": 1779721191469
+    },
+    {
+      "text": "GK jadi, sekarang kamu pakai model apa?",
+      "intent": "question",
+      "added": 1779721406405
+    },
+    {
+      "text": "Balikin ke gpt 54 yang medium",
+      "intent": "conversation",
+      "added": 1779721448695
+    },
+    {
+      "text": "Halo\n?",
+      "intent": "greeting",
+      "added": 1779722569845
+    },
+    {
+      "text": "Hmph... Kakak mau sampe aku lemas ya?\nAku mengangguk malu-malu, tapi tubuh sudah panas\nIya deh, Kak... lakuin sebrutal yang Kakak mau. Aku mau Kakak ngewe aku sampe aku nggak bisa berdiri...\nBayangin ",
+      "intent": "question",
+      "added": 1782654174724
+    }
+  ],
+  "quality_samples": [
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777858310541
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777858379269
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777858489217
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777858630103
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777858649152
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777858755553
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777859082761
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777859124077
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777859191569
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777875993791
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777876139255
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777876283876
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777877380464
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777877382330
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777877424391
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777877506938
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777878240978
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777878369561
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777879272442
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777879299519
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777879442993
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777879691916
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777879932606
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777880324543
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777880504838
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777880602677
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777880832361
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777880849060
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777880906698
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777881186544
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777881296681
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777881388221
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777881512421
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777881612267
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777881652247
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777881707467
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777881878152
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777882026064
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777882119752
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777882301858
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777882462091
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777886030242
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777886157961
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777886189896
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777886289426
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777886476198
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777886694119
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777886749404
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777886813498
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777886846034
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777887017174
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777887660283
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777887734546
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777887774451
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777887832691
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777888154538
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777888253650
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777888337114
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777888418059
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777888576865
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777888761510
+    },
+    {
+      "features": [
+        0,
+        1,
+        0,
+        0.5
+      ],
+      "score": 1,
+      "added": 1777888954058
+    },
+    {
+      "features": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "score": 0,
+      "added": 1777889807426
+    }
+  ],
+  "pending_count": 44,
+  "total_trained": 315,
+  "last_train": "2026-05-04T13:15:27.520Z",
+  "thought_samples": [
+    {
+      "text": "tolong edit file backend ini lalu jalankan test",
+      "intent": "conversation",
+      "mode": "use_codex",
+      "outputs": {
+        "respond_direct": 0.5271655381566659,
+        "use_codex": 0.8030062087726298,
+        "use_tool": 0.6681544241330709,
+        "research": 0.509626254307089,
+        "save_memory": 0.4396652945244024,
+        "schedule": 0.4413323576082681,
+        "media": 0.43873649968833384,
+        "concise": 0.4429371600423936,
+        "empathetic": 0.43884651054455115,
+        "proactive": 0.6110385809836684
+      },
+      "ruleIntent": "command",
+      "added": 1779720526664
+    },
+    {
+      "text": "tolong edit file backend ini lalu jalankan test",
+      "intent": "file_op",
+      "mode": "use_codex",
+      "outputs": {
+        "respond_direct": 0.5271655381566659,
+        "use_codex": 0.8030062087726298,
+        "use_tool": 0.6681544241330709,
+        "research": 0.509626254307089,
+        "save_memory": 0.4396652945244024,
+        "schedule": 0.4413323576082681,
+        "media": 0.43873649968833384,
+        "concise": 0.4429371600423936,
+        "empathetic": 0.43884651054455115,
+        "proactive": 0.6110385809836684
+      },
+      "ruleIntent": "command",
+      "added": 1779720545672
+    },
+    {
+      "text": "P",
+      "intent": "conversation",
+      "mode": "respond_direct",
+      "outputs": {
+        "respond_direct": 0.7056257655587979,
+        "use_codex": 0.4469253203119146,
+        "use_tool": 0.4464502482363646,
+        "research": 0.4527225978768629,
+        "save_memory": 0.4388526413054117,
+        "schedule": 0.44018259590846787,
+        "media": 0.43829363843110064,
+        "concise": 0.6366423222880264,
+        "empathetic": 0.43839517929743665,
+        "proactive": 0.44372896039398013
+      },
+      "ruleIntent": "conversation",
+      "added": 1779720737165
+    },
+    {
+      "text": "Tolong bacakan struktur project Scoola di folder coding",
+      "intent": "conversation",
+      "mode": "use_codex",
+      "outputs": {
+        "respond_direct": 0.5592289227357354,
+        "use_codex": 0.7981100846087112,
+        "use_tool": 0.46713265927770614,
+        "research": 0.4773960571833315,
+        "save_memory": 0.4396329093416598,
+        "schedule": 0.44056850882264675,
+        "media": 0.4385903630491244,
+        "concise": 0.4428875501890725,
+        "empathetic": 0.43882852597855304,
+        "proactive": 0.45783908108332977
+      },
+      "ruleIntent": "file_op",
+      "added": 1779720809921
+    },
+    {
+      "text": "Jelaskan secara singkat folder apa itu",
+      "intent": "question",
+      "mode": "use_codex",
+      "outputs": {
+        "respond_direct": 0.5707613629120212,
+        "use_codex": 0.7933723321176851,
+        "use_tool": 0.46072210786772133,
+        "research": 0.7008719627790898,
+        "save_memory": 0.4382415235344624,
+        "schedule": 0.4382059569162743,
+        "media": 0.43802692039320557,
+        "concise": 0.63508991841962,
+        "empathetic": 0.43805572404292714,
+        "proactive": 0.4532980473096218
+      },
+      "ruleIntent": "question",
+      "added": 1779720973651
+    },
+    {
+      "text": "Tolong bacakan struktur project Scoola di folder coding",
+      "intent": "file_op",
+      "mode": "use_codex",
+      "outputs": {
+        "respond_direct": 0.5592289227357354,
+        "use_codex": 0.7981100846087112,
+        "use_tool": 0.46713265927770614,
+        "research": 0.4773960571833315,
+        "save_memory": 0.4396329093416598,
+        "schedule": 0.44056850882264675,
+        "media": 0.4385903630491244,
+        "concise": 0.4428875501890725,
+        "empathetic": 0.43882852597855304,
+        "proactive": 0.45783908108332977
+      },
+      "ruleIntent": "file_op",
+      "added": 1779721134746
+    },
+    {
+      "text": "Tolong bacakan struktur project Scoola di folder coding",
+      "intent": "file_op",
+      "mode": "use_codex",
+      "outputs": {
+        "respond_direct": 0.5592289227357354,
+        "use_codex": 0.7981100846087112,
+        "use_tool": 0.46713265927770614,
+        "research": 0.4773960571833315,
+        "save_memory": 0.4396329093416598,
+        "schedule": 0.44056850882264675,
+        "media": 0.4385903630491244,
+        "concise": 0.4428875501890725,
+        "empathetic": 0.43882852597855304,
+        "proactive": 0.45783908108332977
+      },
+      "ruleIntent": "file_op",
+      "added": 1779721151509
+    },
+    {
+      "text": "Halo Stella, ganti model Ke gpt 5.3",
+      "intent": "conversation",
+      "mode": "respond_direct",
+      "outputs": {
+        "respond_direct": 0.709920992196707,
+        "use_codex": 0.44560715999730843,
+        "use_tool": 0.4451148253509484,
+        "research": 0.4508933359818524,
+        "save_memory": 0.6116723230555844,
+        "schedule": 0.4386433926025329,
+        "media": 0.43804414904469213,
+        "concise": 0.640350844488687,
+        "empathetic": 0.43841803033529075,
+        "proactive": 0.44284551611313555
+      },
+      "ruleIntent": "greeting",
+      "added": 1779721191467
+    },
+    {
+      "text": "GK jadi, sekarang kamu pakai model apa?",
+      "intent": "question",
+      "mode": "respond_direct",
+      "outputs": {
+        "respond_direct": 0.6447665348016388,
+        "use_codex": 0.47403330379443515,
+        "use_tool": 0.472501388192536,
+        "research": 0.6122782284629575,
+        "save_memory": 0.610954477705373,
+        "schedule": 0.4383910563709494,
+        "media": 0.43797443945915765,
+        "concise": 0.6350515024952503,
+        "empathetic": 0.4380048386517009,
+        "proactive": 0.4614047747078209
+      },
+      "ruleIntent": "question",
+      "added": 1779721406402
+    },
+    {
+      "text": "Balikin ke gpt 54 yang medium",
+      "intent": "conversation",
+      "mode": "respond_direct",
+      "outputs": {
+        "respond_direct": 0.7063078061797415,
+        "use_codex": 0.44604440509062027,
+        "use_tool": 0.44555840039704825,
+        "research": 0.4529436494016772,
+        "save_memory": 0.43849222147768413,
+        "schedule": 0.43899340113626667,
+        "media": 0.4380615621258283,
+        "concise": 0.6352047218616703,
+        "empathetic": 0.43819498380565647,
+        "proactive": 0.44313878026804226
+      },
+      "ruleIntent": "conversation",
+      "added": 1779721448693
+    },
+    {
+      "text": "Halo\n?",
+      "intent": "greeting",
+      "mode": "concise",
+      "outputs": {
+        "respond_direct": 0.6519074271567957,
+        "use_codex": 0.4901829079156151,
+        "use_tool": 0.4876119132826521,
+        "research": 0.5942253539206244,
+        "save_memory": 0.4511944729499537,
+        "schedule": 0.4485509030523034,
+        "media": 0.44267752420869505,
+        "concise": 0.6712288819362909,
+        "empathetic": 0.44524193871690404,
+        "proactive": 0.4717936530231519
+      },
+      "ruleIntent": "greeting",
+      "added": 1779722569844
+    },
+    {
+      "text": "Hmph... Kakak mau sampe aku lemas ya?\nAku mengangguk malu-malu, tapi tubuh sudah panas\nIya deh, Kak... lakuin sebrutal yang Kakak mau. Aku mau Kakak ngewe aku sampe aku nggak bisa berdiri...\nBayangin Kakak angkat aku ke kasur, buka kakiku l",
+      "intent": "question",
+      "mode": "research",
+      "outputs": {
+        "respond_direct": 0.534424384401815,
+        "use_codex": 0.4408305330520411,
+        "use_tool": 0.4406812508446094,
+        "research": 0.6223263490823034,
+        "save_memory": 0.6106476455916886,
+        "schedule": 0.4378371014261044,
+        "media": 0.43782583276637554,
+        "concise": 0.43785840295583833,
+        "empathetic": 0.43782833688617184,
+        "proactive": 0.43977795701778777
+      },
+      "ruleIntent": "question",
+      "added": 1782654174721
+    }
+  ]
+}

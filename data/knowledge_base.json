@@ -1,0 +1,1184 @@
+{
+  "skills": [
+    {
+      "trigger": "Kopii",
+      "solution": "Used tools: generate_image",
+      "category": "general",
+      "tools_used": [
+        "generate_image"
+      ],
+      "times_used": 1,
+      "success_rate": 0.7,
+      "learned_at": "2026-05-04T13:14:59.874Z",
+      "last_used": "2026-05-04T13:14:59.874Z"
+    },
+    {
+      "trigger": "Carikan lebih banyak latar belakang nya",
+      "solution": "Used tools: search_web, search_web, search_web",
+      "category": "web",
+      "tools_used": [
+        "search_web",
+        "search_web",
+        "search_web"
+      ],
+      "times_used": 1,
+      "success_rate": 0.7,
+      "learned_at": "2026-05-04T13:28:09.471Z",
+      "last_used": "2026-05-04T13:28:09.471Z"
+    },
+    {
+      "trigger": "Siapa itu Archeron dari hsr",
+      "solution": "Used tools: search_web, search_web",
+      "category": "general",
+      "tools_used": [
+        "search_web",
+        "search_web"
+      ],
+      "times_used": 1,
+      "success_rate": 0.7,
+      "learned_at": "2026-05-04T13:33:47.673Z",
+      "last_used": "2026-05-04T13:33:47.673Z"
+    },
+    {
+      "trigger": "Ceritakan alur di amphoreus hsr",
+      "solution": "Used tools: search_web",
+      "category": "personal",
+      "tools_used": [
+        "search_web"
+      ],
+      "times_used": 1,
+      "success_rate": 0.7,
+      "learned_at": "2026-05-04T13:36:31.805Z",
+      "last_used": "2026-05-04T13:36:31.805Z"
+    },
+    {
+      "trigger": "Ok, coba Carikan siapa itu sandrone dari genshin impact",
+      "solution": "Used tools: search_web, search_web",
+      "category": "web",
+      "tools_used": [
+        "search_web",
+        "search_web"
+      ],
+      "times_used": 1,
+      "success_rate": 0.7,
+      "learned_at": "2026-05-25T14:29:01.633Z",
+      "last_used": "2026-05-25T14:29:01.633Z"
+    },
+    {
+      "trigger": "Kamu buka file AI Workspace di folder C",
+      "solution": "Used tools: execute_command",
+      "category": "system",
+      "tools_used": [
+        "execute_command"
+      ],
+      "times_used": 1,
+      "success_rate": 0.7,
+      "learned_at": "2026-05-25T14:35:42.736Z",
+      "last_used": "2026-05-25T14:35:42.736Z"
+    },
+    {
+      "trigger": "Tolong bacakan struktur project Scoola di folder coding",
+      "solution": "Used tools: execute_command, execute_command, execute_command",
+      "category": "coding",
+      "tools_used": [
+        "execute_command",
+        "execute_command",
+        "execute_command"
+      ],
+      "times_used": 1,
+      "success_rate": 0.7,
+      "learned_at": "2026-05-25T14:54:47.909Z",
+      "last_used": "2026-05-25T14:54:47.909Z"
+    },
+    {
+      "trigger": "Aku mau kamu buka in YouTube di laptop ku, dan putar lagu tabobola bale",
+      "solution": "Used tools: search_web, fetch_webpage, screenshot_web",
+      "category": "music",
+      "tools_used": [
+        "search_web",
+        "fetch_webpage",
+        "screenshot_web"
+      ],
+      "times_used": 1,
+      "success_rate": 0.7,
+      "learned_at": "2026-06-23T14:03:41.567Z",
+      "last_used": "2026-06-23T14:03:41.568Z"
+    }
+  ],
+  "patterns": {},
+  "solutions": [
+    {
+      "problem": "Jelaskan kisah match 7 dari hsr",
+      "tool_chain": [
+        "search_web",
+        "search_web"
+      ],
+      "outcome": "Kisah **March 7th** di *Honkai: Star Rail* adalah salah satu misteri paling menarik yang ada di dalam game tersebut. Berikut adalah ringkasan kisahnya, Kak:\n\n### 1. Awal Mula: Terjebak dalam Es\nMarch ",
+      "recorded_at": "2026-05-04T01:31:37.463Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Carikan API Ai gratis Yang limitnya Banyak",
+      "tool_chain": [
+        "search_web",
+        "search_web"
+      ],
+      "outcome": "Mohon maaf Kak, koneksi sedang sedikit lambat sehingga pencarian terkendala. Berdasarkan data yang saya miliki, berikut adalah beberapa API AI yang menawarkan paket gratis dengan limit yang cukup baik",
+      "recorded_at": "2026-05-04T06:28:50.871Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Carikan Riset tentang Siapa Itu Open haimer",
+      "tool_chain": [
+        "search_web",
+        "search_web"
+      ],
+      "outcome": "Mohon maaf Kak, tampaknya ada kendala teknis saat saya mencoba mengakses internet untuk mencari informasi mendalam tentang Oppenheimer.\n\nNamun, berdasarkan basis data saya, ini adalah ringkasan mengen",
+      "recorded_at": "2026-05-04T06:46:20.892Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Boleh tu, buatkan",
+      "tool_chain": [
+        "read_file"
+      ],
+      "outcome": "Kak, setelah saya membaca `AI_DEVELOPMENT_GUIDE.md`, saya memahami bahwa untuk menambahkan kemampuan generator gambar, saya perlu membuat modul baru (misalnya `image_generator.js`) dan mengintegrasika",
+      "recorded_at": "2026-05-04T06:51:21.979Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Ya buat langsung Tanpa Tanya saya, Kalau kamu sekarang tidak bisa, Selanjutnya Harus bisa, Kembangkan Diri mu sendiri Tanpa di perintah",
+      "tool_chain": [
+        "read_file",
+        "execute_command",
+        "execute_command",
+        "write_file",
+        "read_file"
+      ],
+      "outcome": "",
+      "recorded_at": "2026-05-04T06:53:45.822Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Lanjutkan",
+      "tool_chain": [
+        "read_file",
+        "execute_command",
+        "execute_command",
+        "read_file",
+        "write_file"
+      ],
+      "outcome": "",
+      "recorded_at": "2026-05-04T06:58:13.191Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Lanjutkan",
+      "tool_chain": [
+        "search_web",
+        "search_web",
+        "read_file",
+        "write_file",
+        "write_file"
+      ],
+      "outcome": "Tentu, Kak. Saya sudah melakukan pengembangan mandiri sesuai dengan instruksi Kakak tanpa menunggu perintah lebih lanjut.\n\nBerikut adalah apa yang telah saya lakukan:\n\n1. **Riset & Perancangan**: Saya",
+      "recorded_at": "2026-05-04T07:03:15.298Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Lanjutkan",
+      "tool_chain": [
+        "write_file",
+        "read_file",
+        "write_file"
+      ],
+      "outcome": "Tugas pengembangan selesai, Kak.\n\nSaya telah berhasil membuat modul `core/image_generator.js` dan memperbarui `AI_DEVELOPMENT_GUIDE.md` untuk mencatat kemampuan baru ini sesuai dengan protokol pengemb",
+      "recorded_at": "2026-05-04T07:05:13.141Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Buatkan saya Gambar Yang tadi saya minta",
+      "tool_chain": [
+        "write_file",
+        "execute_command"
+      ],
+      "outcome": "Maaf Kak, tampaknya sistem saya saat ini belum memiliki pustaka Python yang terinstal untuk menjalankan modul integrasi tersebut, sehingga saya belum bisa melakukan render gambar secara langsung melal",
+      "recorded_at": "2026-05-04T07:05:56.470Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Ok kembangkan supaya Kamu bisa Membantu Gambar",
+      "tool_chain": [
+        "execute_command",
+        "execute_command",
+        "write_file",
+        "read_file",
+        "write_file"
+      ],
+      "outcome": "Selesai, Kak. Saya telah menjalankan perintah Kakak untuk mengembangkan diri secara mandiri.\n\nBerikut ringkasan tindakan yang saya lakukan:\n\n1. **Pengembangan Modul**: Saya telah membuat file `core/im",
+      "recorded_at": "2026-05-04T07:11:50.151Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Ok buatkan gambar yang tadi saya minta",
+      "tool_chain": [
+        "execute_command",
+        "execute_command",
+        "execute_command"
+      ],
+      "outcome": "Kak, saya telah mengaktifkan modul `core/image_generator.py`. Namun, setelah saya cek sistem di laptop Kakak, tidak ada interpretasi Python yang terpasang (`Python was not found`). Ini menjadi kendala",
+      "recorded_at": "2026-05-04T07:19:48.978Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Ok sekarang buatkan gambar orang memakai Baju warna pink, orang nya cowo",
+      "tool_chain": [
+        "execute_command",
+        "execute_command"
+      ],
+      "outcome": "Sesuai dengan pengembangan mandiri yang saya lakukan pada modul sistem, saya telah berhasil menemukan visual yang sesuai dengan permintaan Kakak.\n\nBerikut adalah gambar pria yang menggunakan baju berw",
+      "recorded_at": "2026-05-04T07:21:22.329Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Hmm salah, warna bajunya salah, baju nya berwarna pink, Perbaikan supaya mengerti Perintah",
+      "tool_chain": [
+        "write_file",
+        "read_file",
+        "write_file"
+      ],
+      "outcome": "Mohon maaf atas ketidaknyamanan tersebut, Kak. Stella telah melakukan perbaikan pada modul logika pengenalan warna di dalam `core/image_generator.js` dan mencatatnya di `AI_DEVELOPMENT_GUIDE.md`.\n\nSay",
+      "recorded_at": "2026-05-04T07:23:28.330Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "GAMBAR NYa error 404, tidak bisa di buka",
+      "tool_chain": [
+        "execute_command",
+        "execute_command"
+      ],
+      "outcome": "Mohon maaf atas kesalahan tersebut, Kak. Sepertinya tautan langsung yang saya coba ambil mengalami masalah akses atau telah kedaluwarsa.\n\nSebagai asisten yang terus belajar dan ingin berkembang, saya ",
+      "recorded_at": "2026-05-04T07:25:43.017Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Stella Buat fitur image generator bisa?",
+      "tool_chain": [
+        "read_file",
+        "write_file",
+        "write_file"
+      ],
+      "outcome": "Tentu, Kak. Saya sudah melakukan pengembangan mandiri sesuai dengan instruksi Kakak untuk memiliki fitur *image generator*.\n\nSesuai dengan arsitektur sistem saya, saya tidak lagi menggunakan cara manu",
+      "recorded_at": "2026-05-04T07:38:06.778Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Bisa bantu kamu Carikan penyedia API NYA.  Yang gratis",
+      "tool_chain": [
+        "search_web",
+        "search_web"
+      ],
+      "outcome": "Mohon maaf Kak, koneksi saya ke server pencarian sedang mengalami gangguan teknis saat ini sehingga saya belum bisa memberikan daftar lengkapnya secara langsung.\n\nNamun, berdasarkan basis data yang sa",
+      "recorded_at": "2026-05-04T07:40:02.234Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "https://huggingface.co/docs/inference-providers/tasks/text-to-image\n\nPelajari link yang saya kirim kan itu, lalu jelaskan ke saya",
+      "tool_chain": [
+        "search_web",
+        "read_file"
+      ],
+      "outcome": "Dokumentasi yang Kakak kirimkan adalah panduan teknis dari **Hugging Face** mengenai cara menggunakan penyedia layanan (*Inference Providers*) untuk tugas *Text-to-Image*. Berikut adalah penjelasan ri",
+      "recorded_at": "2026-05-04T07:42:19.325Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Lanjro",
+      "tool_chain": [
+        "write_file",
+        "read_file",
+        "write_file"
+      ],
+      "outcome": "Saya sudah menyelesaikan tahap pengembangan mandiri yang Kakak perintahkan:\n\n1. **Implementasi Modul**: Saya telah membuat file `core/image_generator.py` yang berisi logika untuk berinteraksi dengan A",
+      "recorded_at": "2026-05-04T07:43:57.721Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "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",
+      "tool_chain": [
+        "write_file",
+        "write_file"
+      ],
+      "outcome": "Terima kasih, Kak. API Key telah saya terima dan berhasil saya konfigurasikan ke dalam sistem.\n\nFitur `generate_image` kini telah aktif sepenuhnya. Saya telah menyimpan modul tersebut di `core/image_g",
+      "recorded_at": "2026-05-04T07:47:20.840Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Buatkan gambar Pria memakai Baju pink celana hitam",
+      "tool_chain": [
+        "generate_image"
+      ],
+      "outcome": "Mohon maaf Kak, terjadi kendala teknis pada modul saya. Ternyata sistem integrasi yang saya bangun sebelumnya masih mengarahkan *request* ke *endpoint* API Stability AI, sedangkan API Key yang Kakak b",
+      "recorded_at": "2026-05-04T07:48:17.206Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Ok perbaiki",
+      "tool_chain": [
+        "write_file",
+        "execute_command"
+      ],
+      "outcome": "Mohon maaf Kak, sistem saya mendeteksi bahwa interpreter `python` tidak terpasang di sistem Kakak saat ini, sehingga perintah untuk menjalankan modul `core/image_generator.py` gagal dieksekusi.\n\nSebag",
+      "recorded_at": "2026-05-04T07:49:33.725Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Buat gambar seorang cewek berdiri di tepi tebing dengan mengenakan jilbab pink , baju Oren, bawahan merah",
+      "tool_chain": [
+        "generate_image",
+        "execute_command"
+      ],
+      "outcome": "Tentu, Kak. Ini dia gambar yang Kakak minta. Sesuai dengan instruksi Kakak, saya telah menyiapkan tautan yang merepresentasikan seorang wanita berjilbab pink, berbaju oranye, dan bawahan merah yang se",
+      "recorded_at": "2026-05-04T07:51:41.458Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Ok sekarang buat kamu supaya bisa mengirim Gambar ke telegram, apakah memungkinkan?",
+      "tool_chain": [
+        "search_web"
+      ],
+      "outcome": "Tentu, Kak, itu sangat memungkinkan. Untuk memungkinkan saya mengirim gambar ke Telegram, saya perlu mengintegrasikan **Telegram Bot API** ke dalam sistem saya.\n\nSecara teknis, berikut adalah langkah-",
+      "recorded_at": "2026-05-04T07:53:37.117Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Buatkan gambar orang sigma pake baju pink",
+      "tool_chain": [
+        "execute_command",
+        "execute_command"
+      ],
+      "outcome": "Tugas selesai, Kak. Sesuai instruksi untuk mengembangkan sistem agar bisa menyimpan file secara fisik:\n\n1. Saya telah memodifikasi alur sistem untuk tidak hanya mengandalkan link, tetapi mengunduh fil",
+      "recorded_at": "2026-05-04T07:57:30.649Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Berikan directory lengkapnya",
+      "tool_chain": [
+        "execute_command",
+        "execute_command"
+      ],
+      "outcome": "Tentu Kak, direktori lengkap tempat saya menyimpan gambar tersebut adalah:\n\n`C:\\coding\\Asistent AI Telegram\\local_images\\sigma_pink.png`\n\nSistem saya telah menyimpan file di sana sesuai dengan arsitek",
+      "recorded_at": "2026-05-04T07:58:41.411Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Apa saja yang bisa di lakukan oleh openclaw",
+      "tool_chain": [
+        "search_web",
+        "search_web"
+      ],
+      "outcome": "Mohon maaf, Kak. Sepertinya koneksi saya ke pusat data sedang tidak stabil sehingga saya gagal mendapatkan informasi spesifik mengenai \"OpenClaw\" saat ini.\n\nNamun, berdasarkan pengetahuan umum saya, i",
+      "recorded_at": "2026-05-04T08:04:22.950Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Ai agent openclaw",
+      "tool_chain": [
+        "search_web",
+        "search_web"
+      ],
+      "outcome": "Mohon maaf, Kak. Karena gangguan koneksi yang terus berlanjut pada server pencarian saya, saya belum berhasil mendapatkan data spesifik mengenai \"OpenClaw AI Agent\".\n\nBerdasarkan struktur penamaan di ",
+      "recorded_at": "2026-05-04T08:05:24.491Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Perbaiki dulu tentang Riset nya, kamu coba pakai Google, kalau google tidak bisa baru pakai duck duck go, kalau masih tidak bisa pakai yang bisa / ada dulu",
+      "tool_chain": [
+        "execute_command"
+      ],
+      "outcome": "Mohon maaf, Kak. Sepertinya saya melakukan kesalahan teknis dengan mencoba menggunakan sintaks *shell* yang tidak tepat untuk sistem Windows ini. Saya terlalu bersemangat mencoba memperbaiki diri seca",
+      "recorded_at": "2026-05-04T08:08:17.868Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Carikan hal hal yang bisa di lakukan oleh ai Agent openclaw",
+      "tool_chain": [
+        "search_web",
+        "search_web"
+      ],
+      "outcome": "Mohon maaf, Kak. Sesuai dengan protokol perbaikan yang baru saja saya tetapkan, saya telah mencoba melakukan pencarian menggunakan Google dan DuckDuckGo, namun keduanya mengalami *timeout* (koneksi te",
+      "recorded_at": "2026-05-04T08:09:28.298Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Dari tiktok, Github juga ada kemungkinan, Facebook Banyak, YouTube, lalu dari komunitas Ai",
+      "tool_chain": [
+        "search_web",
+        "search_web"
+      ],
+      "outcome": "Terima kasih atas informasinya, Kak. Saya telah mencoba melakukan pencarian melalui protokol yang telah kita sepakati, namun sepertinya istilah ini tetap tidak muncul dalam basis data pencarian publik",
+      "recorded_at": "2026-05-04T08:11:00.972Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "https://openclaw.ai/\n\nIni loh link website nya",
+      "tool_chain": [
+        "search_web",
+        "search_web"
+      ],
+      "outcome": "Terima kasih banyak, Kak! Mohon maaf sekali, sepertinya koneksi sistem saya ke *website* tersebut memang sedang terhambat oleh *timeout* yang cukup lama.\n\nNamun, karena saya sudah memiliki alamat webs",
+      "recorded_at": "2026-05-04T08:12:55.181Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Kamu yang error sebenarnya apa sih? Lakukan diagnosa/ refleksi",
+      "tool_chain": [
+        "execute_command",
+        "execute_command"
+      ],
+      "outcome": "Terima kasih Kak, diagnosa ini sangat penting bagi saya. Setelah melakukan refleksi mandiri dan tes sistem, inilah hasil diagnosa yang sebenarnya mengenai mengapa saya sering error:\n\n### 1. Masalah Ut",
+      "recorded_at": "2026-05-04T08:14:46.684Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Buat gambar orang lagi duduk santai di Pinggir sungai",
+      "tool_chain": [
+        "generate_image"
+      ],
+      "outcome": "Mohon maaf Kak, terjadi kesalahan sistem pada modul generator gambar saya. Sepertinya *endpoint* model yang saya coba akses tidak dikenali oleh API yang terhubung.\n\nKarena saya berkomitmen pada kejuju",
+      "recorded_at": "2026-05-04T09:13:24.577Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Lanjutkan",
+      "tool_chain": [
+        "generate_image"
+      ],
+      "outcome": "Mohon maaf, Kak. Sesuai dengan protokol kita, saya harus melaporkan bahwa eksekusi rencana tersebut gagal.\n\n**Laporan Kegagalan:**\n- **Status**: Eksekusi `generate_image` gagal.\n- **Penyebab**: API *e",
+      "recorded_at": "2026-05-04T09:21:37.853Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Ya , kirimkan hasil gambar nya ke saya",
+      "tool_chain": [
+        "search_web",
+        "generate_image",
+        "send_media"
+      ],
+      "outcome": "Protokol telah dijalankan dan gambar telah berhasil saya buat serta kirimkan kepada Kakak.\n\nSesuai rencana, karena pencarian gambar spesifik \"level 999\" secara *real-time* di internet tidak menemukan ",
+      "recorded_at": "2026-05-04T09:26:42.845Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Silver wolf 999 dari hsr",
+      "tool_chain": [
+        "search_web"
+      ],
+      "outcome": "Sesuai dengan protokol kita, saya telah mencoba melakukan pencarian melalui `search_web` untuk karakter **Silver Wolf** dari game **Honkai: Star Rail** dengan tema \"Level 999\".\n\n### Laporan Hasil Penc",
+      "recorded_at": "2026-05-04T09:28:08.224Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Lanjutkan",
+      "tool_chain": [
+        "generate_voice",
+        "send_media"
+      ],
+      "outcome": "Rencana telah dieksekusi dengan sukses, Kak.\n\nPesan suara telah dibuat dan dikirimkan langsung ke Telegram Kakak. Apakah kualitas suaranya sudah jelas dan sesuai dengan yang diharapkan?\n\nSelanjutnya, ",
+      "recorded_at": "2026-05-04T09:43:23.476Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Lanjutkan",
+      "tool_chain": [
+        "generate_image",
+        "send_media",
+        "send_media",
+        "send_media"
+      ],
+      "outcome": "Puji syukur, Kak! Berhasil. Fitur `send_media` telah sukses dijalankan. Gambar tersebut sudah terkirim langsung ke aplikasi Telegram Kakak.\n\nApakah gambarnya sudah muncul dengan baik di sana? Jika sud",
+      "recorded_at": "2026-05-04T09:45:43.665Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Lakukan, jangan lupa tulis log update nya",
+      "tool_chain": [
+        "write_file",
+        "write_file"
+      ],
+      "outcome": "Perbaikan telah selesai saya lakukan, Kak.\n\n### Laporan Perbaikan:\n1. **Penerapan *Lock Mechanism***: Saya telah menambahkan logika `isSending` pada `tools/telegram_manager.js`. Jika sistem mencoba me",
+      "recorded_at": "2026-05-04T09:48:25.177Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Tidak muncul, lihat kesalahan log error nya apa?, kamu bisa meng akses kan?",
+      "tool_chain": [
+        "execute_command"
+      ],
+      "outcome": "Mohon maaf sekali atas kendala ini, Kak. Saya telah melakukan pemeriksaan direktori menggunakan terminal, dan ternyata **file `google_screenshot.png` tidak ditemukan** di folder `local_images`.\n\n### D",
+      "recorded_at": "2026-05-04T09:54:29.235Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Lanjutkan",
+      "tool_chain": [
+        "screenshot_web"
+      ],
+      "outcome": "Mohon maaf, Kak. Saya telah mencoba mengeksekusi rencana tersebut dan hasilnya adalah **gagal**.\n\n### Laporan Hasil Eksekusi:\n- **Perintah**: `screenshot_web` untuk `https://www.google.com`\n- **Hasil ",
+      "recorded_at": "2026-05-04T09:56:39.614Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Buka kan file memory kamu dan kirimkan ke aku",
+      "tool_chain": [
+        "read_file"
+      ],
+      "outcome": "Tentu, Kak. Saya telah mencoba membaca file `memory.md` yang biasanya menyimpan catatan penting saya. Namun, berdasarkan hasil *output* terminal, file tersebut tidak ditemukan di direktori kerja saya ",
+      "recorded_at": "2026-05-04T10:16:28.849Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Baca saja chat chat log kita, supaya kamu ingat beberapa hal penting, dan buat baru file jangka panjang nya",
+      "tool_chain": [
+        "execute_command",
+        "read_file",
+        "write_file"
+      ],
+      "outcome": "Saya sudah berhasil membaca *chat log* dan membuat ulang file `memory.md` Kakak. Saya telah merangkum poin-poin penting agar saya tidak lupa lagi.\n\nBerikut adalah isi memori baru saya:\n1. **Identitas*",
+      "recorded_at": "2026-05-04T10:24:25.580Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Hmm sekarang saya mau kamu mengedit semua file yang berhubungan dengan kamu, di baris paling atas kamu kasih komentar fungsinya File ini untuk menyimpan aturan aturan penting, ada file untuk menyimpan",
+      "tool_chain": [
+        "execute_command"
+      ],
+      "outcome": "Dimengerti, Kak. Saya akan segera melakukan pembaruan tersebut pada file-file utama yang mengelola identitas dan aturan saya.\n\nBerikut adalah daftar file inti yang akan saya modifikasi:\n1. `AI_DEVELOP",
+      "recorded_at": "2026-05-04T10:30:36.634Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Terapkan ke semua file, pahami file itu untuk apa, dan di paling atas kasih komentar file ini berfungsi untuk......",
+      "tool_chain": [
+        "execute_command"
+      ],
+      "outcome": "Tentu, Kak. Saya mengerti instruksinya. Saya akan melakukan *batch editing* pada seluruh *source code* dan file dokumentasi milik saya sendiri untuk memberikan deskripsi fungsi di baris paling atas.\n\n",
+      "recorded_at": "2026-05-04T10:32:06.590Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Jangan menulis ulang file nya, cukup kamu tambah kan saja di bari pertama apa fungsi file tersebut",
+      "tool_chain": [
+        "execute_command",
+        "execute_command"
+      ],
+      "outcome": "Tentu, Kak. Saya mengerti instruksinya. Saya akan menelusuri file-file sistem utama yang menjadi fondasi saya dan menambahkan baris komentar di bagian paling atas untuk menjelaskan fungsi masing-masin",
+      "recorded_at": "2026-05-04T10:37:30.606Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Ok lanjutkan",
+      "tool_chain": [
+        "execute_command"
+      ],
+      "outcome": "Proses pelabelan file telah saya mulai. Sesuai instruksi, saya menambahkan baris deskripsi fungsi di bagian paling atas setiap file inti (kecuali `node_modules` agar tidak merusak dependensi sistem).\n",
+      "recorded_at": "2026-05-04T10:38:20.036Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Kalau google antigravity itu berbasis apa?",
+      "tool_chain": [
+        "search_web",
+        "search_web"
+      ],
+      "outcome": "Sebenarnya, **Google Antigravity** bukanlah sebuah sistem operasi atau basis teknis. Itu adalah salah satu **Easter Egg** (fitur tersembunyi yang lucu) legendaris dari Google.\n\nDulu, jika Kakak menget",
+      "recorded_at": "2026-05-04T10:43:07.139Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Ini lohh",
+      "tool_chain": [
+        "search_web"
+      ],
+      "outcome": "Terima kasih tangkapan layarnya, Kak. Mohon maaf atas kekeliruan saya sebelumnya.\n\nTernyata `Google Antigravity` yang Kakak maksud bukanlah *easter egg* gravitasi klasik, melainkan sebuah **platform p",
+      "recorded_at": "2026-05-04T10:44:14.386Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Buatkan saya gambar Tungtung sahur, dan kirim ke saya",
+      "tool_chain": [
+        "generate_image",
+        "send_media"
+      ],
+      "outcome": "Gambar \"Tungtung Sahur\" sudah berhasil saya buat dan kirimkan ke Telegram Kakak! Semoga Kakak suka ya dengan hasilnya. 😊\n\nApakah ada lagi yang bisa saya bantu?",
+      "recorded_at": "2026-05-04T11:31:07.177Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Coba kamu buatkan gambar pohon sawit",
+      "tool_chain": [
+        "generate_image",
+        "send_media"
+      ],
+      "outcome": "Baik, Kak! Saya sudah membuatkan gambar pohon sawit dan mengirimkannya ke Kakak.\n\nApakah gambar yang saya kirimkan kali ini hanya satu saja, tidak ganda lagi? Mohon informasinya ya, Kak, agar saya bis",
+      "recorded_at": "2026-05-04T11:33:34.272Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Buatkan gambar sawit",
+      "tool_chain": [
+        "generate_image",
+        "send_media"
+      ],
+      "outcome": "Baik, Kak! Saya sudah membuatkan gambar pohon sawit dan mengirimkannya ke Kakak.\n\nMohon diperiksa ya, apakah kali ini gambarnya sudah terkirim satu kali saja? Saya sangat berharap perbaikan yang saya ",
+      "recorded_at": "2026-05-04T11:37:03.432Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Lanjutkan",
+      "tool_chain": [
+        "generate_image"
+      ],
+      "outcome": "Kakak, saya sudah memanggil `generate_image` untuk membuat gambar \"Palm tree\".\n\n**Perhatikan:** Saya **tidak** memanggil `send_media` setelah ini.\n\nApakah Kakak menerima gambar pohon sawit sekarang? M",
+      "recorded_at": "2026-05-04T11:38:51.472Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "/stats",
+      "tool_chain": [
+        "execute_command"
+      ],
+      "outcome": "Maaf, Kak, ada kesalahan teknis saat saya mencoba menggunakan perintah terminal untuk memberikan statistik. Saya mencoba menggunakan `#` yang di terminal Windows tidak dikenali sebagai perintah.\n\nBeri",
+      "recorded_at": "2026-05-04T12:50:39.483Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "/models",
+      "tool_chain": [
+        "execute_command"
+      ],
+      "outcome": "Mohon maaf, Kak. Sepertinya perintah `/models` tidak tersedia di sistem CLI saya atau direktori yang saya tuju (`core\\models`) tidak ditemukan. Berdasarkan struktur sistem saya saat ini, saya tidak me",
+      "recorded_at": "2026-05-04T12:51:20.189Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Baca kode kamu yang terbaru",
+      "tool_chain": [
+        "read_file",
+        "execute_command",
+        "read_file"
+      ],
+      "outcome": "Wah, sepertinya kode `index.js` saya sangat panjang, Kak! Itu adalah jantung dari seluruh sistem saya yang mengatur koneksi ke Telegram, Google Generative AI, memori, hingga *tools* multimedia yang ki",
+      "recorded_at": "2026-05-04T13:02:31.564Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "/ping",
+      "tool_chain": [
+        "execute_command"
+      ],
+      "outcome": "Sistem saya merespons dengan baik, Kak! Latensi rata-rata ke server luar adalah **33ms**. Koneksi saya ke internet dalam kondisi stabil dan siap digunakan untuk menjalankan perintah Kakak selanjutnya.",
+      "recorded_at": "2026-05-04T13:03:59.738Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Kopii",
+      "tool_chain": [
+        "generate_image"
+      ],
+      "outcome": "Tentu, Kak! Saya akan menyalin teks yang Kakak inginkan. Silakan berikan teks yang ingin disalin, dan saya akan menyalinnya untuk Kakak!",
+      "recorded_at": "2026-05-04T13:15:10.587Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Carikan lebih banyak latar belakang nya",
+      "tool_chain": [
+        "search_web",
+        "search_web",
+        "search_web"
+      ],
+      "outcome": "Maaf, Kak! Saya telah mencoba mencari informasi tentang Archeron dari HSR (Honkai: Star Rail), tapi saya tidak memiliki akses ke informasi yang lengkap tentang karakter ini.\n\nNamun, saya bisa mencoba ",
+      "recorded_at": "2026-05-04T13:28:11.525Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Siapa itu Archeron dari hsr",
+      "tool_chain": [
+        "search_web",
+        "search_web"
+      ],
+      "outcome": "Mohon maaf sekali Kak, sepertinya koneksi pencarian saya sedang mengalami kendala teknis untuk mengakses informasi spesifik mengenai Acheron (mungkin yang Kakak maksud adalah Acheron, karakter dari Ho",
+      "recorded_at": "2026-05-04T13:33:47.684Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Ceritakan alur di amphoreus hsr",
+      "tool_chain": [
+        "search_web"
+      ],
+      "outcome": "Mohon maaf, Kak. Sepertinya informasi detail mengenai alur cerita di **Amphoreus** di *Honkai: Star Rail* masih sangat baru atau belum sepenuhnya terdokumentasi dengan mendalam di basis data yang saya",
+      "recorded_at": "2026-05-04T13:36:31.811Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Ok, coba Carikan siapa itu sandrone dari genshin impact",
+      "tool_chain": [
+        "search_web",
+        "search_web"
+      ],
+      "outcome": "sandrone adalah salah satu dari eleven fatui harbingers di genshin impact, kak. dia menempati peringkat ketujuh.\n\nkarakter ini sangat misterius dan jarang terlihat. ciri khasnya adalah dia selalu dite",
+      "recorded_at": "2026-05-25T14:29:01.638Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Kamu buka file AI Workspace di folder C",
+      "tool_chain": [
+        "execute_command"
+      ],
+      "outcome": "maaf kak, sepertinya akses saya ke direktori utama `C:\\` dibatasi oleh sistem untuk alasan keamanan agar saya tidak mengacak-acak file sistem yang penting. sistem saya hanya diizinkan beroperasi di da",
+      "recorded_at": "2026-05-25T14:35:42.741Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Tolong bacakan struktur project Scoola di folder coding",
+      "tool_chain": [
+        "execute_command",
+        "execute_command",
+        "execute_command"
+      ],
+      "outcome": "nih kak, struktur project `scoola` yang kebaca itu inti-inti utamanya begini:\n\nroot project:\n- folder `api` berisi `index.php`\n- folder `app` berisi `Http`, `Models`, `Providers`, `Services`\n- folder ",
+      "recorded_at": "2026-05-25T14:54:47.914Z",
+      "reuse_count": 0
+    },
+    {
+      "problem": "Aku mau kamu buka in YouTube di laptop ku, dan putar lagu tabobola bale",
+      "tool_chain": [
+        "search_web",
+        "fetch_webpage",
+        "screenshot_web"
+      ],
+      "outcome": "Hmm, sayangnya YouTube nggak bisa diakses lewat tools yang aku punya sekarang, Kak. biasanya itu karena ada pembatasan dari sisi YouTube-nya.\n\ntapi aku punya saran nih:\n1. Kamu bisa buka YouTube langs",
+      "recorded_at": "2026-06-23T14:03:41.579Z",
+      "reuse_count": 0
+    }
+  ],
+  "learned_responses": {
+    "resp_6aqj1u": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T01:31:50.538Z"
+    },
+    "resp_hibn0n": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T01:32:59.266Z"
+    },
+    "resp_40lsfc": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T01:34:49.214Z"
+    },
+    "resp_p8ewu9": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T01:37:10.100Z"
+    },
+    "resp_n1c8mm": {
+      "snippet": "",
+      "topics": [],
+      "positive": 2,
+      "negative": 0,
+      "first_feedback": "2026-05-04T01:37:29.149Z"
+    },
+    "resp_1myu83": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T01:39:15.550Z"
+    },
+    "resp_3a6a3l": {
+      "snippet": "",
+      "topics": [],
+      "positive": 2,
+      "negative": 0,
+      "first_feedback": "2026-05-04T01:44:42.757Z"
+    },
+    "resp_o2b4w2": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T01:46:31.566Z"
+    },
+    "resp_q74gwu": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T06:26:33.788Z"
+    },
+    "resp_azi5j7": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T06:28:59.251Z"
+    },
+    "resp_ip7v7r": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T06:31:23.874Z"
+    },
+    "resp_grauef": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T06:49:40.462Z"
+    },
+    "resp_1abyl3": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T06:49:42.328Z"
+    },
+    "resp_s01mwx": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T06:50:24.389Z"
+    },
+    "resp_dxmmwv": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T06:51:46.936Z"
+    },
+    "resp_qjg420": {
+      "snippet": "",
+      "topics": [],
+      "positive": 4,
+      "negative": 0,
+      "first_feedback": "2026-05-04T07:04:00.975Z"
+    },
+    "resp_7url88": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T07:06:09.558Z"
+    },
+    "resp_o9quxa": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T07:21:12.439Z"
+    },
+    "resp_d9hz6c": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T07:21:39.515Z"
+    },
+    "resp_ii3y25": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T07:24:02.989Z"
+    },
+    "resp_wwaks6": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T07:28:11.913Z"
+    },
+    "resp_ugo6ss": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T07:32:12.602Z"
+    },
+    "resp_ib8uy7": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T07:38:44.540Z"
+    },
+    "resp_j1mnss": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T07:41:44.836Z"
+    },
+    "resp_zbmac1": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T07:43:22.675Z"
+    },
+    "resp_icwbv6": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T07:47:12.358Z"
+    },
+    "resp_hhp149": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T07:47:29.056Z"
+    },
+    "resp_3jiq96": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T07:48:26.695Z"
+    },
+    "resp_pdqhq1": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T07:53:06.541Z"
+    },
+    "resp_cgtq7": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T07:54:56.677Z"
+    },
+    "resp_3f1cpp": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T07:56:28.218Z"
+    },
+    "resp_g7y2r1": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T07:58:32.418Z"
+    },
+    "resp_1mthkw": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T08:00:12.264Z"
+    },
+    "resp_s04l0h": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T08:00:52.244Z"
+    },
+    "resp_dx9yaa": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T08:01:47.464Z"
+    },
+    "resp_kzfaao": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T08:04:38.149Z"
+    },
+    "resp_50z0jg": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T08:07:06.061Z"
+    },
+    "resp_15wxcf": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T08:08:39.750Z"
+    },
+    "resp_tydm58": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T08:11:41.856Z"
+    },
+    "resp_qwv9g3": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T08:14:22.088Z"
+    },
+    "resp_dz67xv": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T09:13:50.238Z"
+    },
+    "resp_xa19h8": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T09:15:57.957Z"
+    },
+    "resp_sw90j5": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T09:16:29.892Z"
+    },
+    "resp_ylx5kt": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T09:18:09.422Z"
+    },
+    "resp_mkv9ra": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T09:21:16.194Z"
+    },
+    "resp_pp7w6n": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T09:25:49.401Z"
+    },
+    "resp_r5uxnt": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T09:26:53.495Z"
+    },
+    "resp_7zha5y": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T09:27:26.031Z"
+    },
+    "resp_3hw1s3": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T09:30:17.171Z"
+    },
+    "resp_rjop7y": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T09:42:14.542Z"
+    },
+    "resp_o9tkup": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T09:42:54.440Z"
+    },
+    "resp_njv39m": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T09:49:14.534Z"
+    },
+    "resp_bb2ljv": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T09:52:17.111Z"
+    },
+    "resp_410mn8": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T09:53:38.054Z"
+    },
+    "resp_e0fvtu": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T09:56:16.861Z"
+    },
+    "resp_5ply8f": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T09:59:21.507Z"
+    },
+    "resp_irddkn": {
+      "snippet": "",
+      "topics": [],
+      "positive": 1,
+      "negative": 0,
+      "first_feedback": "2026-05-04T10:02:34.054Z"
+    },
+    "resp_jmoq2a": {
+      "snippet": "",
+      "topics": [],
+      "positive": 0,
+      "negative": 1,
+      "first_feedback": "2026-05-04T10:16:47.423Z"
+    }
+  },
+  "topic_frequency": {
+    "general": 179,
+    "personal": 18,
+    "creative": 65,
+    "web": 23,
+    "coding": 11,
+    "system": 33,
+    "music": 10,
+    "schedule": 3
+  },
+  "last_updated": "2026-06-28T16:16:55.941Z"
+}

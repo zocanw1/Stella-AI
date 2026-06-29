@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "replyText",
+    "toolCalls"
+  ],
+  "properties": {
+    "replyText": {
+      "type": "string"
+    },
+    "toolCalls": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "argsJson"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "argsJson": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

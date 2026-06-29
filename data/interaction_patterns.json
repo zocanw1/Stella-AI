@@ -1,0 +1,720 @@
+{
+  "users": {
+    "6182570336": {
+      "interaction_count": 306,
+      "first_seen": "2026-05-04T01:30:26.050Z",
+      "last_seen": "2026-06-28T14:19:49.797Z",
+      "hourly_activity": {
+        "8": 12,
+        "13": 15,
+        "14": 42,
+        "15": 17,
+        "16": 36,
+        "17": 32,
+        "18": 19,
+        "19": 17,
+        "20": 62,
+        "21": 53,
+        "22": 1
+      },
+      "topic_history": [
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T13:14:59.872Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T13:15:25.303Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T13:25:33.168Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T13:25:55.390Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T13:26:46.257Z"
+        },
+        {
+          "topics": [
+            "web"
+          ],
+          "time": "2026-05-04T13:27:24.998Z"
+        },
+        {
+          "topics": [
+            "web"
+          ],
+          "time": "2026-05-04T13:28:09.469Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T13:33:04.804Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T13:33:47.671Z"
+        },
+        {
+          "topics": [
+            "personal",
+            "creative"
+          ],
+          "time": "2026-05-04T13:36:00.122Z"
+        },
+        {
+          "topics": [
+            "personal",
+            "creative"
+          ],
+          "time": "2026-05-04T13:36:31.803Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T14:25:20.798Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T14:25:53.775Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T14:27:02.637Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T14:27:27.916Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T14:27:49.709Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T14:28:16.803Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T14:28:21.376Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-04T14:28:25.393Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:02:12.999Z"
+        },
+        {
+          "topics": [
+            "system",
+            "music"
+          ],
+          "time": "2026-05-25T14:04:15.729Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:06:37.784Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:07:02.809Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:20:39.490Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:21:06.820Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:23:03.364Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:24:31.211Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:26:50.604Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:27:36.325Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:27:50.152Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:27:57.420Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:28:08.439Z"
+        },
+        {
+          "topics": [
+            "web"
+          ],
+          "time": "2026-05-25T14:28:43.864Z"
+        },
+        {
+          "topics": [
+            "web"
+          ],
+          "time": "2026-05-25T14:29:01.632Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:29:21.427Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:29:34.725Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:29:41.971Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:31:07.432Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:31:20.237Z"
+        },
+        {
+          "topics": [
+            "system"
+          ],
+          "time": "2026-05-25T14:33:31.175Z"
+        },
+        {
+          "topics": [
+            "system"
+          ],
+          "time": "2026-05-25T14:35:42.735Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:52:17.145Z"
+        },
+        {
+          "topics": [
+            "coding",
+            "system"
+          ],
+          "time": "2026-05-25T14:53:29.915Z"
+        },
+        {
+          "topics": [
+            "coding",
+            "system"
+          ],
+          "time": "2026-05-25T14:54:47.907Z"
+        },
+        {
+          "topics": [
+            "system"
+          ],
+          "time": "2026-05-25T14:56:13.649Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T14:59:51.457Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-05-25T15:22:49.833Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-23T13:47:12.838Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-23T13:47:42.067Z"
+        },
+        {
+          "topics": [
+            "personal",
+            "creative"
+          ],
+          "time": "2026-06-23T13:48:24.696Z"
+        },
+        {
+          "topics": [
+            "personal",
+            "creative"
+          ],
+          "time": "2026-06-23T13:49:01.961Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-23T13:51:38.491Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-23T13:57:34.922Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-23T14:00:53.624Z"
+        },
+        {
+          "topics": [
+            "music",
+            "system"
+          ],
+          "time": "2026-06-23T14:03:26.564Z"
+        },
+        {
+          "topics": [
+            "music",
+            "system"
+          ],
+          "time": "2026-06-23T14:03:41.566Z"
+        },
+        {
+          "topics": [
+            "music",
+            "system"
+          ],
+          "time": "2026-06-23T14:04:21.071Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-23T14:08:39.194Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-23T14:08:57.021Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-23T14:09:15.320Z"
+        },
+        {
+          "topics": [
+            "personal",
+            "creative"
+          ],
+          "time": "2026-06-23T14:09:42.681Z"
+        },
+        {
+          "topics": [
+            "creative"
+          ],
+          "time": "2026-06-23T14:10:05.068Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-23T14:10:52.146Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-23T14:11:47.020Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-23T14:12:34.899Z"
+        },
+        {
+          "topics": [
+            "creative",
+            "personal"
+          ],
+          "time": "2026-06-23T14:13:13.476Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T12:43:50.259Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T12:44:02.736Z"
+        },
+        {
+          "topics": [
+            "creative",
+            "personal"
+          ],
+          "time": "2026-06-28T12:45:13.754Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T12:46:45.993Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T12:47:13.875Z"
+        },
+        {
+          "topics": [
+            "music"
+          ],
+          "time": "2026-06-28T12:51:46.824Z"
+        },
+        {
+          "topics": [
+            "system",
+            "music"
+          ],
+          "time": "2026-06-28T12:52:07.033Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T13:14:03.248Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T13:14:12.636Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T13:15:26.403Z"
+        },
+        {
+          "topics": [
+            "music"
+          ],
+          "time": "2026-06-28T13:15:47.908Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T13:16:18.349Z"
+        },
+        {
+          "topics": [
+            "personal",
+            "creative"
+          ],
+          "time": "2026-06-28T13:16:47.618Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T13:21:36.500Z"
+        },
+        {
+          "topics": [
+            "creative",
+            "personal"
+          ],
+          "time": "2026-06-28T13:21:51.895Z"
+        },
+        {
+          "topics": [
+            "creative",
+            "personal"
+          ],
+          "time": "2026-06-28T13:25:21.593Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T13:30:14.867Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T13:30:24.191Z"
+        },
+        {
+          "topics": [
+            "creative",
+            "personal"
+          ],
+          "time": "2026-06-28T13:30:37.296Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T13:31:37.749Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T13:33:14.963Z"
+        },
+        {
+          "topics": [
+            "creative",
+            "personal"
+          ],
+          "time": "2026-06-28T13:33:29.974Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T13:33:43.918Z"
+        },
+        {
+          "topics": [
+            "creative",
+            "personal"
+          ],
+          "time": "2026-06-28T13:34:10.343Z"
+        },
+        {
+          "topics": [
+            "creative",
+            "personal"
+          ],
+          "time": "2026-06-28T13:34:33.303Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T13:35:09.104Z"
+        },
+        {
+          "topics": [
+            "creative",
+            "personal"
+          ],
+          "time": "2026-06-28T13:42:54.702Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T13:44:04.254Z"
+        },
+        {
+          "topics": [
+            "personal",
+            "creative"
+          ],
+          "time": "2026-06-28T13:44:34.543Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T14:16:14.591Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T14:17:10.389Z"
+        },
+        {
+          "topics": [
+            "personal",
+            "creative"
+          ],
+          "time": "2026-06-28T14:18:13.229Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T14:19:28.272Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-28T14:19:49.797Z"
+        }
+      ],
+      "tool_preferences": {
+        "search_web": 36,
+        "read_file": 16,
+        "execute_command": 38,
+        "write_file": 21,
+        "generate_image": 11,
+        "send_media": 8,
+        "generate_voice": 1,
+        "screenshot_web": 2,
+        "fetch_webpage": 1
+      },
+      "avg_message_length": 66,
+      "session_starts": [
+        "2026-05-04T01:30:26.050Z",
+        "2026-05-04T06:26:08.788Z",
+        "2026-05-04T06:57:22.269Z",
+        "2026-05-04T07:28:48.696Z",
+        "2026-05-04T07:59:26.065Z",
+        "2026-05-04T09:12:58.789Z",
+        "2026-05-04T09:43:23.464Z",
+        "2026-05-04T10:14:17.095Z",
+        "2026-05-04T11:29:54.466Z",
+        "2026-05-04T12:48:27.065Z",
+        "2026-05-04T13:25:33.168Z",
+        "2026-05-04T14:25:20.798Z",
+        "2026-05-25T14:02:12.999Z",
+        "2026-05-25T14:33:31.175Z",
+        "2026-05-25T15:22:49.833Z",
+        "2026-06-23T13:47:12.838Z",
+        "2026-06-28T12:43:50.259Z",
+        "2026-06-28T13:14:03.248Z",
+        "2026-06-28T13:44:04.254Z",
+        "2026-06-28T14:16:14.591Z"
+      ],
+      "favorite_topics": {
+        "general": 179,
+        "personal": 18,
+        "creative": 65,
+        "web": 23,
+        "coding": 11,
+        "system": 33,
+        "music": 10,
+        "schedule": 3
+      }
+    }
+  },
+  "global_patterns": {
+    "peak_hours": {
+      "8": 12,
+      "13": 15,
+      "14": 42,
+      "15": 17,
+      "16": 36,
+      "17": 32,
+      "18": 19,
+      "19": 17,
+      "20": 62,
+      "21": 53,
+      "22": 1
+    },
+    "common_topics": {},
+    "tool_usage": {
+      "search_web": 36,
+      "read_file": 16,
+      "execute_command": 38,
+      "write_file": 21,
+      "generate_image": 11,
+      "send_media": 8,
+      "generate_voice": 1,
+      "screenshot_web": 2,
+      "fetch_webpage": 1
+    },
+    "avg_session_length": 0
+  }
+}
