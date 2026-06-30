@@ -687,14 +687,216 @@
         "music": 10,
         "schedule": 3
       }
+    },
+    "1412427834907033713": {
+      "interaction_count": 5,
+      "first_seen": "2026-06-30T07:10:32.955Z",
+      "last_seen": "2026-06-30T07:19:21.965Z",
+      "hourly_activity": {
+        "14": 5
+      },
+      "topic_history": [
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T07:10:32.955Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T07:11:21.232Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T07:15:45.611Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T07:18:05.443Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T07:19:21.965Z"
+        }
+      ],
+      "tool_preferences": {},
+      "avg_message_length": 15,
+      "session_starts": [
+        "2026-06-30T07:10:32.955Z"
+      ],
+      "favorite_topics": {
+        "general": 5
+      }
+    },
+    "1376549771489050711": {
+      "interaction_count": 18,
+      "first_seen": "2026-06-30T07:48:14.140Z",
+      "last_seen": "2026-06-30T08:27:24.050Z",
+      "hourly_activity": {
+        "14": 3,
+        "15": 15
+      },
+      "topic_history": [
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T07:48:14.140Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T07:51:22.571Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T07:59:07.440Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T08:00:13.318Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T08:00:40.035Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T08:01:50.926Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T08:02:24.499Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T08:02:52.306Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T08:02:58.999Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T08:06:56.627Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T08:14:48.644Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T08:15:26.973Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T08:15:54.256Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T08:16:50.107Z"
+        },
+        {
+          "topics": [
+            "creative"
+          ],
+          "time": "2026-06-30T08:22:20.207Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T08:22:41.822Z"
+        },
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T08:23:04.401Z"
+        },
+        {
+          "topics": [
+            "web"
+          ],
+          "time": "2026-06-30T08:27:24.050Z"
+        }
+      ],
+      "tool_preferences": {},
+      "avg_message_length": 23,
+      "session_starts": [
+        "2026-06-30T07:48:14.140Z",
+        "2026-06-30T08:22:20.207Z"
+      ],
+      "favorite_topics": {
+        "general": 16,
+        "creative": 1,
+        "web": 1
+      }
+    },
+    "1521415912341766304": {
+      "interaction_count": 1,
+      "first_seen": "2026-06-30T07:54:13.195Z",
+      "last_seen": "2026-06-30T07:54:13.195Z",
+      "hourly_activity": {
+        "14": 1
+      },
+      "topic_history": [
+        {
+          "topics": [
+            "general"
+          ],
+          "time": "2026-06-30T07:54:13.195Z"
+        }
+      ],
+      "tool_preferences": {},
+      "avg_message_length": 20,
+      "session_starts": [
+        "2026-06-30T07:54:13.195Z"
+      ],
+      "favorite_topics": {
+        "general": 1
+      }
     }
   },
   "global_patterns": {
     "peak_hours": {
       "8": 12,
       "13": 15,
-      "14": 42,
-      "15": 17,
+      "14": 51,
+      "15": 32,
       "16": 36,
       "17": 32,
       "18": 19,

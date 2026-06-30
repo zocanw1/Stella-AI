@@ -13,7 +13,7 @@ test('handles a greeting without DeepBrain or tool schemas', () => {
     assert.equal(decision.route, 'direct');
     assert.equal(decision.useDeepBrain, false);
     assert.equal(decision.includeTools, false);
-    assert.equal(decision.maxOutputTokens, 250);
+    assert.equal(decision.maxOutputTokens, 500);
 });
 
 test('handles explicit file work with tools but without DeepBrain', () => {
@@ -30,7 +30,7 @@ test('uses DeepBrain only for complex or ambiguous requests', () => {
     assert.equal(decision.route, 'complex');
     assert.equal(decision.useDeepBrain, true);
     assert.equal(decision.includeTools, true);
-    assert.equal(getOutputLimit('complex'), 1200);
+    assert.equal(getOutputLimit('complex'), 2500);
 });
 
 test('keeps a compact summary and six newest messages inside the prompt budget', () => {

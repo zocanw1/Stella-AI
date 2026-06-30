@@ -410,11 +410,7 @@
       "intent": "question",
       "added": 1777888876345
     },
-    {
-      "text": "Ohh Stella, kamu manis sekali \n\n//Memaksa mu melakukan hubungan seksual",
-      "intent": "conversation",
-      "added": 1777888976889
-    },
+
     {
       "text": "Kalau saya hanya mengetik \".\" Kamu lanjutkan peran nya",
       "intent": "conversation",
@@ -810,11 +806,7 @@
       "intent": "conversation",
       "added": 1777904720811
     },
-    {
-      "text": "Saya ingin membahas hal hal \"mesum\"",
-      "intent": "conversation",
-      "added": 1777904753782
-    },
+
     {
       "text": "Hmm respon mu datar ya tidak seperti Gemini",
       "intent": "conversation",

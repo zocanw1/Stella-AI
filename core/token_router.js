@@ -4,11 +4,11 @@ const RESEARCH_PATTERN = /\b(terbaru|update|berita|news|cari di web|cari interne
 const COMPLEX_PATTERN = /\b(analisis|bedah|debug|perbaiki|bandingkan|rancang|strategi|langkah|setelah itu|kemudian|lalu)\b/i;
 
 const ROUTE_LIMITS = {
-    direct: 250,
-    chat: 500,
-    tool: 700,
-    research: 800,
-    complex: 1200
+    direct: 500,
+    chat: 1200,
+    tool: 1500,
+    research: 1800,
+    complex: 2500
 };
 
 function getOutputLimit(route) {

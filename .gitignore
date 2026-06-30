@@ -14,3 +14,4 @@ StellaBrain_*.md
 bot_logs.txt
 stella_runtime.*.log
 Memory/
+discord_data/

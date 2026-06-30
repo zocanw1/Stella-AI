@@ -73,7 +73,7 @@ const MEMORY_DIR = path.join(__dirname, 'Memory');
 const LOG_FILE = path.join(__dirname, 'bot_logs.txt');
 const TOKEN_METRICS_FILE = path.join(__dirname, 'data', 'token_metrics.json');
 const PERSONA_DIR = path.join(__dirname, 'Personas');
-const PERSONA_FILES = ['stella_tsundere.txt', 'stella_backup_lengkap.txt'];
+const PERSONA_FILES = ['stella_ramah.txt', 'stella_backup_lengkap.txt'];
 const MAX_HISTORY = 40;
 
 const deepseekConfig = loadDeepSeekConfig();

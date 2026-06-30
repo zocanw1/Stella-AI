@@ -69,7 +69,7 @@ var MODEL_OPTIONS = [
 
 var PERSONALITY_OPTIONS = [
     { id: 'stella_default', name: 'Stella Default', desc: 'Profesional, santai, solutif' },
-    { id: 'stella_tsundere', name: 'Stella Tsundere', desc: 'Cuek tapi sayang, lucu & genit' },
+    { id: 'stella_tsundere', name: 'Stella Ramah', desc: 'Santai, hangat, dan suportif' },
     { id: 'stella_backup_lengkap', name: 'Stella Backup Lengkap', desc: 'Versi lengkap dengan semua fitur' }
 ];
 
