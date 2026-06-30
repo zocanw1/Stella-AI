@@ -1,5 +1,5 @@
 const DIRECT_PATTERN = /^(halo|hai|hi)(\s+(stella|kak))?[!?.\s]*$|^(pagi|siang|sore|malam|makasih|terima kasih|ok|oke|iya|ya|gak apa apa|nggak apa apa)[!?.\s]*$/i;
-const TOOL_PATTERN = /\b(baca|lihat|cek|list|daftar|file|folder|tulis|buatkan file|ubah file|edit|jalankan|run|terminal|command|download|screenshot|kirim gambar|buat gambar|voice note)\b/i;
+const TOOL_PATTERN = /\b(baca|lihat|cek|list|daftar|file|folder|tulis|buatkan file|ubah file|edit|jalankan|run|terminal|command|download|screenshot|kirim gambar|buat gambar|voice|voice note|suara)\b/i;
 const RESEARCH_PATTERN = /\b(terbaru|update|berita|news|cari di web|cari internet|sumber|link|referensi|harga hari ini|jadwal hari ini)\b/i;
 const COMPLEX_PATTERN = /\b(analisis|bedah|debug|perbaiki|bandingkan|rancang|strategi|langkah|setelah itu|kemudian|lalu)\b/i;
 

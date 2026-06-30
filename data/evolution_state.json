@@ -1,9 +1,9 @@
 {
   "level": 8,
-  "xp": 1351,
+  "xp": 1646,
   "xp_to_next_level": 1702,
-  "total_interactions": 249,
-  "total_tasks_completed": 65,
+  "total_interactions": 284,
+  "total_tasks_completed": 68,
   "total_positive_feedback": 48,
   "total_negative_feedback": 15,
   "personality": {
@@ -17,11 +17,11 @@
   "skill_tree": {
     "conversation": {
       "level": 7,
-      "xp": 22
+      "xp": 188
     },
     "coding_help": {
       "level": 1,
-      "xp": 12
+      "xp": 22
     },
     "system_admin": {
       "level": 3,
@@ -29,7 +29,7 @@
     },
     "web_search": {
       "level": 3,
-      "xp": 40
+      "xp": 45
     },
     "file_management": {
       "level": 3,
@@ -37,7 +37,7 @@
     },
     "emotional_support": {
       "level": 1,
-      "xp": 40
+      "xp": 44
     },
     "creative_writing": {
       "level": 2,

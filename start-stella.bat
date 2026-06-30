@@ -28,13 +28,16 @@ echo.
 echo Tekan Ctrl+C untuk menghentikan bot.
 echo.
 
+:restart
 node index.js
-
 set "EXIT_CODE=%ERRORLEVEL%"
-if not "%EXIT_CODE%"=="0" (
+if "%EXIT_CODE%"=="42" (
     echo.
-    echo Stella berhenti dengan kode %EXIT_CODE%.
-    pause
+    echo [RESTART] Stella restart otomatis...
+    echo.
+    goto restart
 )
-
+echo.
+echo Stella berhenti dengan kode %EXIT_CODE%.
+if not "%EXIT_CODE%"=="0" pause
 exit /b %EXIT_CODE%

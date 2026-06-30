@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, GatewayIntentBits, PermissionsBitField } = require('discord.js');
 const { joinVoiceChannel, getVoiceConnection } = require('@discordjs/voice');
 const fs = require('fs');
 const path = require('path');
@@ -193,7 +193,8 @@ const client = new Client({
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent,
-        GatewayIntentBits.GuildVoiceStates
+        GatewayIntentBits.GuildVoiceStates,
+        GatewayIntentBits.GuildMembers
     ]
 });
 
@@ -201,7 +202,8 @@ client.on('messageCreate', async (message) => {
     if (message.author.bot) return;
     if (!message.mentions.has(client.user)) return;
 
-    let text = message.content.replace(/<@!?\d+>/g, '').trim();
+    const botId = client.user.id;
+    let text = message.content.replace(new RegExp('<@!?' + botId + '>', 'g'), '').trim();
     if (!text) text = 'halo';
 
     const lowerText = text.toLowerCase();
@@ -233,6 +235,73 @@ client.on('messageCreate', async (message) => {
         } else {
             await message.channel.send('Aku gak ada di voice channel.');
         }
+        return;
+    }
+
+    if (lowerText.startsWith('/help')) {
+        await message.channel.send(
+            '--- PANDUAN PERINTAH STELLA (DISCORD) ---\n\n' +
+            '🔹 `/stats` - Cek statistik, level, dan model AI.\n' +
+            '🔹 `/ping` - Cek apakah Stella aktif.\n' +
+            '🔹 `/myperms` atau `/permissions` - Lihat izin Stella di server ini.\n' +
+            '🔹 `/debugperms` - Debug detail permissions Stella.\n' +
+            '🔹 `/kick @user` - Tendang anggota dari server (admin).\n' +
+            '🔹 `join` - Ajak Stella join voice channel.\n' +
+            '🔹 `leave` / `keluar` - Suruh Stella keluar dari voice.\n\n' +
+            '💡 Kamu juga bisa tag @Stella buat ngobrol, minta gambar, voice note, atau riset web.'
+        );
+        return;
+    }
+
+    if (lowerText.startsWith('/debugperms')) {
+        const botMember = message.guild.members.me;
+        const permsArray = botMember.permissions.toArray();
+        const hasAdmin = botMember.permissions.has(PermissionsBitField.Flags.Administrator);
+        console.log('=== DEBUG PERMS ===');
+        console.log('Permissions array:', permsArray);
+        console.log('Has Administrator:', hasAdmin);
+        await message.channel.send(
+            '**Debug Permissions Stella:**\n' +
+            '• Has Administrator: `' + hasAdmin + '`\n' +
+            '• All permissions: `' + permsArray.join(', ') + '`\n' +
+            '• Role: `' + botMember.roles.highest.name + '` (posisi ' + botMember.roles.highest.position + ')\n' +
+            '• Cek console untuk detail lengkap.'
+        );
+        return;
+    }
+
+    if (lowerText.startsWith('/myperms') || lowerText.startsWith('/permissions')) {
+        const member = message.guild.members.me;
+        const roles = member.roles.cache.sort((a, b) => b.position - a.position).map(r => r.name).join(', ');
+        const perms = member.permissions.toArray().join(', ');
+        const topRole = member.roles.highest.name;
+        const topRolePos = member.roles.highest.position;
+        await message.channel.send(
+            '**Izin Stella di server ini:**\n' +
+            '• Role tertinggi: `' + topRole + '` (posisi ' + topRolePos + ')\n' +
+            '• Semua role: ' + roles + '\n' +
+            '• Permissions: ' + perms
+        );
+        return;
+    }
+
+    if (lowerText.startsWith('/kick')) {
+        if (!message.member?.permissions.has(PermissionsBitField.Flags.KickMembers)) {
+            await message.channel.send('Kamu gak punya izin buat kick anggota.');
+            return;
+        }
+        const target = message.mentions.members.filter(function(m) { return m.id !== botId; }).first();
+        if (!target) {
+            await message.channel.send('Tag anggota yang mau di-kick.');
+            return;
+        }
+        if (!target.kickable) {
+            await message.channel.send('Aku tidak bisa kick anggota itu. Mungkin role-nya lebih tinggi.');
+            return;
+        }
+        const reason = text.replace(/<@!?\d+>/g, '').replace('/kick', '').trim() || 'Tidak ada alasan';
+        await target.kick(reason);
+        await message.channel.send('**' + target.user.tag + '** berhasil dikick. Alasan: ' + reason);
         return;
     }
 

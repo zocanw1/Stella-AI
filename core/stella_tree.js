@@ -10,24 +10,37 @@ const {
     STATUS, Selector, Sequence, Action, Condition, Cooldown, BehaviorTree
 } = require('./behavior_tree');
 const { decideRoute } = require('./token_router');
+const path = require('path');
+const fs = require('fs');
+
+const COMMANDS_DIR = path.join(__dirname, '..', 'commands');
+
+function loadCommands() {
+    const commands = [];
+    if (!fs.existsSync(COMMANDS_DIR)) return commands;
+    const files = fs.readdirSync(COMMANDS_DIR).filter(f => f.endsWith('.js'));
+    for (const file of files) {
+        const fullPath = path.join(COMMANDS_DIR, file);
+        delete require.cache[require.resolve(fullPath)];
+        try {
+            const cmd = require(fullPath);
+            if (cmd && typeof cmd.match === 'function' && typeof cmd.execute === 'function') {
+                commands.push(cmd);
+            }
+        } catch (e) {
+            console.error('[commands] Gagal load ' + file + ':', e.message);
+        }
+    }
+    return commands;
+}
+
+let cachedCommands = null;
 
 /**
  * Build Stella's main behavior tree.
  */
 function buildStellaTree(deps) {
     const { learningEngine, evolutionSystem, autoResearcher, selfModifier, deepBrain, MODEL_NAME, currentModel } = deps;
-
-    const isNaturalModelCommand = (msg) => {
-        return /\b(ganti|ubah|switch|balikin|kembali|balik)\b.*\b(model|gpt|gemini|groq|llama)\b/.test(msg) ||
-            /\bgpt\s*[- ]?\s*\d/.test(msg);
-    };
-
-    const parseModelTarget = (msg) => {
-        if (/\bgemini\b/.test(msg)) return 'gemini';
-        if (/\bgroq\b|\bllama\b/.test(msg)) return 'groq';
-        if (/\bcodex\b|\bgpt\b/.test(msg)) return 'codex';
-        return null;
-    };
 
     // ═══════════════════════════════════════
     //  BRANCH 1: Safety & Rate Limiting
@@ -148,129 +161,25 @@ function buildStellaTree(deps) {
     });
 
     // ═══════════════════════════════════════
-    //  BRANCH 5: Command Handling
+    //  BRANCH 5: Command Handling (Dynamic)
     // ═══════════════════════════════════════
+    if (!cachedCommands) cachedCommands = loadCommands();
+
     const commandBranch = new Sequence('CommandCheck', [
         new Condition('IsCommand', (ctx) => {
             const msg = ctx.message.trim().toLowerCase();
-            ctx.isCommand = msg.startsWith('/') || isNaturalModelCommand(msg);
+            ctx.isCommand = msg.startsWith('/') || cachedCommands.some(c => c.match(msg));
             return ctx.isCommand;
         }),
         new Action('HandleCommand', async (ctx) => {
             const msg = ctx.message.trim().toLowerCase();
             if (ctx._btLog) ctx._btLog('HandleCommand', `Checking command: ${msg}`);
 
-            if (msg.startsWith('/ping')) {
-                ctx.directReply = `aku aktif kok.`;
-                ctx.skipAI = true;
-                return STATUS.SUCCESS;
-            }
-            if (msg.startsWith('/restart')) {
-                ctx.directReply = `🚀 Me-restart sistem Stella... Mohon tunggu.`;
-                ctx.skipAI = true;
-                setTimeout(() => process.exit(0), 1000);
-                return STATUS.SUCCESS;
-            }
-            if (msg.startsWith('/stats')) {
-                let reply = `--- STATISTIK SISTEM ---\n`;
-                reply += `🤖 Gaya proses aktif: ${currentModel === 'codex' ? 'stella natural' : currentModel === 'groq' ? 'stella cepat' : 'stella standar'}\n`;
-                reply += evolutionSystem.getStatsText();
-                if (deepBrain) reply += '\n' + deepBrain.getStatsText();
-                if (autoResearcher) reply += '\n' + autoResearcher.getStatsText();
-                ctx.directReply = reply;
-                ctx.skipAI = true;
-                return STATUS.SUCCESS;
-            }
-            if (msg.startsWith('/help')) {
-                let reply = `--- PANDUAN PERINTAH STELLA ---\n\n`;
-                reply += `🔹 /stats - Cek statistik, level, dan model AI.\n`;
-                reply += `🔹 /skills - Lihat daftar kemampuan yang dikuasai.\n`;
-                reply += `🔹 /learn - Lihat topik favorit dan jam aktifmu.\n`;
-                reply += `🔹 /patches - Lihat perbaikan sistem otomatis.\n`;
-                reply += `🔹 /rules - Lihat aturan kustom yang aktif.\n`;
-                reply += `🔹 /reflect - Jalankan evaluasi diri (Self-Reflection).\n`;
-                reply += `🔹 /settings - Buka menu pengaturan interaktif.\n`;
-                reply += `🔹 /model [codex|gemini|groq] - Ganti mode respons Stella.\n`;
-                reply += `🔹 /clear - Reset chat history (jika Stella error).\n`;
-                reply += `\n💡 Kamu juga bisa chat biasa buat minta gambar, voice note, atau riset web.`;
-                ctx.directReply = reply;
-                ctx.skipAI = true;
-                return STATUS.SUCCESS;
-            }
-            if (msg.startsWith('/skills')) {
-                ctx.directReply = evolutionSystem.getSkillTreeText();
-                ctx.skipAI = true;
-                return STATUS.SUCCESS;
-            }
-            if (msg.startsWith('/learn')) {
-                const topTopics = learningEngine.getUserTopTopics(ctx.userId, 5);
-                const peakHours = learningEngine.getUserPeakHours(ctx.userId);
-                let reply = `--- APA YANG STELLA PELAJARI ---\n\n`;
-                reply += `Topik favoritmu:\n`;
-                topTopics.forEach(t => { reply += `  - ${t.topic}: ${t.count}x\n`; });
-                reply += `\nJam aktifmu:\n`;
-                peakHours.forEach(h => { reply += `  - ${h.hour}:00 (${h.count}x)\n`; });
-                reply += `\nSkill yang Stella pelajari: ${learningEngine.knowledgeBase.skills.length}`;
-                reply += `\nSolusi tersimpan: ${learningEngine.knowledgeBase.solutions.length}`;
-                ctx.directReply = reply;
-                ctx.skipAI = true;
-                return STATUS.SUCCESS;
-            }
-            if (msg.startsWith('/patches')) {
-                ctx.directReply = selfModifier ? selfModifier.getPatchesText() : 'Self-Modifier tidak aktif.';
-                ctx.skipAI = true;
-                return STATUS.SUCCESS;
-            }
-            if (msg.startsWith('/rules')) {
-                ctx.directReply = selfModifier ? selfModifier.getRulesText() : 'Self-Modifier tidak aktif.';
-                ctx.skipAI = true;
-                return STATUS.SUCCESS;
-            }
-            if (!msg.startsWith('/') && isNaturalModelCommand(msg)) {
-                const target = parseModelTarget(msg);
-
-                if (target) {
-                    ctx.switchModel = target;
-                    ctx.directReply = `berhasil. mode Stella sekarang: ${target.toUpperCase()}.`;
-                } else {
-                    ctx.directReply = 'model yang bisa kupakai dari sini: codex, gemini, atau groq.';
+            for (const cmd of cachedCommands) {
+                if (cmd.match(msg)) {
+                    if (ctx._btLog) ctx._btLog('HandleCommand', `Matched: ${cmd.name || 'unnamed'}`);
+                    return cmd.execute(ctx, { ...deps, STATUS });
                 }
-                ctx.skipAI = true;
-                return STATUS.SUCCESS;
-            }
-            if (msg.startsWith('/model')) {
-                const parts = msg.split(/\s+/);
-                const target = ['codex', 'gemini', 'groq'].includes(parts[1]) ? parts[1] : parseModelTarget(msg);
-                if (target === 'codex' || target === 'groq' || target === 'gemini') {
-                    ctx.switchModel = target;
-                    ctx.directReply = `✅ Berhasil! Otak Stella sekarang menggunakan: **${target.toUpperCase()}**`;
-                } else {
-                    ctx.directReply = `❌ Gunakan: /model codex, /model gemini, atau /model groq`;
-                }
-                ctx.skipAI = true;
-                return STATUS.SUCCESS;
-            }
-            if (msg.startsWith('/reflect')) {
-                ctx.triggerReflection = true;
-                ctx.directReply = 'Stella sedang melakukan self-reflection... Tunggu sebentar.';
-                ctx.skipAI = true;
-                return STATUS.SUCCESS;
-            }
-
-            // Command /settings untuk membuka UI pengaturan
-            if (msg.startsWith('/settings') || msg.startsWith('/setting')) {
-                ctx.triggerSettings = true;
-                ctx.directReply = 'Membuka menu pengaturan...';
-                ctx.skipAI = true;
-                return STATUS.SUCCESS;
-            }
-
-            // Command /clear to fix "bengong" state
-            if (msg.startsWith('/clear')) {
-                ctx.triggerClearHistory = true;
-                ctx.directReply = 'ingatan jangka pendekku sudah di-reset. aku siap ngobrol lagi.';
-                ctx.skipAI = true;
-                return STATUS.SUCCESS;
             }
 
             ctx.isCommand = false;
@@ -336,9 +245,16 @@ function createContext(userId, message, extras = {}) {
         didResearch: false,
         rulePrompt: '',
         triggerReflection: false,
+        triggerReload: false,
         notifyCallback: null,
         ...extras
     };
 }
 
-module.exports = { buildStellaTree, createContext };
+function reloadCommands() {
+    cachedCommands = null;
+    cachedCommands = loadCommands();
+    console.log('[commands] Reloaded ' + cachedCommands.length + ' commands.');
+}
+
+module.exports = { buildStellaTree, createContext, reloadCommands };

@@ -410,7 +410,6 @@
       "intent": "question",
       "added": 1777888876345
     },
-
     {
       "text": "Kalau saya hanya mengetik \".\" Kamu lanjutkan peran nya",
       "intent": "conversation",
@@ -806,7 +805,6 @@
       "intent": "conversation",
       "added": 1777904720811
     },
-
     {
       "text": "Hmm respon mu datar ya tidak seperti Gemini",
       "intent": "conversation",
@@ -986,6 +984,11 @@
       "text": "Hmph... Kakak mau sampe aku lemas ya?\nAku mengangguk malu-malu, tapi tubuh sudah panas\nIya deh, Kak... lakuin sebrutal yang Kakak mau. Aku mau Kakak ngewe aku sampe aku nggak bisa berdiri...\nBayangin ",
       "intent": "question",
       "added": 1782654174724
+    },
+    {
+      "text": "\"use client\";\nimport { useEffect, useState } from \"react\";\nimport { useParams } from \"next/navigation\";\n\nexport default function AnimeDetail() {\n  const { id } = useParams();\n  const [anime, setAnime]",
+      "intent": "question",
+      "added": 1782818859561
     }
   ],
   "quality_samples": [
@@ -1620,7 +1623,7 @@
       "added": 1777889807426
     }
   ],
-  "pending_count": 44,
+  "pending_count": 45,
   "total_trained": 315,
   "last_train": "2026-05-04T13:15:27.520Z",
   "thought_samples": [
@@ -1851,6 +1854,25 @@
       },
       "ruleIntent": "question",
       "added": 1782654174721
+    },
+    {
+      "text": "\"use client\";\nimport { useEffect, useState } from \"react\";\nimport { useParams } from \"next/navigation\";\n\nexport default function AnimeDetail() {\n  const { id } = useParams();\n  const [anime, setAnime] = useState(null);\n  const [loading, set",
+      "intent": "question",
+      "mode": "use_codex",
+      "outputs": {
+        "respond_direct": 0.46886743931907987,
+        "use_codex": 0.7993884523166431,
+        "use_tool": 0.469192757088363,
+        "research": 0.6728070890692025,
+        "save_memory": 0.4385113341511482,
+        "schedule": 0.43843959940155514,
+        "media": 0.43808927427888483,
+        "concise": 0.4395094670770274,
+        "empathetic": 0.7008926633192613,
+        "proactive": 0.45918198188341663
+      },
+      "ruleIntent": "question",
+      "added": 1782818859558
     }
   ]
 }

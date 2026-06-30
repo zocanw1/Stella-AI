@@ -13,7 +13,7 @@ const DeepBrain = require('./core/deep_brain');
 const AutoResearcher = require('./core/auto_researcher');
 const SelfModifier = require('./core/self_modifier');
 const { runCodexAgent } = require('./core/codex_bridge');
-const { buildStellaTree, createContext } = require('./core/stella_tree');
+const { buildStellaTree, createContext, reloadCommands } = require('./core/stella_tree');
 const { DeepSeekProvider, toDeepSeekTools } = require('./core/deepseek_provider');
 const { loadDeepSeekConfig } = require('./core/runtime_env');
 const { buildPromptBudget } = require('./core/token_router');
@@ -380,7 +380,7 @@ bot.on('callback_query', async (query) => {
                 chat_id: query.message.chat.id,
                 message_id: query.message.message_id,
                 parse_mode: 'Markdown',
-                ...keyboard
+                reply_markup: keyboard
             });
         } catch (e) {
             await bot.answerCallbackQuery(query.id, { text: 'Gagal update menu, coba lagi' });
@@ -441,7 +441,7 @@ bot.on('message', async (msg) => {
 
         if (btContext.triggerSettings) {
             const menu = buildMainMenu(userId);
-            await bot.sendMessage(chatId, menu.text, { parse_mode: 'Markdown', ...menu.keyboard });
+            await bot.sendMessage(chatId, menu.text, { parse_mode: 'Markdown', reply_markup: menu.keyboard });
             return;
         }
 
@@ -449,6 +449,51 @@ bot.on('message', async (msg) => {
             chatHistory[userId] = [];
             saveMemory();
             await bot.sendMessage(chatId, btContext.directReply);
+            return;
+        }
+
+        if (btContext.triggerLeaveGroup) {
+            try {
+                await bot.leaveChat(chatId);
+            } catch (e) {
+                await bot.sendMessage(chatId, 'Gagal keluar dari grup: ' + e.message);
+            }
+            return;
+        }
+
+        if (btContext.triggerKickMember) {
+            let targetId = null;
+            let targetName = '';
+            if (msg.reply_to_message) {
+                targetId = msg.reply_to_message.from.id;
+                targetName = msg.reply_to_message.from.first_name || 'User';
+            } else if (msg.entities && msg.entities.length > 0) {
+                const mentionEntity = msg.entities.find(e => e.type === 'mention' || e.type === 'text_mention');
+                if (mentionEntity && mentionEntity.user) {
+                    targetId = mentionEntity.user.id;
+                    targetName = mentionEntity.user.first_name || 'User';
+                }
+            }
+            if (!targetId) {
+                await bot.sendMessage(chatId, 'Gunakan /kick sambil reply pesan orang yang mau di-kick.');
+                return;
+            }
+            try {
+                await bot.banChatMember(chatId, targetId);
+                await bot.unbanChatMember(chatId, targetId);
+                await bot.sendMessage(chatId, targetName + ' berhasil di-kick.');
+            } catch (e) {
+                await bot.sendMessage(chatId, 'Gagal kick anggota. Pastikan aku punya izin admin.');
+            }
+            return;
+        }
+
+        if (btContext.triggerReload) {
+            reloadCommands();
+            stellaTree = buildStellaTree({
+                learningEngine, evolutionSystem, deepBrain, autoResearcher, selfModifier, MODEL_NAME, currentModel
+            });
+            await bot.sendMessage(chatId, '✅ Command berhasil di-reload! (' + new Date().toLocaleTimeString('id-ID') + ')');
             return;
         }
 
@@ -556,6 +601,12 @@ bot.on('message', async (msg) => {
                     if (funcRes._mediaResult?.type && funcRes._mediaResult?.filePath && !funcRes._mediaResult.mediaSent) {
                         mediaToSend.push(funcRes._mediaResult);
                     }
+                    if (safeCall.name === 'send_media' && funcRes._mediaResult?.mediaSent) {
+                        const sentFile = path.resolve(args.filePath || '');
+                        for (const m of mediaToSend) {
+                            if (path.resolve(m.filePath) === sentFile) m._alreadySent = true;
+                        }
+                    }
                 }
 
                 callCount++;
@@ -640,6 +691,12 @@ bot.on('message', async (msg) => {
                     if (funcRes._mediaResult && funcRes._mediaResult.type && funcRes._mediaResult.filePath && !funcRes._mediaResult.mediaSent) {
                         mediaToSend.push(funcRes._mediaResult);
                     }
+                    if (safeCall.name === 'send_media' && funcRes._mediaResult?.mediaSent) {
+                        const sentFile = path.resolve(safeCall.args?.filePath || '');
+                        for (const m of mediaToSend) {
+                            if (path.resolve(m.filePath) === sentFile) m._alreadySent = true;
+                        }
+                    }
                 }
 
                 callCount++;
@@ -695,6 +752,12 @@ bot.on('message', async (msg) => {
                     if (funcRes._mediaResult && funcRes._mediaResult.type && funcRes._mediaResult.filePath && !funcRes._mediaResult.mediaSent) {
                         mediaToSend.push(funcRes._mediaResult);
                     }
+                    if (call.name === 'send_media' && funcRes._mediaResult?.mediaSent) {
+                        const sentFile = path.resolve(call.args?.filePath || '');
+                        for (const m of mediaToSend) {
+                            if (path.resolve(m.filePath) === sentFile) m._alreadySent = true;
+                        }
+                    }
                 }
 
                 if (statusMsg) {
@@ -730,7 +793,8 @@ bot.on('message', async (msg) => {
         }
 
         // --- AUTO-SEND MEDIA (Smart Response) ---
-        for (const media of mediaToSend) {
+        const pendingMedia = mediaToSend.filter(m => !m._alreadySent);
+        for (const media of pendingMedia) {
             try {
                 const filePath = media.filePath;
                 const caption = media.caption || '';
