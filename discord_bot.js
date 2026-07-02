@@ -343,10 +343,14 @@ client.on('messageCreate', async (message) => {
     let text = message.content.replace(new RegExp('<@!?' + botId + '>', 'g'), '').trim();
     if (!text) text = 'halo';
 
+    const isCommand = text.startsWith('/') || text.startsWith('!');
+
     let intentResult = { intent: 'conversation', confidence: 0 };
-    try {
-        intentResult = await intentClassifier.predict(text);
-    } catch {}
+    if (!isCommand) {
+        try {
+            intentResult = await intentClassifier.predict(text);
+        } catch {}
+    }
 
     const isVoiceJoin = intentResult.intent === 'voice_join' && intentResult.confidence >= 0.80;
     const isVoiceLeave = intentResult.intent === 'voice_leave' && intentResult.confidence >= 0.80;
