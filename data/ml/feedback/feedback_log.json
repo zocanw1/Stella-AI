@@ -1,0 +1,112 @@
+{
+  "entries": [
+    {
+      "userId": "u",
+      "category": "correction",
+      "data": {
+        "type": "correction",
+        "signal": "negative",
+        "weight": 0.9,
+        "question": "salah",
+        "predicted": null,
+        "previousResponse": "",
+        "correctionText": "salah",
+        "explicit": true
+      },
+      "timestamp": "2026-07-02T13:52:56.036Z"
+    },
+    {
+      "userId": "u",
+      "category": "confirmation",
+      "data": {
+        "type": "confirmation",
+        "signal": "positive",
+        "weight": 0.85,
+        "question": "bagus",
+        "predicted": null,
+        "previousResponse": "",
+        "explicit": true
+      },
+      "timestamp": "2026-07-02T13:52:56.037Z"
+    },
+    {
+      "userId": "u",
+      "category": "correction",
+      "data": {
+        "type": "correction",
+        "signal": "negative",
+        "weight": 0.7,
+        "question": "ulangi",
+        "predicted": null,
+        "previousResponse": "",
+        "correctionText": "ulangi",
+        "explicit": true
+      },
+      "timestamp": "2026-07-02T13:52:56.038Z"
+    },
+    {
+      "userId": "u",
+      "category": "confirmation",
+      "data": {
+        "type": "confirmation",
+        "signal": "positive",
+        "weight": 0.9,
+        "question": "makasih",
+        "predicted": null,
+        "previousResponse": "",
+        "explicit": true
+      },
+      "timestamp": "2026-07-02T13:52:56.038Z"
+    },
+    {
+      "userId": "u",
+      "category": "correction",
+      "data": {
+        "type": "correction",
+        "signal": "negative",
+        "weight": 0.8,
+        "question": "gak nyambung",
+        "predicted": null,
+        "previousResponse": "",
+        "correctionText": "gak nyambung",
+        "explicit": true
+      },
+      "timestamp": "2026-07-02T13:52:56.039Z"
+    },
+    {
+      "userId": "u1",
+      "category": "correction",
+      "data": {
+        "type": "correction",
+        "signal": "negative",
+        "weight": 0.9,
+        "question": "deploy ke server ya?",
+        "predicted": "deploy",
+        "previousResponse": "oke akan deploy",
+        "correctionText": "salah, maksudku debug bukan deploy",
+        "explicit": true
+      },
+      "timestamp": "2026-07-02T13:53:35.417Z"
+    },
+    {
+      "userId": "u1",
+      "category": "confirmation",
+      "data": {
+        "type": "confirmation",
+        "signal": "positive",
+        "weight": 0.9,
+        "question": "deploy ke server ya?",
+        "predicted": "deploy",
+        "previousResponse": "oke akan deploy",
+        "explicit": true
+      },
+      "timestamp": "2026-07-02T13:53:35.418Z"
+    }
+  ],
+  "stats": {
+    "total": 7,
+    "corrections": 0,
+    "confirmations": 0,
+    "implicit": 0
+  }
+}

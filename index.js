@@ -6,7 +6,7 @@ const axios = require('axios');
 const { exec } = require('child_process');
 const { format, isAfter, parseISO, addDays } = require('date-fns');
 
-// ── Core Systems ──
+// ── Core Systems (Existing) ──
 const LearningEngine = require('./core/learning_engine');
 const EvolutionSystem = require('./core/evolution');
 const DeepBrain = require('./core/deep_brain');
@@ -28,6 +28,29 @@ const {
     applySettingsToContext,
     getSettingsText
 } = require('./tools/settings_ui');
+
+// ── Stella v5 New Systems ──
+const { bus: eventBus, EVENTS } = require('./core/event_bus');
+const KnowledgeBase = require('./core/knowledge');
+const MemoryCore = require('./core/memory/memory_core');
+const ExecutiveBrain = require('./core/engine/executive_brain');
+const ReasoningEngine = require('./core/reasoning/reasoner');
+const PlanningEngine = require('./core/engine/planning_engine');
+const ReflectionEngine = require('./core/engine/reflection_engine');
+const GoalEngine = require('./core/engine/goal_engine');
+const CuriosityEngine = require('./core/engine/curiosity_engine');
+const ExperienceEngine = require('./core/experience/experience_engine');
+const SkillEngine = require('./core/skills/skill_engine');
+const WorkflowEngine = require('./core/workflow/workflow_engine');
+const Scheduler = require('./core/scheduler/scheduler');
+const SafetyLayer = require('./core/safety/safety_layer');
+const ApplicationKernel = require('./core/kernel');
+
+// ── ML Infrastructure (v5.2) ──
+const GroundTruthManager = require('./core/ml/ground_truth_manager');
+const ModelRegistry = require('./core/ml/model_registry');
+const FeedbackEngine = require('./core/ml/feedback_engine');
+const { seedGroundTruth } = require('./core/ml/seed');
 
 // --- KONFIGURASI ---
 function loadEnvFile(filePath) {
@@ -101,7 +124,7 @@ const MODEL_NAME = "gemini-3.1-flash-lite-preview";
 let currentModel = "gemini"; // Default model
 
 // ═══════════════════════════════════════
-//  🧠 INITIALIZE ALL SYSTEMS
+//  🧠 INITIALIZE ALL SYSTEMS (Existing + Stella v5)
 // ═══════════════════════════════════════
 const learningEngine = new LearningEngine();
 const evolutionSystem = new EvolutionSystem();
@@ -110,8 +133,98 @@ const autoResearcher = new AutoResearcher(learningEngine);
 const selfModifier = new SelfModifier(evolutionSystem, learningEngine);
 const tokenTelemetry = new TokenTelemetry(TOKEN_METRICS_FILE);
 
+// Stella v5 — Knowledge & Memory
+const knowledgeBase = new KnowledgeBase();
+const memoryCore = new MemoryCore(deepBrain);
+
+// Stella v5 — Engines
+const reasoningEngine = new ReasoningEngine(deepBrain, knowledgeBase);
+const goalEngine = new GoalEngine(eventBus, EVENTS);
+const curiosityEngine = new CuriosityEngine(knowledgeBase, eventBus, EVENTS);
+const skillEngine = new SkillEngine(deepBrain, eventBus, EVENTS);
+const experienceEngine = new ExperienceEngine(deepBrain, knowledgeBase, eventBus, EVENTS);
+const planningEngine = new PlanningEngine(deepBrain, skillEngine, eventBus, EVENTS);
+const reflectionEngine = new ReflectionEngine(deepBrain, experienceEngine, eventBus, EVENTS);
+const workflowEngine = new WorkflowEngine(eventBus, EVENTS, skillEngine);
+const scheduler = new Scheduler(eventBus, EVENTS);
+const safetyLayer = new SafetyLayer(eventBus, EVENTS);
+
+// Stella v5 — Executive Brain (Simplified Dispatcher)
+const executiveBrain = new ExecutiveBrain({
+    eventBus, EVENTS,
+    memory: memoryCore,
+    knowledge: knowledgeBase,
+    reasoning: reasoningEngine,
+    planning: planningEngine,
+    reflection: reflectionEngine,
+    goals: goalEngine,
+    curiosity: curiosityEngine,
+    experience: experienceEngine,
+    skills: skillEngine,
+    workflow: workflowEngine,
+    scheduler,
+    safety: safetyLayer,
+    deepBrain
+});
+
+// Application Kernel (v5.1 — orchestrator layer)
+const kernel = new ApplicationKernel({
+    eventBus, EVENTS,
+    executiveBrain,
+    memory: memoryCore,
+    knowledge: knowledgeBase,
+    reasoning: reasoningEngine,
+    planning: planningEngine,
+    reflection: reflectionEngine,
+    goals: goalEngine,
+    curiosity: curiosityEngine,
+    experience: experienceEngine,
+    skills: skillEngine,
+    workflow: workflowEngine,
+    scheduler,
+    safety: safetyLayer,
+    deepBrain,
+    learningEngine,
+    evolutionSystem
+});
+
+// ML Infrastructure
+const groundTruth = new GroundTruthManager();
+const modelRegistry = new ModelRegistry();
+const feedbackEngine = new FeedbackEngine({
+    groundTruth, deepBrain, experience: experienceEngine
+});
+
+// Wire feedback engine into kernel
+kernel.feedback = feedbackEngine;
+
+// Behavior Tree (v2 — now a fallback layer)
 let stellaTree = buildStellaTree({
-    learningEngine, evolutionSystem, deepBrain, autoResearcher, selfModifier, MODEL_NAME, currentModel
+    learningEngine, evolutionSystem, deepBrain, autoResearcher, selfModifier,
+    MODEL_NAME, currentModel, executiveBrain, eventBus, EVENTS
+});
+
+// Initialize async subsystems
+Promise.all([
+    knowledgeBase.initialize(),
+    scheduler.buildDefaults()
+]).then(() => {
+    console.log('[Stella v5] All subsystems initialized.');
+    knowledgeBase.embeddings.trainModel([
+        'Stella is an AI assistant',
+        'Memory systems store experiences',
+        'Knowledge graphs connect concepts',
+        'Machine learning improves decisions',
+        'Experience engine converts tasks into skills',
+        'Planning reduces risk and improves outcomes',
+        'Reflection identifies patterns in success and failure'
+    ]).catch(() => {});
+
+    const seedResult = seedGroundTruth(groundTruth, feedbackEngine);
+    console.log(`[v5.2 ML] GroundTruth seeded: ${seedResult.seeded} samples (v${seedResult.version})`);
+    console.log(`[v5.2 ML] GT stats:`, JSON.stringify(groundTruth.getStats().byLabel));
+}).catch(err => {
+    console.error('[Stella v5] Init error:', err.message);
 });
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
@@ -126,10 +239,29 @@ function getStellaInstruction(ctx = {}) {
     const patchesPrompt = selfModifier.getActivePatchesPrompt();
     const personaPrompt = getPersonaPrompt();
 
+    // Use kernel context if available (only relevant modules)
+    let v5Context = '';
+    if (ctx.executiveContext && ctx.executiveContext.text) {
+        v5Context = '\n' + ctx.executiveContext.text + '\n';
+    }
+    const planContext = !v5Context && ctx.planInfo ? `\nPLAN:\nGoal: ${ctx.planInfo.goal.substring(0, 100)}\nSteps: ${ctx.planInfo.subtasks.map(s => `- ${s.name} (confidence: ${(s.confidence * 100).toFixed(0)}%)`).join('\n')}\nRisk: ${JSON.stringify(ctx.planInfo.risks)}\n` : '';
+    const reasoningContext = !v5Context && ctx.reasoningInfo ? `\n${ctx.reasoningInfo}\n` : '';
+    const goalContext = !v5Context && ctx.goalContext ? `\n${ctx.goalContext}\n` : '';
+    const toolRecContext = !v5Context && ctx.toolRecommendations && ctx.toolRecommendations.length > 0
+        ? `\nRecommended tools: ${ctx.toolRecommendations.slice(0, 3).map(r => r.skill).join(', ')}\n`
+        : '';
+    const memoryContextText = !v5Context && ctx.memoryContext && ctx.memoryContext.length > 0
+        ? `\nRelevant memories:\n${ctx.memoryContext.slice(0, 3).map(m => `- [${m.tier}] ${m.content.substring(0, 100)}`).join('\n')}\n`
+        : '';
+
     return `${personaPrompt}
 ${getPersonaPolicy()}
 ${personalityPrompt ? `\nKEPRIBADIAN EVOLUSI:\n${personalityPrompt}` : ''}
-
+${v5Context || goalContext}
+${!v5Context ? memoryContextText : ''}
+${!v5Context ? toolRecContext : ''}
+${!v5Context ? planContext : ''}
+${!v5Context ? reasoningContext : ''}
 
 PRINSIP UTAMA:
 - PROFESIONALISME: Berikan jawaban yang sopan, jelas, dan fokus pada solusi.
@@ -393,9 +525,14 @@ bot.on('callback_query', async (query) => {
 // ==================================================
 //  MAIN MESSAGE HANDLER
 // ==================================================
-console.log('Stella v4.5 is now ONLINE and ready.');
+console.log('Stella v5 — Autonomous Intelligence is now ONLINE and ready.');
 console.log('==================================================');
 console.log('Level: ' + evolutionSystem.state.level + ' | XP: ' + evolutionSystem.state.xp + '/' + evolutionSystem.state.xp_to_next_level);
+console.log('[v5 Modules] ExecutiveBrain | Knowledge | Reasoning | Planning | Reflection | Goal | Curiosity | Experience | Skills | Workflow | Scheduler | Safety');
+console.log('[v5 ML] Embeddings: ' + (knowledgeBase.embeddings.isReady ? 'TF.js' : 'hash') + ' | DeepBrain: ' + (deepBrain.isReady ? 'Neural' : 'Rule') + ' | Experience: classifier-ready');
+console.log('[v5.1 Kernel] NeedAnalyzer | ContextBuilder | DecisionJournal | IdleScheduler');
+console.log(`[v5.2 ML] GroundTruth: ${groundTruth.getStats().totalSamples} samples | ModelRegistry: ${modelRegistry.getAllModels().length} models | Feedback: active`);
+console.log('==================================================');
 
 bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
@@ -425,6 +562,22 @@ bot.on('message', async (msg) => {
         });
 
         applySettingsToContext(userId, btContext);
+
+        // Stella v5.1 — Kernel intelligence layer (need analysis + context selection)
+        const kernelResult = await kernel.processMessage(userId, prompt || '', {
+            userId,
+            model: btContext.userSettings?.model || currentModel
+        });
+
+        if (kernelResult.blocked) {
+            await bot.sendMessage(chatId, kernelResult.reason);
+            return;
+        }
+
+        btContext.kernelAnalysis = kernelResult.analysis;
+        btContext.executiveContext = kernelResult.context;
+        btContext.shouldReflect = kernelResult.shouldReflect;
+        btContext.needsPlanning = kernelResult.needsPlanning;
 
         const btResult = await stellaTree.tick(btContext);
 
@@ -844,6 +997,12 @@ bot.on('message', async (msg) => {
                     toolsUsedThisRound
                 );
             }
+        }
+
+        // Stella v5.1 — Kernel Outcome Recording (experience + reflection + learning + decision journal)
+        const taskSuccess = !((cleanText || '').includes('gagal') || (cleanText || '').includes('error') || (cleanText || '').includes('maaf'));
+        if (toolsUsedThisRound.length > 0 || cleanText) {
+            kernel.recordOutcome(userId, prompt || '', cleanText, taskSuccess, toolsUsedThisRound, 0).catch(() => {});
         }
 
         // --- POST-PROCESS RESPONSE ---

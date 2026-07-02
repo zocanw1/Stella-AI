@@ -1,0 +1,530 @@
+{
+  "meta": {
+    "version": 2,
+    "createdAt": "2026-07-02T13:48:02.600Z",
+    "lastUpdated": "2026-07-02T13:48:02.678Z",
+    "totalSamples": 40
+  },
+  "samples": [
+    {
+      "id": "gt_mr3k7op5_zyqfiw",
+      "text": "join",
+      "label": "voice_join",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.633Z"
+    },
+    {
+      "id": "gt_mr3k7op6_a6gd9l",
+      "text": "join vc",
+      "label": "voice_join",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.634Z"
+    },
+    {
+      "id": "gt_mr3k7op6_0lwhr7",
+      "text": "join voice",
+      "label": "voice_join",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.634Z"
+    },
+    {
+      "id": "gt_mr3k7op7_exve1v",
+      "text": "masuk voice",
+      "label": "voice_join",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.635Z"
+    },
+    {
+      "id": "gt_mr3k7op7_9vmwh3",
+      "text": "@stella join",
+      "label": "voice_join",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.635Z"
+    },
+    {
+      "id": "gt_mr3k7op7_co5hgo",
+      "text": "join dong",
+      "label": "voice_join",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.635Z"
+    },
+    {
+      "id": "gt_mr3k7op8_mn66b2",
+      "text": "join channel",
+      "label": "voice_join",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.636Z"
+    },
+    {
+      "id": "gt_mr3k7op8_gnt8h0",
+      "text": "stella join",
+      "label": "voice_join",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.636Z"
+    },
+    {
+      "id": "gt_mr3k7op8_v0n58k",
+      "text": "leave",
+      "label": "voice_leave",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.636Z"
+    },
+    {
+      "id": "gt_mr3k7op9_j0hcd1",
+      "text": "keluar",
+      "label": "voice_leave",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.637Z"
+    },
+    {
+      "id": "gt_mr3k7op9_d9p49o",
+      "text": "leave vc",
+      "label": "voice_leave",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.637Z"
+    },
+    {
+      "id": "gt_mr3k7opa_rj2jp3",
+      "text": "keluar voice",
+      "label": "voice_leave",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.638Z"
+    },
+    {
+      "id": "gt_mr3k7opa_xj5lmg",
+      "text": "@stella leave",
+      "label": "voice_leave",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.638Z"
+    },
+    {
+      "id": "gt_mr3k7opa_80fzfy",
+      "text": "hai",
+      "label": "greeting",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.638Z"
+    },
+    {
+      "id": "gt_mr3k7opc_txvvz7",
+      "text": "halo",
+      "label": "greeting",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.640Z"
+    },
+    {
+      "id": "gt_mr3k7opd_iqjh2s",
+      "text": "hi",
+      "label": "greeting",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.641Z"
+    },
+    {
+      "id": "gt_mr3k7ope_o6w7eq",
+      "text": "hai stella",
+      "label": "greeting",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.642Z"
+    },
+    {
+      "id": "gt_mr3k7opg_969kfu",
+      "text": "pagi",
+      "label": "greeting",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.644Z"
+    },
+    {
+      "id": "gt_mr3k7oph_59f58k",
+      "text": "siang",
+      "label": "greeting",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.645Z"
+    },
+    {
+      "id": "gt_mr3k7opr_y0fg55",
+      "text": "apa kabar",
+      "label": "question",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.655Z"
+    },
+    {
+      "id": "gt_mr3k7opt_hjxqk8",
+      "text": "siapa kamu",
+      "label": "question",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.657Z"
+    },
+    {
+      "id": "gt_mr3k7opv_qldp9n",
+      "text": "kapan dibuat",
+      "label": "question",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.659Z"
+    },
+    {
+      "id": "gt_mr3k7opw_zqwryo",
+      "text": "bagaimana cara kerja",
+      "label": "question",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.660Z"
+    },
+    {
+      "id": "gt_mr3k7opy_0b08jf",
+      "text": "apakah kamu bisa",
+      "label": "question",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.662Z"
+    },
+    {
+      "id": "gt_mr3k7oq0_6aba66",
+      "text": "apakah kamu pernah join organisasi",
+      "label": "question",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.664Z"
+    },
+    {
+      "id": "gt_mr3k7oq2_owbubb",
+      "text": "bisakah kamu join",
+      "label": "question",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.666Z"
+    },
+    {
+      "id": "gt_mr3k7oq4_x1dj8k",
+      "text": "stella tolong join dong",
+      "label": "voice_join",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.668Z"
+    },
+    {
+      "id": "gt_mr3k7oq5_w3nmel",
+      "text": "bisa join ke voice?",
+      "label": "question",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.669Z"
+    },
+    {
+      "id": "gt_mr3k7oq6_cjx5ur",
+      "text": "bisa join vc?",
+      "label": "question",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.670Z"
+    },
+    {
+      "id": "gt_mr3k7oq7_5mp609",
+      "text": "stella join ya",
+      "label": "voice_join",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.671Z"
+    },
+    {
+      "id": "gt_mr3k7oq8_yxviz9",
+      "text": "join aja",
+      "label": "voice_join",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.672Z"
+    },
+    {
+      "id": "gt_mr3k7oq8_8jeqxn",
+      "text": "join organisasi itu sulit",
+      "label": "conversation",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.672Z"
+    },
+    {
+      "id": "gt_mr3k7oqa_1kxjs4",
+      "text": "join group",
+      "label": "conversation",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "intent_classifier_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.674Z"
+    },
+    {
+      "id": "gt_mr3k7oqc_nndtm7",
+      "text": "stella is an ai assistant",
+      "label": "knowledge_system",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "embedding_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.676Z"
+    },
+    {
+      "id": "gt_mr3k7oqc_n41qmu",
+      "text": "memory systems store experiences",
+      "label": "knowledge_system",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "embedding_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.676Z"
+    },
+    {
+      "id": "gt_mr3k7oqc_83gh2n",
+      "text": "knowledge graphs connect concepts",
+      "label": "knowledge_system",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "embedding_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.676Z"
+    },
+    {
+      "id": "gt_mr3k7oqd_gdmdg6",
+      "text": "machine learning improves decisions",
+      "label": "knowledge_system",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "embedding_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.677Z"
+    },
+    {
+      "id": "gt_mr3k7oqd_qt81on",
+      "text": "experience engine converts tasks into skills",
+      "label": "knowledge_system",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "embedding_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.677Z"
+    },
+    {
+      "id": "gt_mr3k7oqe_416lzi",
+      "text": "planning reduces risk and improves outcomes",
+      "label": "knowledge_system",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "embedding_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.678Z"
+    },
+    {
+      "id": "gt_mr3k7oqe_so5gt3",
+      "text": "reflection identifies patterns in success and failure",
+      "label": "knowledge_system",
+      "source": "manual",
+      "confidence": 1,
+      "metadata": {
+        "seed": true,
+        "dataset": "embedding_v1"
+      },
+      "versionAdded": 1,
+      "createdAt": "2026-07-02T13:48:02.678Z"
+    }
+  ]
+}

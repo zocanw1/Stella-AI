@@ -989,6 +989,166 @@
       "text": "\"use client\";\nimport { useEffect, useState } from \"react\";\nimport { useParams } from \"next/navigation\";\n\nexport default function AnimeDetail() {\n  const { id } = useParams();\n  const [anime, setAnime]",
       "intent": "question",
       "added": 1782818859561
+    },
+    {
+      "text": "hai",
+      "intent": "greeting",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082640
+    },
+    {
+      "text": "hi",
+      "intent": "greeting",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082642
+    },
+    {
+      "text": "hai stella",
+      "intent": "greeting",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082643
+    },
+    {
+      "text": "pagi",
+      "intent": "greeting",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082645
+    },
+    {
+      "text": "siang",
+      "intent": "greeting",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082646
+    },
+    {
+      "text": "apa kabar",
+      "intent": "question",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082657
+    },
+    {
+      "text": "siapa kamu",
+      "intent": "question",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082658
+    },
+    {
+      "text": "kapan dibuat",
+      "intent": "question",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082660
+    },
+    {
+      "text": "bagaimana cara kerja",
+      "intent": "question",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082662
+    },
+    {
+      "text": "apakah kamu bisa",
+      "intent": "question",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082663
+    },
+    {
+      "text": "Apakah kamu pernah join organisasi",
+      "intent": "question",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082665
+    },
+    {
+      "text": "bisakah kamu join",
+      "intent": "question",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082667
+    },
+    {
+      "text": "bisa join ke voice?",
+      "intent": "question",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082669
+    },
+    {
+      "text": "bisa join vc?",
+      "intent": "question",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082671
+    },
+    {
+      "text": "join organisasi itu sulit",
+      "intent": "conversation",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082673
+    },
+    {
+      "text": "join group",
+      "intent": "conversation",
+      "source": "manual",
+      "metadata": {
+        "seed": true
+      },
+      "verified": true,
+      "added": 1783000082675
     }
   ],
   "quality_samples": [
@@ -1623,7 +1783,7 @@
       "added": 1777889807426
     }
   ],
-  "pending_count": 45,
+  "pending_count": 61,
   "total_trained": 315,
   "last_train": "2026-05-04T13:15:27.520Z",
   "thought_samples": [

@@ -71,11 +71,9 @@ class DeepBrain {
     constructor() {
         this.tf = null;
         this.intentModel = null;
-        this.qualityModel = null;
         this.vocabulary = this._loadJSON(VOCAB_FILE, { words: {}, size: 0 });
         this.trainingData = this._loadJSON(TRAINING_FILE, {
             intent_samples: [],
-            quality_samples: [],
             thought_samples: [],
             pending_count: 0,
             total_trained: 0,
@@ -265,45 +263,36 @@ class DeepBrain {
         }
     }
 
-    /**
-     * Predict response quality (0 to 1).
-     */
-    async predictQuality(features) {
-        if (!this.isReady || !this.qualityModel) return { quality: 0.5, source: 'no_model' };
-
-        try {
-            // features: [topicIdx, sentimentScore, intentIdx, messageLengthNorm]
-            const inputTensor = this.tf.tensor2d([features]);
-            const prediction = this.qualityModel.predict(inputTensor);
-            const value = (await prediction.data())[0];
-            inputTensor.dispose();
-            prediction.dispose();
-            return { quality: value, source: 'neural_network' };
-        } catch (err) {
-            return { quality: 0.5, source: 'error' };
-        }
-    }
-
     // ═══════════════════════════════════════
     //  TRAINING DATA COLLECTION
     // ═══════════════════════════════════════
 
     /**
-     * Add a training sample for intent classification.
+     * Add a verified training sample with source tracking.
+     * Source: 'user_correction' | 'tool_outcome' | 'manual' | 'feedback'
+     * Only verified samples trigger retraining.
      */
-    addIntentSample(text, intentLabel) {
+    addVerifiedSample(text, intentLabel, source = 'manual', metadata = {}) {
         if (!INTENT_LABELS.includes(intentLabel)) return;
 
         const tokens = this._tokenize(text);
         this._updateVocabulary(tokens);
 
+        const normalized = text.substring(0, 200).toLowerCase().trim();
+        const isDuplicate = this.trainingData.intent_samples.some(
+            s => s.text.toLowerCase().trim() === normalized && s.intent === intentLabel
+        );
+        if (isDuplicate) return;
+
         this.trainingData.intent_samples.push({
             text: text.substring(0, 200),
             intent: intentLabel,
+            source,
+            metadata,
+            verified: true,
             added: Date.now()
         });
 
-        // Cap at 2000 samples, remove oldest
         if (this.trainingData.intent_samples.length > 2000) {
             this.trainingData.intent_samples = this.trainingData.intent_samples.slice(-2000);
         }
@@ -311,32 +300,15 @@ class DeepBrain {
         this.trainingData.pending_count++;
         this._saveJSON(TRAINING_FILE, this.trainingData);
 
-        // Auto re-train check
         if (this.trainingData.pending_count >= RETRAIN_THRESHOLD && !this.isTraining) {
-            console.log(`[DeepBrain] ${RETRAIN_THRESHOLD} new samples accumulated, triggering auto-retrain...`);
+            console.log(`[DeepBrain] ${RETRAIN_THRESHOLD} verified samples accumulated, triggering auto-retrain...`);
             this.trainIntentModel().catch(e => console.error('[DeepBrain] Auto-train error:', e.message));
         }
     }
 
-    /**
-     * Add quality training sample from feedback.
-     */
-    addQualitySample(features, positive) {
-        this.trainingData.quality_samples.push({
-            features,
-            score: positive ? 1.0 : 0.0,
-            added: Date.now()
-        });
-
-        if (this.trainingData.quality_samples.length > 1000) {
-            this.trainingData.quality_samples = this.trainingData.quality_samples.slice(-1000);
-        }
-        this._saveJSON(TRAINING_FILE, this.trainingData);
+    addIntentSample(text, intentLabel) {
+        this.addVerifiedSample(text, intentLabel, 'auto', { warning: 'unverified_legacy' });
     }
-
-    // ═══════════════════════════════════════
-    //  MODEL TRAINING
-    // ═══════════════════════════════════════
 
     async think(text, context = {}) {
         const prediction = await this.predictIntent(text);
@@ -598,41 +570,6 @@ class DeepBrain {
         }
     }
 
-    async trainQualityModel() {
-        if (!this.tf || this.isTraining) return false;
-        if (this.trainingData.quality_samples.length < 10) return false;
-
-        this.isTraining = true;
-        try {
-            const model = this.tf.sequential();
-            model.add(this.tf.layers.dense({ inputShape: [4], units: 16, activation: 'relu' }));
-            model.add(this.tf.layers.dense({ units: 8, activation: 'relu' }));
-            model.add(this.tf.layers.dense({ units: 1, activation: 'sigmoid' }));
-
-            model.compile({ optimizer: 'adam', loss: 'binaryCrossentropy', metrics: ['accuracy'] });
-
-            const xs = this.trainingData.quality_samples.map(s => s.features);
-            const ys = this.trainingData.quality_samples.map(s => [s.score]);
-
-            const xT = this.tf.tensor2d(xs);
-            const yT = this.tf.tensor2d(ys);
-            await model.fit(xT, yT, { epochs: 15, batchSize: 8, verbose: 0 });
-            xT.dispose(); yT.dispose();
-
-            if (this.qualityModel) this.qualityModel.dispose();
-            this.qualityModel = model;
-            await model.save(fileSystemIO(path.join(MODELS_DIR, 'quality_model')));
-
-            console.log('[DeepBrain] Quality model trained!');
-            this.isTraining = false;
-            return true;
-        } catch (err) {
-            console.error('[DeepBrain] Quality training error:', err.message);
-            this.isTraining = false;
-            return false;
-        }
-    }
-
     // ── Model Loading ──
     async _loadModels() {
         try {
@@ -642,14 +579,6 @@ class DeepBrain {
                 console.log('[DeepBrain] Intent model loaded from disk');
             }
         } catch (e) { console.log('[DeepBrain] No saved intent model found, will train later'); }
-
-        try {
-            const qualityDir = path.join(MODELS_DIR, 'quality_model');
-            if (fs.existsSync(path.join(qualityDir, 'model.json'))) {
-                this.qualityModel = await this.tf.loadLayersModel(fileSystemIO(qualityDir));
-                console.log('[DeepBrain] Quality model loaded from disk');
-            }
-        } catch (e) { console.log('[DeepBrain] No saved quality model found, will train later'); }
     }
 
     // ── Stats ──
@@ -659,13 +588,11 @@ class DeepBrain {
         text += `TF.js Status: ${this.isReady ? 'AKTIF' : 'TIDAK AKTIF'}\n`;
         text += `Vocabulary: ${this.vocabulary.size} kata\n`;
         text += `Intent Samples: ${td.intent_samples.length}\n`;
-        text += `Quality Samples: ${td.quality_samples.length}\n`;
         text += `Thought Samples: ${(td.thought_samples || []).length}\n`;
         text += `Neural Policy: ACTIVE (${this.neuralState.interactionCount || 0} ticks)\n`;
         text += `Total Trained: ${td.total_trained}\n`;
         text += `Pending Samples: ${td.pending_count}/${RETRAIN_THRESHOLD}\n`;
         text += `Intent Model: ${this.intentModel ? 'LOADED' : 'NOT LOADED'}\n`;
-        text += `Quality Model: ${this.qualityModel ? 'LOADED' : 'NOT LOADED'}\n`;
         if (td.last_train) text += `Last Training: ${new Date(td.last_train).toLocaleString('id-ID')}\n`;
         return text;
     }

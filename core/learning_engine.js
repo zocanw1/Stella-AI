@@ -241,6 +241,97 @@ class LearningEngine {
         return Math.abs(hash).toString(36);
     }
 
+    recordOutcome(userId, task, success, toolsUsed = []) {
+        const user = this.interactionPatterns.users[userId];
+        if (!user) return;
+
+        if (!user.outcomes) user.outcomes = [];
+        user.outcomes.push({
+            task: task.substring(0, 200),
+            success,
+            toolsUsed,
+            timestamp: new Date().toISOString()
+        });
+        if (user.outcomes.length > 100) user.outcomes = user.outcomes.slice(-100);
+
+        if (!user.successRate) user.successRate = { total: 0, success: 0 };
+        user.successRate.total++;
+        if (success) user.successRate.success++;
+
+        const patternKey = toolsUsed.sort().join('+');
+        if (!user.toolPatterns) user.toolPatterns = {};
+        if (!user.toolPatterns[patternKey]) user.toolPatterns[patternKey] = { used: 0, success: 0 };
+        user.toolPatterns[patternKey].used++;
+        if (success) user.toolPatterns[patternKey].success++;
+
+        if (success) {
+            const skill = this._extractSkill(task, toolsUsed);
+            if (skill) {
+                this.learnSkill(skill.trigger, skill.solution, skill.category, toolsUsed, true);
+            }
+        }
+
+        this.save();
+    }
+
+    getBestToolSequence(userId, task) {
+        const user = this.interactionPatterns.users[userId];
+        if (!user || !user.toolPatterns) return null;
+
+        const scored = Object.entries(user.toolPatterns)
+            .map(([pattern, data]) => ({
+                pattern,
+                tools: pattern.split('+'),
+                successRate: data.used > 0 ? data.success / data.used : 0,
+                uses: data.used
+            }))
+            .filter(s => s.successRate > 0.5 && s.uses >= 2)
+            .sort((a, b) => b.successRate - a.successRate);
+
+        return scored.length > 0 ? scored[0].tools : null;
+    }
+
+    getOutcomeStats(userId) {
+        const user = this.interactionPatterns.users[userId];
+        if (!user || !user.successRate) return { total: 0, successRate: 0 };
+        return {
+            total: user.successRate.total,
+            successRate: user.successRate.total > 0
+                ? (user.successRate.success / user.successRate.total * 100).toFixed(1) + '%'
+                : '0%'
+        };
+    }
+
+    _extractSkill(task, toolsUsed) {
+        if (toolsUsed.length === 0) return null;
+        const toolKey = toolsUsed.join('_');
+
+        const categoryMap = {
+            execute_command: 'system_admin', read_file: 'file_management',
+            write_file: 'file_management', search_web: 'web_search',
+            generate_image: 'media_creation', generate_voice: 'voice_interaction',
+            send_media: 'media_creation', download_file: 'file_management',
+            screenshot_web: 'web_search'
+        };
+
+        const category = toolsUsed.map(t => categoryMap[t] || 'conversation').filter(Boolean)[0] || 'conversation';
+        const trigger = task.substring(0, 80);
+        const solution = `Use tools: ${toolsUsed.join(', ')}`;
+
+        return { trigger, solution, category };
+    }
+
+    getAverageSuccessRate() {
+        let total = 0, success = 0;
+        for (const user of Object.values(this.interactionPatterns.users)) {
+            if (user.successRate) {
+                total += user.successRate.total;
+                success += user.successRate.success;
+            }
+        }
+        return total > 0 ? (success / total) : 0.5;
+    }
+
     destroy() {
         if (this._saveInterval) clearInterval(this._saveInterval);
         this.save();

@@ -1,0 +1,205 @@
+{
+  "categories": {
+    "project": {
+      "key": "project",
+      "name": "Project",
+      "parent": "Root",
+      "properties": {
+        "type": "container"
+      },
+      "createdAt": "2026-07-02T12:09:23.986Z"
+    },
+    "technology": {
+      "key": "technology",
+      "name": "Technology",
+      "parent": "Root",
+      "properties": {
+        "type": "concept"
+      },
+      "createdAt": "2026-07-02T12:09:23.987Z"
+    },
+    "programming": {
+      "key": "programming",
+      "name": "Programming",
+      "parent": "Technology",
+      "properties": {
+        "type": "skill"
+      },
+      "createdAt": "2026-07-02T12:09:23.987Z"
+    },
+    "devops": {
+      "key": "devops",
+      "name": "DevOps",
+      "parent": "Technology",
+      "properties": {
+        "type": "practice"
+      },
+      "createdAt": "2026-07-02T12:09:23.988Z"
+    },
+    "database": {
+      "key": "database",
+      "name": "Database",
+      "parent": "Technology",
+      "properties": {
+        "type": "tool"
+      },
+      "createdAt": "2026-07-02T12:09:23.988Z"
+    },
+    "frontend": {
+      "key": "frontend",
+      "name": "Frontend",
+      "parent": "Programming",
+      "properties": {
+        "type": "domain"
+      },
+      "createdAt": "2026-07-02T12:09:23.988Z"
+    },
+    "backend": {
+      "key": "backend",
+      "name": "Backend",
+      "parent": "Programming",
+      "properties": {
+        "type": "domain"
+      },
+      "createdAt": "2026-07-02T12:09:23.989Z"
+    },
+    "ai": {
+      "key": "ai",
+      "name": "AI",
+      "parent": "Technology",
+      "properties": {
+        "type": "domain"
+      },
+      "createdAt": "2026-07-02T12:09:23.989Z"
+    },
+    "machinelearning": {
+      "key": "machinelearning",
+      "name": "MachineLearning",
+      "parent": "AI",
+      "properties": {
+        "type": "subdomain"
+      },
+      "createdAt": "2026-07-02T12:09:23.989Z"
+    },
+    "nlp": {
+      "key": "nlp",
+      "name": "NLP",
+      "parent": "AI",
+      "properties": {
+        "type": "subdomain"
+      },
+      "createdAt": "2026-07-02T12:09:23.990Z"
+    },
+    "computervision": {
+      "key": "computervision",
+      "name": "ComputerVision",
+      "parent": "AI",
+      "properties": {
+        "type": "subdomain"
+      },
+      "createdAt": "2026-07-02T12:09:23.990Z"
+    }
+  },
+  "relations": {
+    "depends_on": {
+      "type": "depends_on",
+      "description": "A depends on B",
+      "properties": {
+        "directed": true
+      },
+      "createdAt": "2026-07-02T12:09:23.990Z"
+    },
+    "implements": {
+      "type": "implements",
+      "description": "A implements B",
+      "properties": {
+        "directed": true
+      },
+      "createdAt": "2026-07-02T12:09:23.991Z"
+    },
+    "uses": {
+      "type": "uses",
+      "description": "A uses B",
+      "properties": {
+        "directed": true
+      },
+      "createdAt": "2026-07-02T12:09:23.991Z"
+    },
+    "related_to": {
+      "type": "related_to",
+      "description": "A is related to B",
+      "properties": {
+        "directed": false
+      },
+      "createdAt": "2026-07-02T12:09:23.991Z"
+    },
+    "part_of": {
+      "type": "part_of",
+      "description": "A is part of B",
+      "properties": {
+        "directed": true
+      },
+      "createdAt": "2026-07-02T12:09:23.991Z"
+    }
+  },
+  "inheritances": [
+    {
+      "child": "project",
+      "parent": "root",
+      "createdAt": "2026-07-02T12:09:23.986Z"
+    },
+    {
+      "child": "technology",
+      "parent": "root",
+      "createdAt": "2026-07-02T12:09:23.987Z"
+    },
+    {
+      "child": "programming",
+      "parent": "technology",
+      "createdAt": "2026-07-02T12:09:23.987Z"
+    },
+    {
+      "child": "devops",
+      "parent": "technology",
+      "createdAt": "2026-07-02T12:09:23.988Z"
+    },
+    {
+      "child": "database",
+      "parent": "technology",
+      "createdAt": "2026-07-02T12:09:23.988Z"
+    },
+    {
+      "child": "frontend",
+      "parent": "programming",
+      "createdAt": "2026-07-02T12:09:23.988Z"
+    },
+    {
+      "child": "backend",
+      "parent": "programming",
+      "createdAt": "2026-07-02T12:09:23.989Z"
+    },
+    {
+      "child": "ai",
+      "parent": "technology",
+      "createdAt": "2026-07-02T12:09:23.989Z"
+    },
+    {
+      "child": "machinelearning",
+      "parent": "ai",
+      "createdAt": "2026-07-02T12:09:23.989Z"
+    },
+    {
+      "child": "nlp",
+      "parent": "ai",
+      "createdAt": "2026-07-02T12:09:23.990Z"
+    },
+    {
+      "child": "computervision",
+      "parent": "ai",
+      "createdAt": "2026-07-02T12:09:23.990Z"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2026-07-02T12:09:23.991Z"
+  }
+}

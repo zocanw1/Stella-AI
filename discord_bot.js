@@ -17,6 +17,41 @@ const { buildPromptBudget } = require('./core/token_router');
 const { getPersonaPolicy } = require('./core/persona_policy');
 const { shouldLogDebug } = require('./core/runtime_debug');
 
+// ── Stella v5 New Systems ──
+const { bus: eventBus, EVENTS } = require('./core/event_bus');
+const KnowledgeBase = require('./core/knowledge');
+const MemoryCore = require('./core/memory/memory_core');
+const ExecutiveBrain = require('./core/engine/executive_brain');
+const ReasoningEngine = require('./core/reasoning/reasoner');
+const PlanningEngine = require('./core/engine/planning_engine');
+const ReflectionEngine = require('./core/engine/reflection_engine');
+const GoalEngine = require('./core/engine/goal_engine');
+const CuriosityEngine = require('./core/engine/curiosity_engine');
+const ExperienceEngine = require('./core/experience/experience_engine');
+const SkillEngine = require('./core/skills/skill_engine');
+const WorkflowEngine = require('./core/workflow/workflow_engine');
+const Scheduler = require('./core/scheduler/scheduler');
+const SafetyLayer = require('./core/safety/safety_layer');
+const ApplicationKernel = require('./core/kernel');
+const IntentClassifier = require('./core/intent_classifier');
+const GroundTruthManager = require('./core/ml/ground_truth_manager');
+const ModelRegistry = require('./core/ml/model_registry');
+const FeedbackEngine = require('./core/ml/feedback_engine');
+const { seedGroundTruth } = require('./core/ml/seed');
+const intentClassifier = new IntentClassifier();
+
+// Train intent classifier on startup
+(async () => {
+    await intentClassifier.initialize();
+    await intentClassifier.seedDefaultData();
+    const result = await intentClassifier.train(8, 50);
+    if (result && result.trained) {
+        console.log('[IntentClassifier] Trained:', result.samples, 'samples, accuracy:', (result.accuracy * 100).toFixed(1) + '%');
+    } else {
+        console.log('[IntentClassifier] Using fallback mode');
+    }
+})();
+
 function loadEnvFile(filePath) {
     if (!fs.existsSync(filePath)) return;
     const content = fs.readFileSync(filePath, 'utf-8');
@@ -55,8 +90,94 @@ const deepBrain = new DeepBrain();
 const autoResearcher = new AutoResearcher(learningEngine);
 const selfModifier = new SelfModifier(evolutionSystem, learningEngine);
 
+// ── Stella v5 — Knowledge & Memory ──
+const knowledgeBase = new KnowledgeBase();
+const memoryCore = new MemoryCore(deepBrain);
+
+// ── Stella v5 — Engines ──
+const reasoningEngine = new ReasoningEngine(deepBrain, knowledgeBase);
+const goalEngine = new GoalEngine(eventBus, EVENTS);
+const curiosityEngine = new CuriosityEngine(knowledgeBase, eventBus, EVENTS);
+const skillEngine = new SkillEngine(deepBrain, eventBus, EVENTS);
+const experienceEngine = new ExperienceEngine(deepBrain, knowledgeBase, eventBus, EVENTS);
+const planningEngine = new PlanningEngine(deepBrain, skillEngine, eventBus, EVENTS);
+const reflectionEngine = new ReflectionEngine(deepBrain, experienceEngine, eventBus, EVENTS);
+const workflowEngine = new WorkflowEngine(eventBus, EVENTS, skillEngine);
+const scheduler = new Scheduler(eventBus, EVENTS);
+const safetyLayer = new SafetyLayer(eventBus, EVENTS);
+
+// ── Stella v5 — Executive Brain ──
+const executiveBrain = new ExecutiveBrain({
+    eventBus, EVENTS,
+    memory: memoryCore,
+    knowledge: knowledgeBase,
+    reasoning: reasoningEngine,
+    planning: planningEngine,
+    reflection: reflectionEngine,
+    goals: goalEngine,
+    curiosity: curiosityEngine,
+    experience: experienceEngine,
+    skills: skillEngine,
+    workflow: workflowEngine,
+    scheduler,
+    safety: safetyLayer,
+    deepBrain
+});
+
+// Application Kernel (v5.1 — orchestrator layer)
+const kernel = new ApplicationKernel({
+    eventBus, EVENTS,
+    executiveBrain,
+    memory: memoryCore,
+    knowledge: knowledgeBase,
+    reasoning: reasoningEngine,
+    planning: planningEngine,
+    reflection: reflectionEngine,
+    goals: goalEngine,
+    curiosity: curiosityEngine,
+    experience: experienceEngine,
+    skills: skillEngine,
+    workflow: workflowEngine,
+    scheduler,
+    safety: safetyLayer,
+    deepBrain,
+    learningEngine,
+    evolutionSystem
+});
+
+const groundTruth = new GroundTruthManager();
+const modelRegistry = new ModelRegistry();
+const feedbackEngine = new FeedbackEngine({
+    groundTruth, deepBrain, intentClassifier
+});
+kernel.feedback = feedbackEngine;
+
 let stellaTree = buildStellaTree({
-    learningEngine, evolutionSystem, deepBrain, autoResearcher, selfModifier, MODEL_NAME: 'deepseek-chat', currentModel: 'deepseek'
+    learningEngine, evolutionSystem, deepBrain, autoResearcher, selfModifier,
+    MODEL_NAME: 'deepseek-chat', currentModel: 'deepseek',
+    executiveBrain, eventBus, EVENTS
+});
+
+// Initialize async subsystems
+Promise.all([
+    knowledgeBase.initialize(),
+    scheduler.buildDefaults()
+]).then(() => {
+    console.log('[Discord v5] All subsystems initialized.');
+    knowledgeBase.embeddings.trainModel([
+        'Stella is an AI assistant',
+        'Memory systems store experiences',
+        'Knowledge graphs connect concepts',
+        'Machine learning improves decisions',
+        'Experience engine converts tasks into skills',
+        'Planning reduces risk and improves outcomes',
+        'Reflection identifies patterns in success and failure'
+    ]).catch(() => {});
+
+    const seedResult = seedGroundTruth(groundTruth, feedbackEngine);
+    console.log(`[Discord ML] GroundTruth seeded: ${seedResult.seeded} samples (v${seedResult.version})`);
+}).catch(err => {
+    console.error('[Discord v5] Init error:', err.message);
 });
 
 const deepseek = new DeepSeekProvider({ apiKey: deepseekConfig.apiKey });
@@ -115,8 +236,24 @@ function getStellaInstruction(ctx) {
     const { personalityPrompt, learningContext, skillHints, researchContext, neuralPrompt } = ctx;
     const patchesPrompt = selfModifier.getActivePatchesPrompt();
 
+    let v5Context = '';
+    if (ctx.executiveContext && ctx.executiveContext.text) {
+        v5Context = '\n' + ctx.executiveContext.text + '\n';
+    }
+    const planContext = !v5Context && ctx.planInfo ? `\nPLAN:\nGoal: ${ctx.planInfo.goal.substring(0, 100)}\nSteps: ${ctx.planInfo.subtasks.map(s => `- ${s.name} (confidence: ${(s.confidence * 100).toFixed(0)}%)`).join('\n')}\nRisk: ${JSON.stringify(ctx.planInfo.risks)}\n` : '';
+    const reasoningContext = !v5Context && ctx.reasoningInfo ? `\n${ctx.reasoningInfo}\n` : '';
+    const goalContext = !v5Context && ctx.goalContext ? `\n${ctx.goalContext}\n` : '';
+    const toolRecContext = !v5Context && ctx.toolRecommendations && ctx.toolRecommendations.length > 0
+        ? `\nRecommended tools: ${ctx.toolRecommendations.slice(0, 3).map(r => r.skill).join(', ')}\n`
+        : '';
+    const memoryContextText = !v5Context && ctx.memoryContext && ctx.memoryContext.length > 0
+        ? `\nRelevant memories:\n${ctx.memoryContext.slice(0, 3).map(m => `- [${m.tier}] ${m.content.substring(0, 100)}`).join('\n')}\n`
+        : '';
+
     return getPersonaPrompt() + '\n' + getPersonaPolicy() + '\n' +
-        (personalityPrompt ? '\nKEPRIBADIAN EVOLUSI:\n' + personalityPrompt : '') + '\n\n' +
+        (personalityPrompt ? '\nKEPRIBADIAN EVOLUSI:\n' + personalityPrompt : '') +
+        (v5Context || goalContext) + (!v5Context ? memoryContextText : '') + (!v5Context ? toolRecContext : '') +
+        (!v5Context ? planContext : '') + (!v5Context ? reasoningContext : '') + '\n\n' +
         'PRINSIP UTAMA:\n' +
         '- PROFESIONALISME: Berikan jawaban yang sopan, jelas, dan fokus pada solusi.\n' +
         '- AGENTIC: Kamu memiliki tools untuk menjalankan perintah, membaca file, menulis file, dan mencari di web. JIKA DIMINTA, GUNAKAN tools yang tersedia.\n' +
@@ -206,11 +343,27 @@ client.on('messageCreate', async (message) => {
     let text = message.content.replace(new RegExp('<@!?' + botId + '>', 'g'), '').trim();
     if (!text) text = 'halo';
 
-    const lowerText = text.toLowerCase();
-    const wantsJoin = /\bjoin\b/.test(lowerText);
-    const wantsLeave = /\b(leave|keluar)\b/.test(lowerText);
+    let intentResult = { intent: 'conversation', confidence: 0 };
+    try {
+        intentResult = await intentClassifier.predict(text);
+    } catch {}
 
-    if (wantsJoin) {
+    const isVoiceJoin = intentResult.intent === 'voice_join' && intentResult.confidence >= 0.80;
+    const isVoiceLeave = intentResult.intent === 'voice_leave' && intentResult.confidence >= 0.80;
+    const askJoin = intentResult.intent === 'voice_join' && intentResult.confidence >= 0.40 && intentResult.confidence < 0.80;
+    const askLeave = intentResult.intent === 'voice_leave' && intentResult.confidence >= 0.40 && intentResult.confidence < 0.80;
+
+    if (askJoin) {
+        await message.channel.send('Maksudmu suruh aku join ke voice channel? Kalo iya, bilang "join" aja.');
+        return;
+    }
+
+    if (askLeave) {
+        await message.channel.send('Maksudmu suruh aku keluar dari voice channel? Kalo iya, bilang "leave" aja.');
+        return;
+    }
+
+    if (isVoiceJoin) {
         const voiceChannel = message.member?.voice?.channel;
         if (!voiceChannel) {
             await message.channel.send('Kamu harus di voice channel dulu.');
@@ -226,29 +379,50 @@ client.on('messageCreate', async (message) => {
         return;
     }
 
-    if (wantsLeave) {
-        const connection = getVoiceConnection(message.guild.id);
-        if (connection) {
-            connection.destroy();
-            delete voiceConnections[message.guild.id];
-            await message.channel.send('Udah keluar dari voice.');
-        } else {
+    if (isVoiceLeave) {
+        if (!getVoiceConnection(message.guild.id)) {
             await message.channel.send('Aku gak ada di voice channel.');
+            return;
         }
+        const connection = getVoiceConnection(message.guild.id);
+        connection.destroy();
+        delete voiceConnections[message.guild.id];
+        await message.channel.send('Udah keluar dari voice.');
         return;
     }
+
+    const lowerText = text.toLowerCase();
 
     if (lowerText.startsWith('/help')) {
         await message.channel.send(
             '--- PANDUAN PERINTAH STELLA (DISCORD) ---\n\n' +
-            '🔹 `/stats` - Cek statistik, level, dan model AI.\n' +
+            '🔹 `/stats` - Cek statistik, level, XP, dan model AI.\n' +
+            '🔹 `/skills` - Lihat skill tree yang dikuasai.\n' +
+            '🔹 `/learn` - Lihat topik favorit dan pembelajaran Stella.\n' +
+            '🔹 `/patches` - Lihat patch otomatis Self-Modifier.\n' +
+            '🔹 `/rules` - Lihat aturan kustom yang aktif.\n' +
+            '🔹 `/reflect` - Jalankan self-reflection manual.\n' +
+            '🔹 `/clear` - Reset riwayat chat.\n' +
             '🔹 `/ping` - Cek apakah Stella aktif.\n' +
+            '🔹 `/model [codex|gemini|groq]` - Ganti model AI Stella.\n' +
             '🔹 `/myperms` atau `/permissions` - Lihat izin Stella di server ini.\n' +
             '🔹 `/debugperms` - Debug detail permissions Stella.\n' +
             '🔹 `/kick @user` - Tendang anggota dari server (admin).\n' +
-            '🔹 `join` - Ajak Stella join voice channel.\n' +
-            '🔹 `leave` / `keluar` - Suruh Stella keluar dari voice.\n\n' +
-            '💡 Kamu juga bisa tag @Stella buat ngobrol, minta gambar, voice note, atau riset web.'
+            '\n--- VOICE CHANNEL ---\n' +
+            '🔹 `@Stella join` - Ajak Stella join voice channel.\n' +
+            '🔹 `@Stella leave` / `keluar` - Suruh Stella keluar dari voice.\n' +
+            '\n--- MULTIMEDIA & TOOLS ---\n' +
+            '🎨 generate_image - Bikin gambar dari teks.\n' +
+            '🎤 generate_voice - Teks jadi voice note.\n' +
+            '📸 screenshot_web - Screenshot halaman web.\n' +
+            '🔍 search_web - Cari informasi di web.\n' +
+            '📥 download_file - Unduh file dari URL.\n' +
+            '\n--- PLATFORM & PROVIDER ---\n' +
+            '🧠 AI Provider: DeepSeek (utama), Gemini, Groq/Llama 3.3, Codex\n' +
+            '🔄 Agentic Loop + Behavior Tree routing\n' +
+            '🧬 Deep Brain (TensorFlow.js) + Evolution XP/Level\n' +
+            '📝 Memory per-channel + Auto-Research + Self-Modifier\n' +
+            '\n💡 Tag @Stella buat ngobrol, minta gambar, voice note, atau riset web!'
         );
         return;
     }
@@ -315,6 +489,16 @@ client.on('messageCreate', async (message) => {
                 await message.channel.send(notifText);
             }
         });
+
+        const kernelResult = await kernel.processMessage(channelId, text, { userId: channelId });
+        if (kernelResult.blocked) {
+            await message.channel.send(kernelResult.reason);
+            return;
+        }
+        btContext.kernelAnalysis = kernelResult.analysis;
+        btContext.executiveContext = kernelResult.context;
+        btContext.shouldReflect = kernelResult.shouldReflect;
+        btContext.needsPlanning = kernelResult.needsPlanning;
 
         await stellaTree.tick(btContext);
 
@@ -442,6 +626,12 @@ client.on('messageCreate', async (message) => {
             evolutionSystem.onTaskCompleted();
         }
 
+        // Stella v5.1 — Kernel Outcome Recording
+        const taskSuccess = !((cleanText || '').includes('gagal') || (cleanText || '').includes('error') || (cleanText || '').includes('maaf'));
+        if (toolsUsedThisRound.length > 0 || cleanText) {
+            kernel.recordOutcome(channelId, text || '', cleanText, taskSuccess, toolsUsedThisRound, 0).catch(() => {});
+        }
+
         addToHistory(channelId, 'user', text);
         addToHistory(channelId, 'model', cleanText);
 
@@ -454,8 +644,10 @@ client.on('messageCreate', async (message) => {
 });
 
 client.once('ready', () => {
-    console.log('[Discord] Stella Discord bot siap di tag @Stella di server!');
+    console.log('[Discord] Stella v5 Discord bot siap di tag @Stella di server!');
     console.log('[Discord] Level:', evolutionSystem.state.level, '| XP:', evolutionSystem.state.xp + '/' + evolutionSystem.state.xp_to_next_level);
+    console.log('[v5] ExecutiveBrain | Knowledge | Reasoning | Planning | Reflection | Goal | Curiosity | Experience | Skills | Workflow | Scheduler | Safety');
+    console.log('[v5.1 Kernel] NeedAnalyzer | ContextBuilder | DecisionJournal | IdleScheduler');
 });
 
 client.login(DISCORD_TOKEN);

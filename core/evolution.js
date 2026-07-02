@@ -206,6 +206,22 @@ class EvolutionSystem {
     }
 
     // ── Stats Display ──
+    getSkillPriority(skillCategory) {
+        const skill = this.state.skill_tree[skillCategory];
+        if (!skill) return 0.5;
+        return Math.min(1, 0.3 + (skill.level * 0.1) + (skill.xp / (50 * skill.level) * 0.05));
+    }
+
+    getPersonalityModifier() {
+        const p = this.state.personality;
+        const mods = {};
+        if (p.proactivity > 0.6) mods.proactivity = p.proactivity;
+        if (p.curiosity > 0.6) mods.curiosity = p.curiosity;
+        if (p.patience > 0.7) mods.patience = p.patience;
+        if (p.helpfulness > 0.8) mods.helpfulness = p.helpfulness;
+        return mods;
+    }
+
     getStatsText() {
         const s = this.state;
         const p = s.personality;

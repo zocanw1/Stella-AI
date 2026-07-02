@@ -330,6 +330,36 @@ PENTING: Saran harus SPESIFIK dan ACTIONABLE. Jangan terlalu generic.`;
         return null;
     }
 
+    integrateReflectionResult(reflection) {
+        if (!reflection || reflection.outcome === 'success') return 0;
+        let patchesAdded = 0;
+        for (const imp of (reflection.improvements || [])) {
+            const patchContent = `${imp.suggestion} (auto-generated from reflection)`;
+            if (this.addPatch(patchContent, `reflection: ${imp.targetArea}`, 'auto_reflection')) {
+                patchesAdded++;
+            }
+        }
+        return patchesAdded;
+    }
+
+    getBestPatchFor(task) {
+        const text = task.toLowerCase();
+        const active = this.patches.patches.filter(p => p.active);
+        if (active.length === 0) return null;
+
+        const scored = active.map(p => {
+            let score = 0;
+            const words = p.content.toLowerCase().split(/\s+/);
+            for (const word of words) {
+                if (word.length > 3 && text.includes(word)) score += 1;
+            }
+            return { patch: p, score };
+        });
+
+        scored.sort((a, b) => b.score - a.score);
+        return scored[0]?.score > 0 ? scored[0].patch : null;
+    }
+
     // ── Display ──
     getPatchesText() {
         const active = this.patches.patches.filter(p => p.active);
