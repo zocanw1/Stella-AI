@@ -33,24 +33,10 @@ const WorkflowEngine = require('./core/workflow/workflow_engine');
 const Scheduler = require('./core/scheduler/scheduler');
 const SafetyLayer = require('./core/safety/safety_layer');
 const ApplicationKernel = require('./core/kernel');
-const IntentClassifier = require('./core/intent_classifier');
 const GroundTruthManager = require('./core/ml/ground_truth_manager');
 const ModelRegistry = require('./core/ml/model_registry');
 const FeedbackEngine = require('./core/ml/feedback_engine');
 const { seedGroundTruth } = require('./core/ml/seed');
-const intentClassifier = new IntentClassifier();
-
-// Train intent classifier on startup
-(async () => {
-    await intentClassifier.initialize();
-    await intentClassifier.seedDefaultData();
-    const result = await intentClassifier.train(8, 50);
-    if (result && result.trained) {
-        console.log('[IntentClassifier] Trained:', result.samples, 'samples, accuracy:', (result.accuracy * 100).toFixed(1) + '%');
-    } else {
-        console.log('[IntentClassifier] Using fallback mode');
-    }
-})();
 
 function loadEnvFile(filePath) {
     if (!fs.existsSync(filePath)) return;
@@ -148,7 +134,7 @@ const kernel = new ApplicationKernel({
 const groundTruth = new GroundTruthManager();
 const modelRegistry = new ModelRegistry();
 const feedbackEngine = new FeedbackEngine({
-    groundTruth, deepBrain, intentClassifier
+    groundTruth, deepBrain
 });
 kernel.feedback = feedbackEngine;
 
@@ -343,29 +329,9 @@ client.on('messageCreate', async (message) => {
     let text = message.content.replace(new RegExp('<@!?' + botId + '>', 'g'), '').trim();
     if (!text) text = 'halo';
 
-    const isCommand = text.startsWith('/') || text.startsWith('!');
-
-    let intentResult = { intent: 'conversation', confidence: 0 };
-    if (!isCommand) {
-        try {
-            intentResult = await intentClassifier.predict(text);
-        } catch {}
-    }
-
-    const isVoiceJoin = intentResult.intent === 'voice_join' && intentResult.confidence >= 0.80;
-    const isVoiceLeave = intentResult.intent === 'voice_leave' && intentResult.confidence >= 0.80;
-    const askJoin = intentResult.intent === 'voice_join' && intentResult.confidence >= 0.40 && intentResult.confidence < 0.80;
-    const askLeave = intentResult.intent === 'voice_leave' && intentResult.confidence >= 0.40 && intentResult.confidence < 0.80;
-
-    if (askJoin) {
-        await message.channel.send('Maksudmu suruh aku join ke voice channel? Kalo iya, bilang "join" aja.');
-        return;
-    }
-
-    if (askLeave) {
-        await message.channel.send('Maksudmu suruh aku keluar dari voice channel? Kalo iya, bilang "leave" aja.');
-        return;
-    }
+    const lowered = text.toLowerCase().trim();
+    const isVoiceJoin  = lowered === '/join';
+    const isVoiceLeave = lowered === '/leave' || lowered === '/keluar';
 
     if (isVoiceJoin) {
         const voiceChannel = message.member?.voice?.channel;
@@ -379,7 +345,7 @@ client.on('messageCreate', async (message) => {
             adapterCreator: voiceChannel.guild.voiceAdapterCreator
         });
         voiceConnections[voiceChannel.guild.id] = connection;
-        await message.channel.send('Udah masuk voice. Kalo mau disuruh keluar, bilang aja `@Stella leave`.');
+        await message.channel.send('Udah masuk voice. Kalo mau keluar, ketik `/leave`.');
         return;
     }
 
