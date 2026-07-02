@@ -1,0 +1,10 @@
+[
+  {
+    "statement": "Rule: Task completed",
+    "category": "learned_rule",
+    "source": "experience",
+    "confidence": 0.6,
+    "id": "fact_mr3kvmruaubi",
+    "storedAt": "2026-07-02T14:06:39.882Z"
+  }
+]

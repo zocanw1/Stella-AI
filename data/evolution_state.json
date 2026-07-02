@@ -1,8 +1,8 @@
 {
   "level": 9,
-  "xp": 49,
+  "xp": 89,
   "xp_to_next_level": 2553,
-  "total_interactions": 305,
+  "total_interactions": 313,
   "total_tasks_completed": 68,
   "total_positive_feedback": 48,
   "total_negative_feedback": 15,
@@ -17,7 +17,7 @@
   "skill_tree": {
     "conversation": {
       "level": 7,
-      "xp": 291
+      "xp": 329
     },
     "coding_help": {
       "level": 1,
@@ -45,7 +45,7 @@
     },
     "scheduling": {
       "level": 1,
-      "xp": 4
+      "xp": 6
     }
   },
   "milestones": [
