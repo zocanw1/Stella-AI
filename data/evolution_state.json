@@ -1,9 +1,9 @@
 {
   "level": 9,
-  "xp": 89,
+  "xp": 204,
   "xp_to_next_level": 2553,
-  "total_interactions": 313,
-  "total_tasks_completed": 68,
+  "total_interactions": 330,
+  "total_tasks_completed": 69,
   "total_positive_feedback": 48,
   "total_negative_feedback": 15,
   "personality": {
@@ -16,8 +16,8 @@
   },
   "skill_tree": {
     "conversation": {
-      "level": 7,
-      "xp": 329
+      "level": 8,
+      "xp": 65
     },
     "coding_help": {
       "level": 1,
@@ -37,11 +37,11 @@
     },
     "emotional_support": {
       "level": 1,
-      "xp": 44
+      "xp": 48
     },
     "creative_writing": {
       "level": 2,
-      "xp": 58
+      "xp": 62
     },
     "scheduling": {
       "level": 1,
@@ -132,8 +132,12 @@
     {
       "description": "Level Up ke Level 9!",
       "achieved_at": "2026-07-02T11:36:35.039Z"
+    },
+    {
+      "description": "Skill \"conversation\" naik ke Level 8!",
+      "achieved_at": "2026-07-02T16:55:25.562Z"
     }
   ],
   "created_at": "2026-05-04T01:04:29.537Z",
-  "last_evolution": "2026-07-02T11:36:35.039Z"
+  "last_evolution": "2026-07-02T16:55:25.562Z"
 }

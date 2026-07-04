@@ -1,7 +1,16 @@
 const { Client, GatewayIntentBits, PermissionsBitField } = require('discord.js');
-const { joinVoiceChannel, getVoiceConnection } = require('@discordjs/voice');
+const { joinVoiceChannel, getVoiceConnection, AudioPlayer, createAudioResource, StreamType, NoSubscriberBehavior, AudioPlayerStatus, createAudioPlayer, entersState, VoiceConnectionStatus } = require('@discordjs/voice');
+const { generateVoiceFile, generateVoiceTempPath, DEFAULT_VOICE } = require('./tools/generate_voice');
 const fs = require('fs');
 const path = require('path');
+
+// FFmpeg static binary untuk @discordjs/voice
+try {
+    const ffmpegPath = require('ffmpeg-static');
+    process.env.PATH = path.dirname(ffmpegPath) + path.delimiter + process.env.PATH;
+} catch (e) {
+    console.warn('[FFmpeg] ffmpeg-static not loaded, fallback to system PATH');
+}
 const axios = require('axios');
 const { format, isAfter } = require('date-fns');
 
@@ -184,6 +193,105 @@ function saveMemory() {
     fs.writeFileSync(MEMORY_BANK_FILE, JSON.stringify(memoryBank, null, 2));
 }
 
+// ── User Settings (autoRead, voiceId per user) ──
+const SETTINGS_FILE = path.join(DISCORD_DATA_DIR, 'settings.json');
+let guildSettings = { users: {} };
+if (fs.existsSync(SETTINGS_FILE)) {
+    try { guildSettings = JSON.parse(fs.readFileSync(SETTINGS_FILE, 'utf-8')); } catch (e) {}
+}
+if (!guildSettings.users) guildSettings.users = {};
+
+function saveSettings() {
+    try { fs.writeFileSync(SETTINGS_FILE, JSON.stringify(guildSettings, null, 2)); } catch (e) {}
+}
+
+function getUserSetting(userId, key, defaultValue) {
+    if (!guildSettings.users[userId]) guildSettings.users[userId] = {};
+    if (guildSettings.users[userId][key] === undefined) return defaultValue;
+    return guildSettings.users[userId][key];
+}
+
+function setUserSetting(userId, key, value) {
+    if (!guildSettings.users[userId]) guildSettings.users[userId] = {};
+    guildSettings.users[userId][key] = value;
+    saveSettings();
+}
+
+// ── Voice Audio Player System ──
+const audioPlayers = {};
+const currentVoiceFiles = {};
+
+function setupAudioPlayer(guildId, connection) {
+    if (audioPlayers[guildId]) {
+        try { audioPlayers[guildId].stop(); } catch (e) {}
+    }
+    const player = createAudioPlayer({
+        behaviors: { noSubscriber: NoSubscriberBehavior.Play }
+    });
+    connection.subscribe(player);
+    audioPlayers[guildId] = player;
+
+    player.on(AudioPlayerStatus.Playing, () => {
+        debugLog('[Voice] AudioPlayer started playing');
+    });
+    player.on(AudioPlayerStatus.Idle, () => {
+        debugLog('[Voice] AudioPlayer idle');
+        // Clean up temp file after playing
+        const gId = Object.keys(audioPlayers).find(k => audioPlayers[k] === player);
+        if (gId) cleanupVoiceFile(gId);
+    });
+    player.on('error', (e) => {
+        console.error('[Voice] AudioPlayer error:', e.message);
+    });
+    player.on('stateChange', (oldState, newState) => {
+        debugLog('[Voice] Player state:', oldState.status, '->', newState.status);
+    });
+
+    return player;
+}
+
+async function speakInVoiceChannel(guildId, text, voiceId) {
+    const connection = getVoiceConnection(guildId);
+    if (!connection) {
+        console.error('[Voice] No connection for guild', guildId);
+        return;
+    }
+
+    try {
+        await entersState(connection, VoiceConnectionStatus.Ready, 10_000);
+    } catch (e) {
+        console.error('[Voice] Connection not ready:', e.message);
+        return;
+    }
+
+    if (!audioPlayers[guildId]) {
+        setupAudioPlayer(guildId, connection);
+    }
+
+    const filePath = generateVoiceTempPath();
+    await generateVoiceFile(text, voiceId, filePath);
+    console.log(`[Voice] Playing: "${text.substring(0, 50)}..." (file: ${path.basename(filePath)}, voice: ${voiceId})`);
+
+    currentVoiceFiles[guildId] = filePath;
+    const resource = createAudioResource(filePath, { inputType: StreamType.Arbitrary });
+    audioPlayers[guildId].play(resource);
+
+    try {
+        await entersState(audioPlayers[guildId], AudioPlayerStatus.Playing, 10_000);
+        console.log('[Voice] Playing OK');
+    } catch (e) {
+        console.error('[Voice] Player did not start playing:', e.message);
+        cleanupVoiceFile(guildId);
+    }
+}
+
+function cleanupVoiceFile(guildId) {
+    if (currentVoiceFiles[guildId]) {
+        try { fs.unlinkSync(currentVoiceFiles[guildId]); } catch (e) {}
+        delete currentVoiceFiles[guildId];
+    }
+}
+
 function getHistory(channelId) {
     if (!chatHistory[channelId]) chatHistory[channelId] = [];
     return chatHistory[channelId].map(function(h) { return { role: h.role, parts: [{ text: h.parts }] }; });
@@ -345,6 +453,12 @@ client.on('messageCreate', async (message) => {
             adapterCreator: voiceChannel.guild.voiceAdapterCreator
         });
         voiceConnections[voiceChannel.guild.id] = connection;
+        try {
+            await entersState(connection, VoiceConnectionStatus.Ready, 20_000);
+        } catch (e) {
+            console.error('[Voice] Join timeout:', e.message);
+        }
+        setupAudioPlayer(voiceChannel.guild.id, connection);
         await message.channel.send('Udah masuk voice. Kalo mau keluar, ketik `/leave`.');
         return;
     }
@@ -381,6 +495,9 @@ client.on('messageCreate', async (message) => {
             '\n--- VOICE CHANNEL ---\n' +
             '🔹 `@Stella join` - Ajak Stella join voice channel.\n' +
             '🔹 `@Stella leave` / `keluar` - Suruh Stella keluar dari voice.\n' +
+            '🔹 `/say [teks]` - Stella bacain teks di voice.\n' +
+            '🔹 `/autoread on/off` - Auto-read balasan di voice (per user).\n' +
+            '🔹 `/setvoice [voiceId]` - Ganti voice TTS (default: anime Jepang).\n' +
             '\n--- MULTIMEDIA & TOOLS ---\n' +
             '🎨 generate_image - Bikin gambar dari teks.\n' +
             '🎤 generate_voice - Teks jadi voice note.\n' +
@@ -446,6 +563,55 @@ client.on('messageCreate', async (message) => {
         const reason = text.replace(/<@!?\d+>/g, '').replace('/kick', '').trim() || 'Tidak ada alasan';
         await target.kick(reason);
         await message.channel.send('**' + target.user.tag + '** berhasil dikick. Alasan: ' + reason);
+        return;
+    }
+
+    // ── Voice Commands ──
+    if (lowerText.startsWith('/say ')) {
+        const textToSay = text.replace('/say', '').trim();
+        if (!textToSay) {
+            await message.channel.send('Mau ngomong apa?');
+            return;
+        }
+        const conn = getVoiceConnection(message.guild.id);
+        if (!conn) {
+            await message.channel.send('Aku gak ada di voice channel.');
+            return;
+        }
+        const voiceId = getUserSetting(message.author.id, 'voiceId', DEFAULT_VOICE);
+        try {
+            await message.channel.sendTyping();
+            await speakInVoiceChannel(message.guild.id, textToSay, voiceId);
+            await message.channel.send('Udah.');
+        } catch (e) {
+            await message.channel.send('Gagal bicara: ' + e.message);
+        }
+        return;
+    }
+
+    if (lowerText.startsWith('/autoread')) {
+        const arg = text.replace('/autoread', '').trim().toLowerCase();
+        if (arg === 'on') {
+            setUserSetting(message.author.id, 'autoRead', true);
+            await message.channel.send('Auto-read nyala! Stella bakal bacain jawaban di voice.');
+        } else if (arg === 'off') {
+            setUserSetting(message.author.id, 'autoRead', false);
+            await message.channel.send('Auto-read mati.');
+        } else {
+            const status = getUserSetting(message.author.id, 'autoRead', false);
+            await message.channel.send('Status auto-read kamu: **' + (status ? 'ON' : 'OFF') + '**. Pake `/autoread on` buat nyalain.');
+        }
+        return;
+    }
+
+    if (lowerText.startsWith('/setvoice')) {
+        const voiceId = text.replace('/setvoice', '').trim();
+        if (!voiceId) {
+            await message.channel.send('Contoh: `/setvoice ja-JP-NanamiNeural`\n\nVoice yang tersedia:\n- `ja-JP-NanamiNeural` (cewek Jepang, anime)\n- `ja-JP-AoiNeural` (cewek Jepang, anime)\n- `ja-JP-ShioriNeural` (cewek Jepang, kalem)\n- `id-ID-GadisNeural` (cewek Indonesia, natural)');
+            return;
+        }
+        setUserSetting(message.author.id, 'voiceId', voiceId);
+        await message.channel.send('Voice TTS diubah ke **' + voiceId + '**!');
         return;
     }
 
@@ -591,6 +757,18 @@ client.on('messageCreate', async (message) => {
 
         await message.channel.send(cleanText);
 
+        // Auto-read di voice channel
+        const voiceConn = getVoiceConnection(message.guild.id);
+        if (voiceConn && cleanText && cleanText.length < 500 && cleanText !== 'Selesai.') {
+            const autoRead = getUserSetting(message.author.id, 'autoRead', false);
+            if (autoRead) {
+                const voiceId = getUserSetting(message.author.id, 'voiceId', DEFAULT_VOICE);
+                speakInVoiceChannel(message.guild.id, cleanText, voiceId).catch(function(e) {
+                    console.error('[Voice] Auto-read error:', e.message);
+                });
+            }
+        }
+
         if (toolsUsedThisRound.length > 0) {
             learningEngine.trackInteraction(channelId, text, toolsUsedThisRound);
             evolutionSystem.onTaskCompleted();
@@ -613,11 +791,21 @@ client.on('messageCreate', async (message) => {
     }
 });
 
+client.on('voiceStateUpdate', (oldState, newState) => {
+    if (oldState.member.id === client.user.id && !newState.channelId) {
+        const guildId = oldState.guild.id;
+        delete audioPlayers[guildId];
+        delete voiceConnections[guildId];
+        cleanupVoiceFile(guildId);
+    }
+});
+
 client.once('ready', () => {
     console.log('[Discord] Stella v5 Discord bot siap di tag @Stella di server!');
     console.log('[Discord] Level:', evolutionSystem.state.level, '| XP:', evolutionSystem.state.xp + '/' + evolutionSystem.state.xp_to_next_level);
     console.log('[v5] ExecutiveBrain | Knowledge | Reasoning | Planning | Reflection | Goal | Curiosity | Experience | Skills | Workflow | Scheduler | Safety');
     console.log('[v5.1 Kernel] NeedAnalyzer | ContextBuilder | DecisionJournal | IdleScheduler');
+    console.log('[Voice] Edge-TTS ready — default voice: ' + DEFAULT_VOICE);
 });
 
 client.login(DISCORD_TOKEN);

@@ -2,117 +2,117 @@
   "recurring": [],
   "oneTime": [
     {
-      "id": "sch_mr3kwmc466g5",
+      "id": "sch_mr4f6jxxiixe",
       "name": "deep_reflection",
       "action": "run_deep_reflection",
       "type": "interval",
       "time": null,
       "intervalMs": 21600000,
       "active": true,
-      "createdAt": "2026-07-02T14:07:25.972Z",
-      "lastExecuted": "2026-07-02T14:08:25.966Z",
+      "createdAt": "2026-07-03T04:14:57.909Z",
+      "lastExecuted": "2026-07-03T04:15:57.894Z",
       "executionCount": 1,
       "metadata": {
         "priority": "high",
         "category": "cognition",
         "heavy": true
       },
-      "scheduledAt": "2026-07-02T14:07:25.972Z",
+      "scheduledAt": "2026-07-03T04:14:57.912Z",
       "executed": true
     },
     {
-      "id": "sch_mr3kwmc5i5gc",
+      "id": "sch_mr4f6jy29l8x",
       "name": "knowledge_consolidation",
       "action": "consolidate_knowledge",
       "type": "interval",
       "time": null,
       "intervalMs": 43200000,
       "active": true,
-      "createdAt": "2026-07-02T14:07:25.973Z",
-      "lastExecuted": "2026-07-02T14:08:25.967Z",
+      "createdAt": "2026-07-03T04:14:57.914Z",
+      "lastExecuted": "2026-07-03T04:15:57.895Z",
       "executionCount": 1,
       "metadata": {
         "priority": "medium",
         "category": "memory",
         "heavy": true
       },
-      "scheduledAt": "2026-07-02T14:07:25.973Z",
+      "scheduledAt": "2026-07-03T04:14:57.914Z",
       "executed": true
     },
     {
-      "id": "sch_mr3kwmc5nsls",
+      "id": "sch_mr4f6jy2h6wv",
       "name": "memory_cleanup",
       "action": "cleanup_memory",
       "type": "daily",
       "time": "03:00",
       "intervalMs": null,
       "active": true,
-      "createdAt": "2026-07-02T14:07:25.973Z",
-      "lastExecuted": "2026-07-02T14:08:25.967Z",
+      "createdAt": "2026-07-03T04:14:57.914Z",
+      "lastExecuted": "2026-07-03T04:15:57.896Z",
       "executionCount": 1,
       "metadata": {
         "priority": "low",
         "category": "maintenance",
         "heavy": false
       },
-      "scheduledAt": "2026-07-02T14:07:25.973Z",
+      "scheduledAt": "2026-07-03T04:14:57.914Z",
       "executed": true
     },
     {
-      "id": "sch_mr3kwmc6pmvz",
+      "id": "sch_mr4f6jy3e0ac",
       "name": "experience_processing",
       "action": "process_experiences",
       "type": "interval",
       "time": null,
       "intervalMs": 3600000,
       "active": true,
-      "createdAt": "2026-07-02T14:07:25.974Z",
-      "lastExecuted": "2026-07-02T14:08:25.968Z",
+      "createdAt": "2026-07-03T04:14:57.915Z",
+      "lastExecuted": "2026-07-03T04:15:57.896Z",
       "executionCount": 1,
       "metadata": {
         "priority": "medium",
         "category": "learning",
         "heavy": false
       },
-      "scheduledAt": "2026-07-02T14:07:25.974Z",
+      "scheduledAt": "2026-07-03T04:14:57.915Z",
       "executed": true
     },
     {
-      "id": "sch_mr3kwmc6s6yo",
+      "id": "sch_mr4f6jy3uzx8",
       "name": "model_retrain",
       "action": "retrain_models",
       "type": "interval",
       "time": null,
       "intervalMs": 86400000,
       "active": true,
-      "createdAt": "2026-07-02T14:07:25.974Z",
-      "lastExecuted": "2026-07-02T14:08:25.968Z",
+      "createdAt": "2026-07-03T04:14:57.915Z",
+      "lastExecuted": "2026-07-03T04:15:57.897Z",
       "executionCount": 1,
       "metadata": {
         "priority": "low",
         "category": "maintenance",
         "heavy": true
       },
-      "scheduledAt": "2026-07-02T14:07:25.974Z",
+      "scheduledAt": "2026-07-03T04:14:57.915Z",
       "executed": true
     },
     {
-      "id": "sch_mr3kwmc6bzza",
+      "id": "sch_mr4f6jy4jwn7",
       "name": "curiosity_trigger",
       "action": "run_curiosity_scan",
       "type": "interval",
       "time": null,
       "intervalMs": 14400000,
       "active": true,
-      "createdAt": "2026-07-02T14:07:25.974Z",
-      "lastExecuted": "2026-07-02T14:08:25.969Z",
+      "createdAt": "2026-07-03T04:14:57.916Z",
+      "lastExecuted": "2026-07-03T04:15:57.898Z",
       "executionCount": 1,
       "metadata": {
         "priority": "low",
         "category": "growth",
         "heavy": false
       },
-      "scheduledAt": "2026-07-02T14:07:25.974Z",
+      "scheduledAt": "2026-07-03T04:14:57.916Z",
       "executed": true
     }
   ],
@@ -476,9 +476,219 @@
       "taskId": "sch_mr3kwmc6bzza",
       "name": "curiosity_trigger",
       "executedAt": "2026-07-02T14:08:25.969Z"
+    },
+    {
+      "taskId": "sch_mr3m2qeqih23",
+      "name": "deep_reflection",
+      "executedAt": "2026-07-02T14:41:10.803Z"
+    },
+    {
+      "taskId": "sch_mr3m2qer5swa",
+      "name": "knowledge_consolidation",
+      "executedAt": "2026-07-02T14:41:10.804Z"
+    },
+    {
+      "taskId": "sch_mr3m2qesdhv2",
+      "name": "memory_cleanup",
+      "executedAt": "2026-07-02T14:41:10.805Z"
+    },
+    {
+      "taskId": "sch_mr3m2qesmgtg",
+      "name": "experience_processing",
+      "executedAt": "2026-07-02T14:41:10.806Z"
+    },
+    {
+      "taskId": "sch_mr3m2qesdz7q",
+      "name": "model_retrain",
+      "executedAt": "2026-07-02T14:41:10.806Z"
+    },
+    {
+      "taskId": "sch_mr3m2qetjy6l",
+      "name": "curiosity_trigger",
+      "executedAt": "2026-07-02T14:41:10.807Z"
+    },
+    {
+      "taskId": "sch_mr3s4ixsl8ci",
+      "name": "deep_reflection",
+      "executedAt": "2026-07-02T17:30:32.126Z"
+    },
+    {
+      "taskId": "sch_mr3s4ixt981w",
+      "name": "knowledge_consolidation",
+      "executedAt": "2026-07-02T17:30:32.127Z"
+    },
+    {
+      "taskId": "sch_mr3s4ixu0att",
+      "name": "memory_cleanup",
+      "executedAt": "2026-07-02T17:30:32.128Z"
+    },
+    {
+      "taskId": "sch_mr3s4ixuy93p",
+      "name": "experience_processing",
+      "executedAt": "2026-07-02T17:30:32.128Z"
+    },
+    {
+      "taskId": "sch_mr3s4ixumg8d",
+      "name": "model_retrain",
+      "executedAt": "2026-07-02T17:30:32.129Z"
+    },
+    {
+      "taskId": "sch_mr3s4ixvz2p7",
+      "name": "curiosity_trigger",
+      "executedAt": "2026-07-02T17:30:32.130Z"
+    },
+    {
+      "taskId": "sch_mr3s7cd56ebz",
+      "name": "deep_reflection",
+      "executedAt": "2026-07-02T17:32:43.563Z"
+    },
+    {
+      "taskId": "sch_mr3s7cd7a3gp",
+      "name": "knowledge_consolidation",
+      "executedAt": "2026-07-02T17:32:43.564Z"
+    },
+    {
+      "taskId": "sch_mr3s7cd72vaz",
+      "name": "memory_cleanup",
+      "executedAt": "2026-07-02T17:32:43.564Z"
+    },
+    {
+      "taskId": "sch_mr3s7cd8f8vc",
+      "name": "experience_processing",
+      "executedAt": "2026-07-02T17:32:43.565Z"
+    },
+    {
+      "taskId": "sch_mr3s7cd8ouqj",
+      "name": "model_retrain",
+      "executedAt": "2026-07-02T17:32:43.566Z"
+    },
+    {
+      "taskId": "sch_mr3s7cd9bd2j",
+      "name": "curiosity_trigger",
+      "executedAt": "2026-07-02T17:32:43.566Z"
+    },
+    {
+      "taskId": "sch_mr3sbodlvjpl",
+      "name": "deep_reflection",
+      "executedAt": "2026-07-02T17:36:05.712Z"
+    },
+    {
+      "taskId": "sch_mr3sbodpklz5",
+      "name": "knowledge_consolidation",
+      "executedAt": "2026-07-02T17:36:05.713Z"
+    },
+    {
+      "taskId": "sch_mr3sbodq49da",
+      "name": "memory_cleanup",
+      "executedAt": "2026-07-02T17:36:05.713Z"
+    },
+    {
+      "taskId": "sch_mr3sbodqr85y",
+      "name": "experience_processing",
+      "executedAt": "2026-07-02T17:36:05.714Z"
+    },
+    {
+      "taskId": "sch_mr3sbodraf35",
+      "name": "model_retrain",
+      "executedAt": "2026-07-02T17:36:05.715Z"
+    },
+    {
+      "taskId": "sch_mr3sbods3y36",
+      "name": "curiosity_trigger",
+      "executedAt": "2026-07-02T17:36:05.715Z"
+    },
+    {
+      "taskId": "sch_mr3sdmo8aytx",
+      "name": "deep_reflection",
+      "executedAt": "2026-07-02T17:37:36.869Z"
+    },
+    {
+      "taskId": "sch_mr3sdmoa4yje",
+      "name": "knowledge_consolidation",
+      "executedAt": "2026-07-02T17:37:36.870Z"
+    },
+    {
+      "taskId": "sch_mr3sdmoa4kr0",
+      "name": "memory_cleanup",
+      "executedAt": "2026-07-02T17:37:36.870Z"
+    },
+    {
+      "taskId": "sch_mr3sdmobmr2f",
+      "name": "experience_processing",
+      "executedAt": "2026-07-02T17:37:36.871Z"
+    },
+    {
+      "taskId": "sch_mr3sdmoc7u1z",
+      "name": "model_retrain",
+      "executedAt": "2026-07-02T17:37:36.872Z"
+    },
+    {
+      "taskId": "sch_mr3sdmoctpxe",
+      "name": "curiosity_trigger",
+      "executedAt": "2026-07-02T17:37:36.873Z"
+    },
+    {
+      "taskId": "sch_mr3szh6raxuk",
+      "name": "deep_reflection",
+      "executedAt": "2026-07-02T17:54:36.199Z"
+    },
+    {
+      "taskId": "sch_mr3szh6srjzm",
+      "name": "knowledge_consolidation",
+      "executedAt": "2026-07-02T17:54:36.200Z"
+    },
+    {
+      "taskId": "sch_mr3szh6sobvk",
+      "name": "memory_cleanup",
+      "executedAt": "2026-07-02T17:54:36.201Z"
+    },
+    {
+      "taskId": "sch_mr3szh6ti6p5",
+      "name": "experience_processing",
+      "executedAt": "2026-07-02T17:54:36.202Z"
+    },
+    {
+      "taskId": "sch_mr3szh6t98sn",
+      "name": "model_retrain",
+      "executedAt": "2026-07-02T17:54:36.202Z"
+    },
+    {
+      "taskId": "sch_mr3szh6tjtwd",
+      "name": "curiosity_trigger",
+      "executedAt": "2026-07-02T17:54:36.203Z"
+    },
+    {
+      "taskId": "sch_mr4f6jxxiixe",
+      "name": "deep_reflection",
+      "executedAt": "2026-07-03T04:15:57.894Z"
+    },
+    {
+      "taskId": "sch_mr4f6jy29l8x",
+      "name": "knowledge_consolidation",
+      "executedAt": "2026-07-03T04:15:57.895Z"
+    },
+    {
+      "taskId": "sch_mr4f6jy2h6wv",
+      "name": "memory_cleanup",
+      "executedAt": "2026-07-03T04:15:57.896Z"
+    },
+    {
+      "taskId": "sch_mr4f6jy3e0ac",
+      "name": "experience_processing",
+      "executedAt": "2026-07-03T04:15:57.896Z"
+    },
+    {
+      "taskId": "sch_mr4f6jy3uzx8",
+      "name": "model_retrain",
+      "executedAt": "2026-07-03T04:15:57.897Z"
+    },
+    {
+      "taskId": "sch_mr4f6jy4jwn7",
+      "name": "curiosity_trigger",
+      "executedAt": "2026-07-03T04:15:57.898Z"
     }
   ],
   "stats": {
-    "totalExecuted": 72
+    "totalExecuted": 114
   }
 }

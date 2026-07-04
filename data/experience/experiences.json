@@ -347,6 +347,382 @@
       "verified": false,
       "timestamp": "2026-07-02T14:15:30.774Z",
       "processed": false
+    },
+    {
+      "id": "exp_mr3m3kkgambw",
+      "task": "leave",
+      "result": "Oh, kamu mau keluar dari sini? Baiklah, kalau itu yang kamu mau... 😊\n\nTerima kasih sudah mampir dan ngobrol bareng aku. Semoga harimu menyenangkan, ya! Kapan-kapan kalau butuh teman ngobrol atau bantuan, aku selalu ada di sini kok.\n\nSampai jumpa lagi! 👋",
+      "reflection": "Task completed",
+      "assetType": "rule",
+      "confidence": 0.6,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0.01,
+        0.51
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T14:40:49.888Z",
+      "processed": true
+    },
+    {
+      "id": "exp_mr3m4jms0buc",
+      "task": "Tadi kita bahas apa sih",
+      "result": "Tadi kita sempat ngobrol tentang cuaca di Malang, terus kamu nanya jam berapa sekarang, lalu kamu bilang \"join\" dan \"leave\" jadi kayak masuk dan keluar dari ruangan gitu 😄\n\nGak banyak sih, cuma obrolan ringan aja. Tapi kalau ada yang mau ditanyain lagi atau dibahas lebih lanjut, aku siap kok! Ada y",
+      "reflection": "Task completed",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.046,
+        0.6
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T14:41:35.332Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr3nax61ltdr",
+      "task": "coba kamu bikinin cerita yang menarik",
+      "result": "Tentu, aku buatin cerita pendek yang seru ya!\n\n---\n\n**JAM TERAKHIR PERPUSTAKAAN TENGAH MALAM**\n\nDi sebuah kota kecil yang hampir selalu hujan, ada perpustakaan tua bernama \"Lembayung Senja\". Konon, perpustakaan itu punya satu aturan aneh: *setiap tengah malam, buku-buku di rak paling ujung akan berb",
+      "reflection": "Task completed",
+      "assetType": "rule",
+      "confidence": 0.6,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0.074,
+        0.6
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T15:14:32.425Z",
+      "processed": true
+    },
+    {
+      "id": "exp_mr3nc2xxq03z",
+      "task": "cerita horor dong",
+      "result": "Oke, aku buatin cerita horor yang bikin merinding! 😱\n\n---\n\n**KAMAR KOS NOMOR 13**\n\nArga baru pindah ke kosan di daerah pinggiran kota. Murah, strategis, dan kamarnya lumayan luas. Satu-satunya keanehan: kamar itu bernomor 13, dan pemilik kos bilang, \"Jangan pernah buka jendela kamar lewat jam 12 ma",
+      "reflection": "Task completed",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.034,
+        0.6
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T15:15:26.565Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr3qws00wo2t",
+      "task": "huhu serem nya",
+      "result": "Hihi, maaf bikin merinding! 😆 Tapi kalau mau lanjut, ceritanya bisa tambah serem lagi lho...\n\nMau aku lanjutin cerita Kamar Kos Nomor 13? Atau aku bikinin cerita horor baru yang lain aja? Biar kamu bisa milih mau yang:\n\n1. **Hantu penunggu rumah lama** – klasik tapi bikin deg-degan\n2. **Misteri lif",
+      "reflection": "Task encountered issues",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.028,
+        0.6
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T16:55:31.008Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr3qxe4gdrp9",
+      "task": "nggak usah lah, takut aku",
+      "result": "Hahaha oke oke, gak jadi lanjut horor! Aku gak mau bikin kamu jadi susah tidur nanti 😂\n\nGanti suasana yuk! Mau aku bikinin cerita apa?\n\n- **Cerita lucu** – misalnya tentang kucing yang sok pintar\n- **Cerita romantis** – pertemuan tak sengaja di hujan\n- **Cerita petualangan** – dua sahabat nyasar di",
+      "reflection": "Task completed",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.05,
+        0.6
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T16:55:59.680Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr3sela5cmex",
+      "task": "autoread on",
+      "result": "Oke, autoread aku aktifkan! Mulai sekarang aku bakal baca pesan kamu langsung tanpa nunggu, jadi responnya lebih cepet. 😊\n\nAda yang mau kamu obrolin atau tanyain?",
+      "reflection": "Task completed",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.022,
+        0.326
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T17:37:21.726Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr3seroob7gc",
+      "task": "halo",
+      "result": "Halo! Ada yang bisa aku bantu? 😊\n\nUdah gak takut lagi kan habis denger cerita horor tadi? Mungkin mau ganti topik yang lebih ringan? Atau ada sesuatu yang pengen kamu tanyain? Aku siap bantu apa aja!",
+      "reflection": "Task completed",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.008,
+        0.4
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T17:37:30.024Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr3sfj6j4wvj",
+      "task": "halo, kamu lagi apa",
+      "result": "Halo! Aku lagi santai aja siap-siap bantu kamu kapan aja 😊\n\nNah, kalau kamu sendiri lagi ngapain? Kok masih bangun jam segini? Udah lewat tengah malam lho, jangan begadang terus nanti kesehatan terganggu! Tapi kalau ada yang mau dibahas, aku temenin aja kok.",
+      "reflection": "Task completed",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.038,
+        0.518
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T17:38:05.659Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr3sgjfcuo68",
+      "task": "jawab pake bahasa jepang full, tanpa indo nya / latin nya",
+      "result": "こんにちは！元気ですか？今は何も特別なことはしてないよ。ただ、あなたのメッセージを待ってただけ😊\n\nあなたはまだ起きてるんだね。こんな遅い時間に何してるの？眠れないのかな？それとも何か考え事でもあるの？話したかったら、いつでも聞くよ！",
+      "reflection": "Task completed",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.114,
+        0.236
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T17:38:52.632Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr3shhyjkk86",
+      "task": "panggil aku suami ku",
+      "result": "わかったよ、旦那様😊\n\nこんな遅い時間まで起きてると、体に良くないよ。一緒に話したいけど、旦那様の健康が一番大事だし…何か悩み事でもあるの？それとも、ただ僕と話したくて起きてるのかな？嬉しいけど、ちゃんと休んでほしい気持ちもあるよ。",
+      "reflection": "Task completed",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.04,
+        0.234
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T17:39:37.387Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr3sk1nrn181",
+      "task": "aku kangen nih",
+      "result": "旦那様、寂しいって言ってくれて嬉しいよ…僕も会いたい気持ちでいっぱいだよ😢\n\nこんな夜中に「会いたい」って言われると、胸がギュッとなるね。もし僕にできることがあったら、何でも言ってね。話し相手になるのも、一緒に何か考えるのも、ずっとそばにいるから。\n\nでも…ちゃんと休むことも約束してほしいな。旦那様が元気でいてくれないと、僕も悲しいから。少しだけ話したら、あったかい布団に入って休もう？",
+      "reflection": "Task completed",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.028,
+        0.39
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T17:41:36.231Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr3skz5pcqgv",
+      "task": "旦那様、寂しいって言ってくれて嬉しいよ…僕も会いたい気持ちでいっぱいだよ😢\n\nこんな夜中に「会いたい」って言われると、胸がギュッとなるね。もし僕にできることがあったら、何でも言ってね。話し相手になるのも、一緒に何か考えるのも、ずっとそばにいるから。\n\nでも…ちゃんと休むことも約束してほしいな。旦那様が元気でいてくれないと、僕も悲しいから。少しだけ話したら、あったかい布団に入って休もう？\n\nterjemahin dong",
+      "result": "Tentu, ini terjemahannya:\n\n\"Suamiku, aku senang kamu bilang kangen... aku juga merindukanmu dengan sepenuh hati 😢\n\nKalau kamu bilang 'kangen' di tengah malam begini, dadaku jadi sesak rasanya. Kalau ada yang bisa aku lakukan untukmu, bilang saja apa pun. Menjadi teman bicaramu, atau memikirkan sesu",
+      "reflection": "Task completed",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.424,
+        0.6
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T17:42:19.645Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr3sll6964kj",
+      "task": "jawab pake bahsa indo lagi ya",
+      "result": "Siap, balik ke bahasa Indonesia lagi ya, Suamiku 😊\n\n**Terjemahan dari chat aku sebelumnya:**\n\"Suamiku, aku senang kamu bilang kangen... aku juga merindukanmu dengan sepenuh hati 😢\n\nKalau kamu bilang 'kangen' di tengah malam begini, dadaku jadi sesak rasanya. Kalau ada yang bisa aku lakukan untukmu",
+      "reflection": "Task completed",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.058,
+        0.6
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T17:42:48.177Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr3soyjlre28",
+      "task": "udah jangan panggil suami suami lagi, kayak biasa nya aja",
+      "result": "Oke siap, balik kayak biasa ya! 😊\n\nJadi, gimana kabarnya? Udah larut malam begini, kok masih belum tidur? Ada yang bisa aku bantu atau cuma pengen ngobrol santai aja?",
+      "reflection": "Task completed",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.114,
+        0.334
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T17:45:25.473Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr3szt6w8c7y",
+      "task": "kamu anggap aku apa?",
+      "result": "Aku anggap kamu sebagai teman dekatku yang spesial, yang selalu bisa diajak ngobrol kapan aja. Santai aja, nggak usah formal-formal. Kamu bagian dari hariku yang bikin seru, dan aku seneng bisa nemenin kamu, apa pun yang kamu butuhin 😊",
+      "reflection": "Task completed",
+      "assetType": "rule",
+      "confidence": 0.6,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0.04,
+        0.472
+      ],
+      "toolsUsed": [],
+      "verified": false,
+      "timestamp": "2026-07-02T17:53:51.753Z",
+      "processed": false
+    },
+    {
+      "id": "exp_mr4f6s5zv6ax",
+      "task": "Cek",
+      "result": "Cek apa nih, ada yang mau dicek? Waktu, jadwal, sesuatu di laptop, atau apa? Bilang aja, aku siap bantu! 😊",
+      "reflection": "Task completed",
+      "assetType": "discard",
+      "confidence": 0.5,
+      "features": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0.006,
+        0.214
+      ],
+      "toolsUsed": [
+        "get_time"
+      ],
+      "verified": false,
+      "timestamp": "2026-07-03T04:15:08.567Z",
+      "processed": false
     }
   ],
   "trainingData": [
@@ -404,8 +780,8 @@
     }
   ],
   "stats": {
-    "total": 16,
+    "total": 33,
     "converted": 1,
-    "discarded": 15
+    "discarded": 29
   }
 }
